@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
+import PriceSearch from "./pages/PriceSearch";
+import GroceryList from "./pages/GroceryList";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -34,12 +36,8 @@ function App() {
     <BrowserRouter>
       <Navbar user={user} />
       <Routes>
-        <Route
-          path="/"
-          element={
-            user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
-          }
-        />
+        <Route path="/search" element={<PriceSearch user={user} />} />
+        <Route path="/lists" element={<GroceryList user={user} />} />
         <Route
           path="/login"
           element={user ? <Navigate to="/dashboard" /> : <Login />}

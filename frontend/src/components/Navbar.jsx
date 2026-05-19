@@ -18,7 +18,9 @@ function Navbar({ user }) {
         {user ? (
           <>
             <span className="nav-email">{user.email}</span>
-            <Link to="/dashboard">My Lists</Link>
+            <Link to="/lists">My Lists</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/search">Price Search</Link>
             <button onClick={handleLogout} className="btn-logout">
               Logout
             </button>
