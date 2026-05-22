@@ -1,148 +1,207 @@
 # 🛒 Smart Grocery Savings
 
-> A personal finance content website helping everyday shoppers spend less on groceries through honest reviews, price comparisons, and practical money-saving strategies.
+> A full-stack grocery cost optimization platform helping everyday shoppers find the lowest prices across stores, build smart grocery lists, and save more money every week.
 
-**Live Site:** [www.smartgrocerysavings.com](https://www.smartgrocerysavings.com)
+**Live App:** [smart-grocery-savings.vercel.app](https://smart-grocery-savings.vercel.app)  
+**Content Site:** [www.smartgrocerysavings.com](https://www.smartgrocerysavings.com)
 
 ---
 
-## 📖 About
+## 🚀 What It Does
 
-Smart Grocery Savings is a static content website built with HTML, CSS, and JavaScript and hosted on GitHub Pages with a custom domain. The site publishes in-depth guides, store comparisons, app reviews, and money-saving strategies focused on grocery shopping and personal finance.
+Smart Grocery Savings started as a static content blog and evolved into a full-stack web application. Users can:
 
-Topics covered include:
-- Grocery delivery service comparisons (Instacart, Walmart+, Amazon Fresh, Thrive Market)
-- Cashback app reviews and stacking strategies (Ibotta, Fetch Rewards, Rakuten)
-- Store price comparisons (Aldi vs Walmart, store brands vs name brands)
-- Meal planning on a budget
-- Health-conscious shopping (microplastics, organic options)
-- Breaking grocery news and updates
+- **Search real-time grocery prices** from Kroger-family stores via the official Kroger API
+- **Build and manage grocery lists** with checkboxes and progress tracking
+- **Add items directly** from live search results into personal lists
+- **Create an account** and have all data saved securely to the cloud
+- **Read in-depth guides** on saving money at every major grocery chain
+
+---
+
+## 🏗️ Architecture
+
+This is a monorepo containing both the static content site and the full-stack React application.
+
+```
+smart-grocery-savings/
+├── frontend/                  # React application (Vite)
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Login.jsx          # User authentication
+│   │   │   ├── Signup.jsx         # Account creation
+│   │   │   ├── Dashboard.jsx      # User dashboard
+│   │   │   ├── PriceSearch.jsx    # Real-time Kroger price search
+│   │   │   └── GroceryList.jsx    # List builder and manager
+│   │   ├── components/
+│   │   │   └── Navbar.jsx         # Navigation with auth state
+│   │   └── lib/
+│   │       └── supabase.js        # Supabase client
+│   ├── api/                       # Vercel serverless functions
+│   │   ├── kroger-token.js        # Kroger OAuth token handler
+│   │   ├── kroger-search.js       # Product search with pricing
+│   │   └── kroger-locations.js    # Store location lookup
+│   └── vercel.json                # Vercel routing + security headers
+├── css/style.css              # Static site stylesheet
+├── index.html                 # Static site homepage
+├── post_1.html → post_12.html # Blog posts
+└── DEVLOG.md                  # Engineering decisions and challenges
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Usage |
-|---|---|
-| HTML5 | Page structure and content |
-| CSS3 | Styling, CSS Grid, Flexbox, animations |
-| Vanilla JavaScript | Header includes, form handling, newsletter |
-| GitHub Pages | Hosting and deployment |
-| GitHub Actions | CI/CD build and deployment pipeline |
-| Namecheap | Custom domain and DNS configuration |
-| Web3Forms | Contact form and newsletter submissions |
-| Google AdSense | Display advertising (pending approval) |
-| Google Fonts | Typography (Playfair Display, Source Sans 3) |
+| Layer        | Technology                  | Purpose                                      |
+| ------------ | --------------------------- | -------------------------------------------- |
+| Frontend     | React + Vite                | Component-based UI                           |
+| Auth         | Supabase Auth               | User signup, login, sessions                 |
+| Database     | PostgreSQL (Supabase)       | Grocery lists, items, prices                 |
+| API Layer    | Vercel Serverless Functions | Kroger API proxy (keeps secrets server-side) |
+| Price Data   | Kroger Developer API        | Real-time product prices                     |
+| Hosting      | Vercel                      | Frontend + serverless functions              |
+| Content Site | GitHub Pages → Vercel       | Static HTML/CSS/JS blog                      |
+| Domain       | Namecheap                   | Custom domain DNS                            |
+| Analytics    | Mixpanel                    | User behavior tracking                       |
 
 ---
 
-## 📁 Project Structure
+## 🗄️ Database Schema
 
-```
-smart-grocery-savings/
-├── index.html              # Homepage (magazine-style layout)
-├── blog.html               # Blog listing page
-├── about.html              # About page
-├── contact.html            # Contact page with Web3Forms
-├── privacy.html            # Privacy policy
-├── header.html             # Shared header component
-├── robots.txt              # Search engine crawl rules
-├── sitemap.xml             # XML sitemap for all pages
-├── CNAME                   # Custom domain configuration
-├── css/
-│   └── style.css           # Main stylesheet
-├── images/                 # All site images
-└── post_1.html             # Top 5 Grocery Delivery Services
-    post_2.html             # Walmart+ vs Instacart
-    post_3.html             # 7 Ways to Cut $50 Off Your Grocery Bill
-    post_4.html             # Best Cashback Apps for Groceries
-    post_5.html             # How to Meal Plan on $50 a Week
-    post_6.html             # Aldi vs Walmart Price Comparison
-    post_7.html             # Does Ibotta Really Save You Money?
-    post_8.html             # Store Brands vs Name Brands
-    post_9.html             # How to Save Money at Costco
-    post_10.html            # Amazon Fresh Stores Closing 2026
-    post_11.html            # Cheapest Avocado Prices by Store
-    post_12.html            # How to Buy Food with Less Microplastics
+```sql
+stores          -- Grocery store locations
+items           -- Grocery product catalog (grows via user searches)
+prices          -- Price records per item per store
+grocery_lists   -- User-owned shopping lists
+list_items      -- Items within each list with quantity + checked state
 ```
 
----
-
-## ✨ Features
-
-- **Magazine-style homepage** with featured articles, sidebar, and savings stats
-- **Responsive design** — works on mobile, tablet, and desktop
-- **Shared header component** loaded via JavaScript fetch for easy site-wide updates
-- **Newsletter signup** wired to Web3Forms — submissions delivered to Gmail
-- **Contact form** with success message and Web3Forms backend
-- **FTC affiliate disclosures** on all monetized posts
-- **Content Security Policy** meta tags for XSS protection
-- **SEO optimized** — meta descriptions, sitemap.xml, robots.txt
-- **Privacy Policy** compliant with Google AdSense and Amazon Associates requirements
+Row Level Security (RLS) enabled on all tables — users can only access their own data.
 
 ---
 
-## 🚀 Deployment
+## 🔐 Security
 
-The site deploys automatically via GitHub Actions on every push to `main`.
+- **Row Level Security** on all Supabase tables
+- **Serverless API proxy** keeps Kroger credentials server-side only
+- **Security headers** via `vercel.json`:
+  - `Strict-Transport-Security` — prevents SSL stripping
+  - `X-Frame-Options: SAMEORIGIN` — prevents clickjacking
+  - `X-Content-Type-Options: nosniff` — prevents MIME sniffing
+  - `Referrer-Policy` — controls referrer leakage
+- **Environment variables** never committed to Git
+- `.env`, `.env.local`, `node_modules/` all gitignored
+
+---
+
+## 🌐 API Integration
+
+### Kroger Developer API
+
+The app integrates with the official Kroger API to fetch real-time product prices from Kroger-family stores (Foods Co, Fred Meyer, King Soopers, etc.).
+
+```
+Browser → Vercel Serverless Function → Kroger API → Browser
+```
+
+Secrets stay server-side. The frontend never touches the Kroger credentials directly.
+
+**Endpoints built:**
+
+- `GET /api/kroger-token` — OAuth2 client credentials flow
+- `GET /api/kroger-search?query=milk&locationId=xxx` — Product search with prices
+- `GET /api/kroger-locations?zip=95814` — Find nearby stores by zip code
+
+---
+
+## 📦 Local Development
 
 ```bash
 # Clone the repo
 git clone https://github.com/hashtags2023/smart-grocery-savings.git
-
-# Make changes locally
 cd smart-grocery-savings
 
-# Deploy
-git add .
-git commit -m "Your commit message"
-git push origin main
+# Install Vercel CLI
+npm install -g vercel
+
+# Link to Vercel project
+vercel link
+
+# Create .env.local with your credentials
+cp .env.example .env.local
+# Fill in: VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY,
+#          KROGER_CLIENT_ID, KROGER_CLIENT_SECRET, VITE_MIXPANEL_TOKEN
+
+# Run locally (frontend + API together)
+vercel dev
+
+# Or run just the React frontend
+cd frontend && npm run dev
 ```
 
-GitHub Pages builds and deploys within 1–2 minutes of each push.
+---
+
+## 🚢 Deployment
+
+Auto-deploys to Vercel on every push to `main`.
+
+```bash
+# Manual production deploy
+vercel --prod
+```
+
+Environment variables are set in Vercel dashboard → Settings → Environment Variables.
 
 ---
 
 ## 💰 Monetization
 
-| Program | Status |
-|---|---|
-| Amazon Associates | ✅ Active — Store ID: smartgrocerys-20 |
-| Google AdSense | 🔄 Pending approval |
-| Thrive Market Affiliate | 🔄 In review |
-| Instacart Affiliate (Impact.com) | 🔄 In review |
-| Walmart Affiliate (Impact.com) | 🔄 Pending |
-| HelloFresh (CJ Affiliate) | 🔄 Submitted |
+| Program                          | Status                                 |
+| -------------------------------- | -------------------------------------- |
+| Amazon Associates                | ✅ Active — Store ID: smartgrocerys-20 |
+| Google AdSense                   | 🔄 Pending approval                    |
+| Thrive Market Affiliate          | 🔄 In review                           |
+| Instacart Affiliate (Impact.com) | 🔄 In review                           |
+| Walmart Affiliate (Impact.com)   | 🔄 Pending                             |
+| HelloFresh (CJ Affiliate)        | 🔄 Submitted                           |
 
 ---
 
-## 📊 Content
+## 📝 Content
 
-**12 published posts** covering grocery delivery, savings apps, store comparisons, meal planning, health, and breaking news. New posts published 1–2 times per month.
+**12 published blog posts** covering:
+
+- Grocery delivery service comparisons (Instacart, Walmart+, Amazon Fresh)
+- Cashback app reviews (Ibotta, Fetch Rewards, Rakuten)
+- Store price comparisons (Aldi vs Walmart, Costco savings guide)
+- Meal planning on a budget
+- Health-conscious shopping tips
 
 ---
 
-## 🔒 Security
+## 🗺️ Roadmap
 
-- HTTPS enforced via GitHub Pages SSL
-- Content Security Policy meta tags
-- X-Content-Type-Options and XSS protection headers
-- No server-side code, no database — static site architecture minimizes attack surface
-- Forms handled by Web3Forms (no sensitive data stored on site)
+- [ ] Walmart API integration for expanded store coverage
+- [ ] Store price comparison page (side-by-side)
+- [ ] List optimization engine (cheapest store combination)
+- [ ] Price drop email alerts (Resend API)
+- [ ] Spending tracker and budget dashboard
+- [ ] Crowdsourced prices for stores without APIs
+- [ ] Mobile PWA support
 
 ---
 
 ## 📬 Contact
 
+**Email:** smartgrocerysavings2026@gmail.com  
 **Website:** [smartgrocerysavings.com/contact.html](https://www.smartgrocerysavings.com/contact.html)
-**Email:** smartgrocerysavings2026@gmail.com
 
 ---
 
 ## 📄 License
 
-This project is proprietary. Content, design, and code are the property of Smart Grocery Savings. Not licensed for reuse or distribution.
+Proprietary. Content, design, and code are the property of Smart Grocery Savings.
 
 ---
 
-*Built and maintained by Lori — software developer and creator of Smart Grocery Savings.*
+_Built by Lori — software developer turning a content site into a real product, one sprint at a time._
