@@ -45,7 +45,6 @@ function PriceSearch({ user }) {
     }
 
     const item = product.items[0];
-    const price = item.price.regular;
     const name = product.description.replace(/®|™/g, "").trim();
     const productId = product.productId;
 
