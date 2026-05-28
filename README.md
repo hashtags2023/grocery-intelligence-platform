@@ -193,7 +193,7 @@ Environment variables are set in Vercel dashboard → Settings → Environment V
 
 ## 📬 Contact
 
-**Email:** smartgrocerysavings2026@gmail.com  
+**Email:** smartgrocerysavings@proton.me  
 **Website:** [smartgrocerysavings.com/contact.html](https://www.smartgrocerysavings.com/contact.html)
 
 ---
