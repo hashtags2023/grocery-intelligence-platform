@@ -1,17 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="VMZWMLnSZEcYyTSHyjbzXSRs7gEspnZ-4sF-dO3xfGw" />
+    <meta
+      name="google-site-verification"
+      content="VMZWMLnSZEcYyTSHyjbzXSRs7gEspnZ-4sF-dO3xfGw"
+    />
     <meta charset="UTF-8" />
     <title>Home - Smart Grocery Savings</title>
-    <meta name='impact-site-verification' value='324538be-cb3a-4e84-a6fd-203e45c7ca1a'>
+    <meta
+      name="impact-site-verification"
+      value="324538be-cb3a-4e84-a6fd-203e45c7ca1a"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Discover smart ways to save on groceries with tips, deals, and comparison tools to help stretch your food budget." />
+    <meta
+      name="description"
+      content="Discover smart ways to save on groceries with tips, deals, and comparison tools to help stretch your food budget."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811999896266925" crossorigin="anonymous"></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9811999896266925"
+      crossorigin="anonymous"
+    ></script>
     <style>
       :root {
         --green: #2e7d32;
@@ -23,86 +39,590 @@
         --muted: #666;
         --border: #e0e0e0;
       }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      body { font-family: "Source Sans 3", sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.6; }
-      header { background: var(--green-dark); color: white; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-      .header-inner { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-      header h1 { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.5px; }
-      header h1 span { color: #a5d6a7; }
-      nav a { color: #c8e6c9; text-decoration: none; font-size: 0.9rem; font-weight: 600; margin-left: 20px; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
-      nav a:hover { color: white; }
-      .hero { background: linear-gradient(135deg, var(--green-dark) 0%, #388e3c 60%, #558b2f 100%); color: white; padding: 64px 24px; text-align: center; position: relative; overflow: hidden; animation: fadeIn 0.8s ease both; }
-      .hero::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-      .hero-content { position: relative; max-width: 700px; margin: 0 auto; }
-      .hero-tag { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #c8e6c9; font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 20px; }
-      .hero h2 { font-family: "Playfair Display", serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 18px; animation: slideUp 0.8s ease 0.1s both; }
-      .hero p { font-size: 1.1rem; color: #c8e6c9; max-width: 520px; margin: 0 auto 28px; animation: slideUp 0.8s ease 0.2s both; }
-      .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; animation: slideUp 0.8s ease 0.3s both; }
-      .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-      .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-      .btn-white { background: white; color: var(--green-dark); }
-      .btn-outline { background: transparent; border: 2px solid white; color: white; }
-      .savings-strip { background: var(--orange); color: white; padding: 12px 24px; text-align: center; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.3px; }
-      .savings-strip a { color: white; text-decoration: underline; }
-      .site-body { max-width: 1100px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: 1fr 320px; gap: 48px; }
-      @media (max-width: 800px) { .site-body { grid-template-columns: 1fr; } }
-      .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 6px; margin-bottom: 24px; }
-      .featured-article { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: box-shadow 0.2s; animation: fadeIn 0.6s ease 0.2s both; }
-      .featured-article:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
-      @media (max-width: 600px) { .featured-article { grid-template-columns: 1fr; } }
-      .featured-article img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; display: block; }
-      .featured-text { padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; }
-      .article-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; width: fit-content; }
-      .featured-text h3 { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
-      .featured-text p { color: var(--muted); font-size: 0.95rem; margin-bottom: 18px; }
-      .read-more { color: var(--green); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
-      .read-more:hover { gap: 10px; }
-      .article-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-      @media (max-width: 600px) { .article-grid { grid-template-columns: 1fr; } }
-      .article-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: box-shadow 0.2s, transform 0.2s; text-decoration: none; color: inherit; display: flex; flex-direction: column; animation: fadeIn 0.6s ease both; }
-      .article-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); transform: translateY(-3px); }
-      .article-card img { width: 100%; height: 150px; object-fit: cover; }
-      .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
-      .card-body .article-tag { margin-bottom: 8px; }
-      .card-body h4 { font-family: "Playfair Display", serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px; }
-      .card-body p { color: var(--muted); font-size: 0.88rem; flex: 1; }
-      .card-footer { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 0.82rem; color: var(--green); font-weight: 600; }
-      .tips-list { list-style: none; margin-bottom: 32px; }
-      .tips-list li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; animation: fadeIn 0.5s ease both; }
-      .tip-icon { background: var(--green-light); color: var(--green); font-size: 1.1rem; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-      .tip-content h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 3px; }
-      .tip-content p { font-size: 0.85rem; color: var(--muted); }
-      .sidebar { display: flex; flex-direction: column; gap: 28px; }
-      .sidebar-widget { background: white; border-radius: 10px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-      .sidebar-widget .section-label { margin-bottom: 16px; }
-      .newsletter-widget { background: var(--green-dark); color: white; }
-      .newsletter-widget .section-label { color: #a5d6a7; border-color: #a5d6a7; }
-      .newsletter-widget p { font-size: 0.9rem; color: #c8e6c9; margin-bottom: 14px; }
-      .newsletter-form { display: flex; flex-direction: column; gap: 10px; }
-      .newsletter-form input { padding: 10px 14px; border-radius: 6px; border: none; font-size: 0.9rem; font-family: inherit; }
-      .newsletter-form button { padding: 10px; background: var(--orange); color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; cursor: pointer; font-family: inherit; transition: background 0.2s; }
-      .newsletter-form button:hover { background: #bf360c; }
-      .newsletter-success { display: none; background: rgba(255,255,255,0.15); border-radius: 6px; padding: 10px 14px; color: #a5d6a7; font-size: 0.9rem; font-weight: 600; text-align: center; margin-top: 4px; }
-      .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-      .stat-box { background: var(--green-light); border-radius: 8px; padding: 14px; text-align: center; }
-      .stat-number { font-family: "Playfair Display", serif; font-size: 1.6rem; font-weight: 900; color: var(--green-dark); display: block; }
-      .stat-label { font-size: 0.78rem; color: var(--muted); }
-      .popular-post { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: color 0.2s; }
-      .popular-post:last-child { border-bottom: none; }
-      .popular-post:hover h5 { color: var(--green); }
-      .popular-post-num { font-family: "Playfair Display", serif; font-size: 1.4rem; font-weight: 900; color: var(--border); line-height: 1; flex-shrink: 0; width: 28px; }
-      .popular-post h5 { font-size: 0.88rem; font-weight: 600; line-height: 1.3; transition: color 0.2s; }
-      .popular-post span { font-size: 0.78rem; color: var(--muted); }
-      .ad-widget { text-align: center; }
-      .ad-label { font-size: 0.7rem; color: #bbb; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-      footer { background: var(--ink); color: #aaa; text-align: center; padding: 24px; font-size: 0.85rem; margin-top: 40px; }
-      footer a { color: #a5d6a7; text-decoration: none; margin: 0 6px; }
-      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      header {
+        background: var(--green-dark);
+        color: white;
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+      }
+      header h1 span {
+        color: #a5d6a7;
+      }
+      nav a {
+        color: #c8e6c9;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-left: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: color 0.2s;
+      }
+      nav a:hover {
+        color: white;
+      }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--green-dark) 0%,
+          #388e3c 60%,
+          #558b2f 100%
+        );
+        color: white;
+        padding: 64px 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 0.8s ease both;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+      .hero-content {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .hero-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #c8e6c9;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 4px 14px;
+        border-radius: 20px;
+        margin-bottom: 20px;
+      }
+      .hero h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 18px;
+        animation: slideUp 0.8s ease 0.1s both;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        color: #c8e6c9;
+        max-width: 520px;
+        margin: 0 auto 28px;
+        animation: slideUp 0.8s ease 0.2s both;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        animation: slideUp 0.8s ease 0.3s both;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      .btn-white {
+        background: white;
+        color: var(--green-dark);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+      }
+      .btn-app {
+        background: var(--orange);
+        color: white;
+        border: 2px solid var(--orange);
+      }
+      .app-banner {
+        background: #1b5e20;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        animation: slideUp 0.8s ease 0.4s both;
+      }
+      .app-banner-text {
+        text-align: left;
+      }
+      .app-banner-text strong {
+        display: block;
+        font-size: 1rem;
+        color: white;
+        margin-bottom: 4px;
+      }
+      .app-banner-text span {
+        font-size: 0.85rem;
+        color: #a5d6a7;
+      }
+      .btn-app-banner {
+        background: white;
+        color: var(--green-dark);
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn-app-banner:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      .savings-strip {
+        background: var(--orange);
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        font-size: 0.88rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+      }
+      .savings-strip a {
+        color: white;
+        text-decoration: underline;
+      }
+      .site-body {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 24px;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 48px;
+      }
+      @media (max-width: 800px) {
+        .site-body {
+          grid-template-columns: 1fr;
+        }
+      }
+      .section-label {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--green);
+        border-bottom: 2px solid var(--green);
+        padding-bottom: 6px;
+        margin-bottom: 24px;
+      }
+      .featured-article {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition: box-shadow 0.2s;
+        animation: fadeIn 0.6s ease 0.2s both;
+      }
+      .featured-article:hover {
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+      }
+      @media (max-width: 600px) {
+        .featured-article {
+          grid-template-columns: 1fr;
+        }
+      }
+      .featured-article img {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      .featured-text {
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .article-tag {
+        display: inline-block;
+        background: var(--green-light);
+        color: var(--green);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 3px;
+        margin-bottom: 12px;
+        width: fit-content;
+      }
+      .featured-text h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+      .featured-text p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 18px;
+      }
+      .read-more {
+        color: var(--green);
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: gap 0.2s;
+      }
+      .read-more:hover {
+        gap: 10px;
+      }
+      .article-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      @media (max-width: 600px) {
+        .article-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .article-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        animation: fadeIn 0.6s ease both;
+      }
+      .article-card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+      .article-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 16px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-body .article-tag {
+        margin-bottom: 8px;
+      }
+      .card-body h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 8px;
+      }
+      .card-body p {
+        color: var(--muted);
+        font-size: 0.88rem;
+        flex: 1;
+      }
+      .card-footer {
+        padding: 12px 16px;
+        border-top: 1px solid var(--border);
+        font-size: 0.82rem;
+        color: var(--green);
+        font-weight: 600;
+      }
+      .tips-list {
+        list-style: none;
+        margin-bottom: 32px;
+      }
+      .tips-list li {
+        display: flex;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+        align-items: flex-start;
+        animation: fadeIn 0.5s ease both;
+      }
+      .tip-icon {
+        background: var(--green-light);
+        color: var(--green);
+        font-size: 1.1rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .tip-content h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+      }
+      .tip-content p {
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+      .sidebar-widget {
+        background: white;
+        border-radius: 10px;
+        padding: 22px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .sidebar-widget .section-label {
+        margin-bottom: 16px;
+      }
+      .newsletter-widget {
+        background: var(--green-dark);
+        color: white;
+      }
+      .newsletter-widget .section-label {
+        color: #a5d6a7;
+        border-color: #a5d6a7;
+      }
+      .newsletter-widget p {
+        font-size: 0.9rem;
+        color: #c8e6c9;
+        margin-bottom: 14px;
+      }
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .newsletter-form input {
+        padding: 10px 14px;
+        border-radius: 6px;
+        border: none;
+        font-size: 0.9rem;
+        font-family: inherit;
+      }
+      .newsletter-form button {
+        padding: 10px;
+        background: var(--orange);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        font-family: inherit;
+        transition: background 0.2s;
+      }
+      .newsletter-form button:hover {
+        background: #bf360c;
+      }
+      .newsletter-success {
+        display: none;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        padding: 10px 14px;
+        color: #a5d6a7;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 4px;
+      }
+      .stat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .stat-box {
+        background: var(--green-light);
+        border-radius: 8px;
+        padding: 14px;
+        text-align: center;
+      }
+      .stat-number {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        font-weight: 900;
+        color: var(--green-dark);
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .popular-post {
+        display: flex;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--border);
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s;
+      }
+      .popular-post:last-child {
+        border-bottom: none;
+      }
+      .popular-post:hover h5 {
+        color: var(--green);
+      }
+      .popular-post-num {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: var(--border);
+        line-height: 1;
+        flex-shrink: 0;
+        width: 28px;
+      }
+      .popular-post h5 {
+        font-size: 0.88rem;
+        font-weight: 600;
+        line-height: 1.3;
+        transition: color 0.2s;
+      }
+      .popular-post span {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+      .ad-widget {
+        text-align: center;
+      }
+      .ad-label {
+        font-size: 0.7rem;
+        color: #bbb;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .try-app-widget {
+        background: linear-gradient(135deg, var(--green-dark), #388e3c);
+        color: white;
+        border-radius: 10px;
+        padding: 22px;
+        text-align: center;
+      }
+      .try-app-widget h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        color: white;
+      }
+      .try-app-widget p {
+        font-size: 0.85rem;
+        color: #c8e6c9;
+        margin-bottom: 16px;
+      }
+      .btn-try-app {
+        display: inline-block;
+        background: white;
+        color: var(--green-dark);
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+      .btn-try-app:hover {
+        transform: translateY(-2px);
+      }
+      footer {
+        background: var(--ink);
+        color: #aaa;
+        text-align: center;
+        padding: 24px;
+        font-size: 0.85rem;
+        margin-top: 40px;
+      }
+      footer a {
+        color: #a5d6a7;
+        text-decoration: none;
+        margin: 0 6px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
-
     <header>
       <div class="header-inner">
         <h1>Smart <span>Grocery</span> Savings</h1>
@@ -111,6 +631,17 @@
           <a href="about.html">About</a>
           <a href="blog.html">Blog</a>
           <a href="contact.html">Contact</a>
+          <a
+            href="https://smart-grocery-savings.vercel.app"
+            target="_blank"
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              padding: 6px 14px;
+              border-radius: 4px;
+              color: white;
+            "
+            >🛒 Price Tool</a
+          >
         </nav>
       </div>
     </header>
@@ -119,40 +650,82 @@
       <div class="hero-content">
         <div class="hero-tag">🛒 Your Grocery Savings Guide</div>
         <h2>Stop Overpaying at the Grocery Store</h2>
-        <p>Real tips, honest service comparisons, and money-saving strategies that actually work — updated regularly.</p>
+        <p>
+          Real tips, honest service comparisons, and money-saving strategies
+          that actually work — updated regularly.
+        </p>
         <div class="hero-buttons">
           <a href="blog.html" class="btn btn-white">Read the Blog</a>
           <a href="about.html" class="btn btn-outline">About This Site</a>
+          <a
+            href="https://smart-grocery-savings.vercel.app"
+            target="_blank"
+            class="btn btn-app"
+            >🔍 Compare Prices Free</a
+          >
+        </div>
+        <div class="app-banner">
+          <div class="app-banner-text">
+            <strong>🆕 New: Real-Time Price Comparison Tool</strong>
+            <span
+              >Search live grocery prices, build lists, and find the cheapest
+              store near you</span
+            >
+          </div>
+          <a
+            href="https://smart-grocery-savings.vercel.app"
+            target="_blank"
+            class="btn-app-banner"
+            >Try It Free →</a
+          >
         </div>
       </div>
     </section>
 
     <div class="savings-strip">
-      💰 New: <a href="post_9.html">How to Save Money at Costco — what to buy, what to skip, and how to make the membership pay for itself</a>
+      💰 New:
+      <a href="post_9.html"
+        >How to Save Money at Costco — what to buy, what to skip, and how to
+        make the membership pay for itself</a
+      >
     </div>
 
     <div class="site-body">
       <main>
         <div class="section-label">Featured Article</div>
         <div class="featured-article">
-          <img src="images/grocery.jpeg" alt="Grocery delivery services comparison" />
+          <img
+            src="images/grocery.jpeg"
+            alt="Grocery delivery services comparison"
+          />
           <div class="featured-text">
             <span class="article-tag">Comparison</span>
-            <h3>Top 5 Grocery Delivery Services in 2025</h3>
-            <p>From no-markup Walmart+ to flexible Instacart — we break down the real costs so you can pick the service that saves you the most.</p>
-            <a href="post_1.html" class="read-more">Read the full breakdown →</a>
+            <h3>Top 5 Grocery Delivery Services in 2026</h3>
+            <p>
+              From no-markup Walmart+ to flexible Instacart — we break down the
+              real costs so you can pick the service that saves you the most.
+            </p>
+            <a href="post_1.html" class="read-more"
+              >Read the full breakdown →</a
+            >
           </div>
         </div>
 
         <div class="section-label">Latest Posts</div>
         <div class="article-grid">
-
           <a href="post_2.html" class="article-card">
-            <img src="images/walmart_vs_instacart2.png" alt="Walmart+ vs Instacart" style="object-fit:contain; background:#f5f5f5; padding:16px;" />
+            <img
+              src="images/walmart_vs_instacart2.png"
+              alt="Walmart+ vs Instacart"
+              style="object-fit: contain; background: #f5f5f5; padding: 16px"
+            />
             <div class="card-body">
               <span class="article-tag">Head-to-Head</span>
               <h4>Walmart+ vs Instacart: Which Saves You More?</h4>
-              <p>One charges no markups. The other quietly inflates every item price by 15–20%.</p>
+              <p>
+                One charges no markups. The other quietly inflates every item
+                price by 15–20%.
+              </p>
             </div>
             <div class="card-footer">Read article →</div>
           </a>
@@ -162,17 +735,27 @@
             <div class="card-body">
               <span class="article-tag">Head-to-Head</span>
               <h4>Aldi vs Walmart: Which is Actually Cheaper?</h4>
-              <p>We compared 20+ items side by side. The winner might change how you shop.</p>
+              <p>
+                We compared 20+ items side by side. The winner might change how
+                you shop.
+              </p>
             </div>
             <div class="card-footer">Read article →</div>
           </a>
 
           <a href="post_7.html" class="article-card">
-            <img src="images/cash_back.png" alt="Ibotta review" style="object-fit:contain; background:#f5f5f5; padding:16px;" />
+            <img
+              src="images/cash_back.png"
+              alt="Ibotta review"
+              style="object-fit: contain; background: #f5f5f5; padding: 16px"
+            />
             <div class="card-body">
               <span class="article-tag">App Review</span>
               <h4>Does Ibotta Really Save You Money?</h4>
-              <p>An honest review of how much you can realistically save and whether it's worth your time.</p>
+              <p>
+                An honest review of how much you can realistically save and
+                whether it's worth your time.
+              </p>
             </div>
             <div class="card-footer">Read article →</div>
           </a>
@@ -182,130 +765,227 @@
             <div class="card-body">
               <span class="article-tag">Guide</span>
               <h4>How to Save Money at Costco</h4>
-              <p>What to buy, what to skip, and 8 tips to make your membership pay for itself.</p>
+              <p>
+                What to buy, what to skip, and 8 tips to make your membership
+                pay for itself.
+              </p>
             </div>
             <div class="card-footer">Read article →</div>
           </a>
-
         </div>
 
         <div class="section-label">Quick Savings Tips</div>
         <ul class="tips-list">
-          <li style="animation-delay:0.1s">
+          <li style="animation-delay: 0.1s">
             <div class="tip-icon">📋</div>
             <div class="tip-content">
               <h4>Always shop with a list</h4>
-              <p>Shoppers without a list spend an average of 23% more per trip due to impulse purchases.</p>
+              <p>
+                Shoppers without a list spend an average of 23% more per trip
+                due to impulse purchases.
+              </p>
             </div>
           </li>
-          <li style="animation-delay:0.2s">
+          <li style="animation-delay: 0.2s">
             <div class="tip-icon">🏷️</div>
             <div class="tip-content">
               <h4>Compare unit prices, not shelf prices</h4>
-              <p>The bigger package isn't always cheaper. Check the price per ounce on the shelf tag.</p>
+              <p>
+                The bigger package isn't always cheaper. Check the price per
+                ounce on the shelf tag.
+              </p>
             </div>
           </li>
-          <li style="animation-delay:0.3s">
+          <li style="animation-delay: 0.3s">
             <div class="tip-icon">📱</div>
             <div class="tip-content">
               <h4>Stack cashback apps with store sales</h4>
-              <p>Apps like Ibotta and Fetch Rewards work on top of existing sales — double the savings on the same item.</p>
+              <p>
+                Apps like Ibotta and Fetch Rewards work on top of existing sales
+                — double the savings on the same item.
+              </p>
             </div>
           </li>
-          <li style="animation-delay:0.4s">
+          <li style="animation-delay: 0.4s">
             <div class="tip-icon">🥦</div>
             <div class="tip-content">
               <h4>Buy produce that's in season</h4>
-              <p>In-season produce can cost 50–70% less than out-of-season equivalents.</p>
+              <p>
+                In-season produce can cost 50–70% less than out-of-season
+                equivalents.
+              </p>
             </div>
           </li>
         </ul>
       </main>
 
       <aside class="sidebar">
+        <div class="try-app-widget">
+          <h3>🔍 Compare Grocery Prices</h3>
+          <p>
+            Search real-time prices from local stores, build your list, and find
+            the cheapest option near you.
+          </p>
+          <a
+            href="https://smart-grocery-savings.vercel.app"
+            target="_blank"
+            class="btn-try-app"
+            >Try the Free Tool →</a
+          >
+        </div>
 
-        <!-- Newsletter — wired to Formspree -->
         <div class="sidebar-widget newsletter-widget">
           <div class="section-label">Newsletter</div>
-          <p>Get weekly deals, coupons, and savings tips delivered to your inbox — free.</p>
+          <p>
+            Get weekly deals, coupons, and savings tips delivered to your inbox
+            — free.
+          </p>
           <form class="newsletter-form" id="newsletterForm">
-          <input type="hidden" name="access_key" value="c78d6c6a-9ff5-4180-92e3-6af9b4c45920" />
-          <input type="hidden" name="subject" value="New Newsletter Signup — Smart Grocery Savings" />
-          <input type="hidden" name="from_name" value="Smart Grocery Savings Newsletter" />
-          <input type="email" name="email" placeholder="your@email.com" required />
-          <button type="submit">Get Free Tips →</button>
-        </form>
-        <div class="newsletter-success" id="newsletterSuccess">
-          ✅ You're subscribed! Tips coming soon.
+            <input
+              type="hidden"
+              name="access_key"
+              value="c78d6c6a-9ff5-4180-92e3-6af9b4c45920"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New Newsletter Signup — Smart Grocery Savings"
+            />
+            <input
+              type="hidden"
+              name="from_name"
+              value="Smart Grocery Savings Newsletter"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+            />
+            <button type="submit">Get Free Tips →</button>
+          </form>
+          <div class="newsletter-success" id="newsletterSuccess">
+            ✅ You're subscribed! Tips coming soon.
+          </div>
         </div>
-       
+
         <div class="sidebar-widget">
           <div class="section-label">Did You Know?</div>
           <div class="stat-grid">
-            <div class="stat-box"><span class="stat-number">$1,500</span><span class="stat-label">avg family saves/year with smart shopping</span></div>
-            <div class="stat-box"><span class="stat-number">20%</span><span class="stat-label">of groceries bought are thrown away unused</span></div>
-            <div class="stat-box"><span class="stat-number">$32</span><span class="stat-label">avg Thrive Market saves per order</span></div>
-            <div class="stat-box"><span class="stat-number">15%</span><span class="stat-label">Instacart markup vs in-store prices</span></div>
+            <div class="stat-box">
+              <span class="stat-number">$1,500</span
+              ><span class="stat-label"
+                >avg family saves/year with smart shopping*</span
+              >
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">20%</span
+              ><span class="stat-label"
+                >of groceries bought are thrown away unused*</span
+              >
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">$32</span
+              ><span class="stat-label"
+                >avg Thrive Market saves per order*</span
+              >
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">15%</span
+              ><span class="stat-label"
+                >Instacart markup vs in-store prices*</span
+              >
+            </div>
           </div>
+          <p style="font-size: 0.7rem; color: #bbb; margin-top: 10px">
+            *Based on publicly available industry data
+          </p>
         </div>
 
         <div class="sidebar-widget">
           <div class="section-label">Most Popular</div>
           <a href="post_1.html" class="popular-post">
             <span class="popular-post-num">01</span>
-            <div><h5>Top 5 Grocery Delivery Services in 2025</h5><span>Delivery · Comparison</span></div>
+            <div>
+              <h5>Top 5 Grocery Delivery Services in 2026</h5>
+              <span>Delivery · Comparison</span>
+            </div>
           </a>
           <a href="post_2.html" class="popular-post">
             <span class="popular-post-num">02</span>
-            <div><h5>Walmart+ vs Instacart: Which Saves You More?</h5><span>Head-to-Head · Savings</span></div>
+            <div>
+              <h5>Walmart+ vs Instacart: Which Saves You More?</h5>
+              <span>Head-to-Head · Savings</span>
+            </div>
           </a>
           <a href="post_6.html" class="popular-post">
             <span class="popular-post-num">03</span>
-            <div><h5>Aldi vs Walmart: Which is Actually Cheaper?</h5><span>Head-to-Head · Savings</span></div>
+            <div>
+              <h5>Aldi vs Walmart: Which is Actually Cheaper?</h5>
+              <span>Head-to-Head · Savings</span>
+            </div>
           </a>
           <a href="post_9.html" class="popular-post">
             <span class="popular-post-num">04</span>
-            <div><h5>How to Save Money at Costco</h5><span>Guide · Bulk Shopping</span></div>
+            <div>
+              <h5>How to Save Money at Costco</h5>
+              <span>Guide · Bulk Shopping</span>
+            </div>
           </a>
         </div>
 
         <div class="sidebar-widget ad-widget">
           <div class="ad-label">Advertisement</div>
-          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9811999896266925" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-9811999896266925"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </div>
-
       </aside>
     </div>
 
     <footer>
       <p>
-        &copy; 2025 Smart Grocery Savings &nbsp;·&nbsp;
+        &copy; 2026 Smart Grocery Savings &nbsp;·&nbsp;
         <a href="about.html">About</a> &nbsp;·&nbsp;
         <a href="contact.html">Contact</a> &nbsp;·&nbsp;
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="disclosure.html">Affiliate Disclosure</a>
       </p>
     </footer>
 
     <script>
-  document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target));
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const result = await res.json();
-      if (result.success) {
-        e.target.style.display = 'none';
-        document.getElementById('newsletterSuccess').style.display = 'block';
-      }
-    } catch(err) { console.error(err); }
-  });
-</script>
-
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(e.target));
+          try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const result = await res.json();
+            if (result.success) {
+              e.target.style.display = "none";
+              document.getElementById("newsletterSuccess").style.display =
+                "block";
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        });
+    </script>
   </body>
 </html>
