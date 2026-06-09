@@ -1,205 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Contact - Smart Grocery Savings</title>
+    <title>Contact - Smart Grocery Intelligence Platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Get in touch with Smart Grocery Savings — questions, feedback, and partnership inquiries welcome."
-    />
+    <meta name="description" content="Get in touch with Smart Grocery Intelligence Platform — questions, feedback, and partnership inquiries welcome." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      .contact-hero {
-        background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%);
-        color: white;
-        padding: 48px 24px;
-        text-align: center;
-      }
-      .contact-hero p {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: #a5d6a7;
-        margin-bottom: 12px;
-      }
-      .contact-hero h2 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(1.8rem, 4vw, 2.4rem);
-        font-weight: 900;
-        margin-bottom: 10px;
-      }
-      .contact-hero span {
-        font-size: 1rem;
-        color: #c8e6c9;
-      }
-      .contact-body {
-        max-width: 620px;
-        margin: 40px auto;
-        padding: 0 24px 60px;
-      }
-      .contact-card {
-        background: white;
-        border-radius: 12px;
-        padding: 36px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        margin-bottom: 24px;
-      }
-      .contact-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 1.3rem;
-        color: #1a1a1a;
-        margin-bottom: 6px;
-      }
-      .contact-card .subtitle {
-        color: #888;
-        font-size: 0.9rem;
-        margin-bottom: 28px;
-        display: block;
-      }
-      .form-group {
-        margin-bottom: 20px;
-      }
-      .form-group label {
-        display: block;
-        font-weight: 600;
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-        color: #333;
-      }
-      .form-group input,
-      .form-group textarea {
-        width: 100%;
-        padding: 11px 14px;
-        border: 1.5px solid #e0e0e0;
-        border-radius: 6px;
-        font-family: inherit;
-        font-size: 0.95rem;
-        transition: border-color 0.2s;
-        background: #fafaf7;
-        box-sizing: border-box;
-      }
-      .form-group input:focus,
-      .form-group textarea:focus {
-        outline: none;
-        border-color: #2e7d32;
-        background: white;
-      }
-      .form-group textarea {
-        min-height: 130px;
-        resize: vertical;
-      }
-      /* Honeypot — hide from real users, visible to bots */
-      .bot-field {
-        position: absolute;
-        left: -9999px;
-        top: -9999px;
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        pointer-events: none;
-        tab-index: -1;
-      }
-      .submit-btn {
-        width: 100%;
-        padding: 13px;
-        background: #2e7d32;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 1rem;
-        font-family: inherit;
-        font-weight: 700;
-        cursor: pointer;
-        transition:
-          background 0.2s,
-          transform 0.15s;
-        margin-top: 8px;
-      }
-      .submit-btn:hover:not(:disabled) {
-        background: #1b5e20;
-        transform: translateY(-1px);
-      }
-      .submit-btn:disabled {
-        background: #888;
-        cursor: not-allowed;
-        transform: none;
-      }
-      .form-note {
-        font-size: 0.82rem;
-        color: #aaa;
-        text-align: center;
-        margin-top: 14px;
-      }
-      .success-message {
-        background: #e8f5e9;
-        color: #2e7d32;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 1rem;
-        display: none;
-      }
-      .error-message {
-        background: #ffebee;
-        color: #c62828;
-        padding: 16px;
-        border-radius: 8px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 0.92rem;
-        display: none;
-        margin-top: 14px;
-      }
-      .alt-contact-card {
-        background: #f5f5f5;
-        border-radius: 10px;
-        padding: 24px 28px;
-        text-align: center;
-      }
-      .alt-contact-card p {
-        color: #555;
-        font-size: 0.92rem;
-        margin-bottom: 8px;
-      }
-      /* Email link is injected by JS — no plain-text in HTML source */
-      .alt-contact-card a {
-        color: #2e7d32;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .alt-contact-card a:hover {
-        text-decoration: underline;
-      }
-      footer {
-        background: #1a1a1a;
-        color: #aaa;
-        text-align: center;
-        padding: 24px;
-        font-size: 0.85rem;
-        margin-top: 40px;
-      }
-      footer a {
-        color: #a5d6a7;
-        text-decoration: none;
-        margin: 0 6px;
-      }
+      .contact-hero { background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%); color: white; padding: 48px 24px; text-align: center; }
+      .contact-hero p { font-size: 0.75rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #a5d6a7; margin-bottom: 12px; }
+      .contact-hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 900; margin-bottom: 10px; }
+      .contact-hero span { font-size: 1rem; color: #c8e6c9; }
+      .contact-body { max-width: 620px; margin: 40px auto; padding: 0 24px 60px; }
+      .contact-card { background: white; border-radius: 12px; padding: 36px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 24px; }
+      .contact-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1a1a1a; margin-bottom: 6px; }
+      .contact-card .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 28px; display: block; }
+      .form-group { margin-bottom: 20px; }
+      .form-group label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; color: #333; }
+      .form-group input, .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid #e0e0e0; border-radius: 6px; font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; background: #fafaf7; }
+      .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #2e7d32; background: white; }
+      .form-group textarea { min-height: 130px; resize: vertical; }
+      .submit-btn { width: 100%; padding: 13px; background: #2e7d32; color: white; border: none; border-radius: 6px; font-size: 1rem; font-family: inherit; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 8px; }
+      .submit-btn:hover { background: #1b5e20; transform: translateY(-1px); }
+      .form-note { font-size: 0.82rem; color: #aaa; text-align: center; margin-top: 14px; }
+      .success-message { background: #e8f5e9; color: #2e7d32; padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1rem; display: none; }
+      .alt-contact-card { background: #f5f5f5; border-radius: 10px; padding: 24px 28px; text-align: center; }
+      .alt-contact-card p { color: #555; font-size: 0.92rem; margin-bottom: 8px; }
+      .alt-contact-card a { color: #2e7d32; font-weight: 700; text-decoration: none; }
+      .alt-contact-card a:hover { text-decoration: underline; }
+      footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 24px; font-size: 0.85rem; margin-top: 40px; }
+      footer a { color: #a5d6a7; text-decoration: none; margin: 0 6px; }
     </style>
   </head>
   <body>
+
     <div id="header"></div>
     <script>
-      fetch("header.html")
-        .then((res) => res.text())
-        .then((data) => (document.getElementById("header").innerHTML = data));
+      fetch('header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header').innerHTML = data);
     </script>
 
     <div class="contact-hero">
@@ -209,81 +51,31 @@
     </div>
 
     <div class="contact-body">
+
       <div class="contact-card">
         <h3>Send a Message</h3>
         <span class="subtitle">We'll get back to you as soon as possible.</span>
 
         <form id="contactForm">
-          <!-- Web3Forms access key -->
-          <input
-            type="hidden"
-            name="access_key"
-            value="442357ed-58cd-40a0-89b4-0a33b34ea207"
-          />
-          <input
-            type="hidden"
-            name="subject"
-            value="New Contact Message — Smart Grocery Savings"
-          />
-          <input
-            type="hidden"
-            name="from_name"
-            value="Smart Grocery Savings Website"
-          />
-
-          <!-- ✅ Honeypot spam field — bots fill this, real users never see it -->
-          <div class="bot-field" aria-hidden="true">
-            <label for="website_url">Leave this blank</label>
-            <input
-              type="text"
-              id="website_url"
-              name="botcheck"
-              tabindex="-1"
-              autocomplete="off"
-            />
-          </div>
+          <input type="hidden" name="access_key" value="c78d6c6a-9ff5-4180-92e3-6af9b4c45920" />
+          <input type="hidden" name="subject" value="New Contact Message — Smart Grocery Intelligence Platform" />
+          <input type="hidden" name="from_name" value="Smart Grocery Intelligence Platform Website" />
 
           <div class="form-group">
             <label for="name">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Jane Smith"
-              required
-              autocomplete="name"
-            />
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
           </div>
           <div class="form-group">
             <label for="email">Your Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="jane@email.com"
-              required
-              autocomplete="email"
-            />
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required />
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Your message here..."
-              required
-            ></textarea>
+            <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
           </div>
 
-          <button type="submit" class="submit-btn" id="submitBtn">
-            Send Message →
-          </button>
-          <p class="form-note">
-            We value your feedback and questions about grocery savings!
-          </p>
-          <div class="error-message" id="errorMsg">
-            ⚠️ Something went wrong. Please try emailing us directly instead.
-          </div>
+          <button type="submit" class="submit-btn">Send Message →</button>
+          <p class="form-note">We value your feedback and questions about grocery savings!</p>
         </form>
 
         <div class="success-message" id="successMsg">
@@ -293,97 +85,53 @@
 
       <div class="alt-contact-card">
         <p>Prefer to reach out directly?</p>
-        <!-- ✅ Email injected by JS — not visible in plain HTML source to scrapers -->
-        <span id="emailLink"></span>
+        <a href="#" id="altEmailLink" onclick="revealAltEmail(event)" style="color:#2e7d32; font-weight:700; text-decoration:none;">
+          Click to reveal email
+        </a>
+        <script>
+          function revealAltEmail(e) {
+            e.preventDefault();
+            var u = 'smartgrocerysavings';
+            var d = 'proton.me';
+            var email = u + '@' + d;
+            document.getElementById('altEmailLink').href = 'mailto:' + email;
+            document.getElementById('altEmailLink').textContent = email;
+          }
+        </script>
       </div>
+
     </div>
 
     <footer>
       <p>
-        &copy; 2025 Smart Grocery Savings &nbsp;·&nbsp;
+        &copy; 2026 Smart Grocery Intelligence Platform &nbsp;·&nbsp;
         <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="contact.html">Contact</a>
       </p>
     </footer>
 
     <script>
-      // -------------------------------------------------------
-      // 1. Obfuscated email — assembled at runtime so it never
-      //    appears as plain text in the HTML source code.
-      //    Bots scrape static HTML; they won't run this JS.
-      // -------------------------------------------------------
-      (function () {
-        const u = "smartgrocerysavings";
-        const d = "proton.me";
-        const addr = u + "@" + d;
-        const el = document.getElementById("emailLink");
-        if (el) {
-          const a = document.createElement("a");
-          a.href = "mailto:" + addr;
-          a.textContent = addr;
-          el.appendChild(a);
-        }
-      })();
-
-      // -------------------------------------------------------
-      // 2. Contact form submission via Web3Forms
-      //    - Shows loading state on button
-      //    - Shows friendly error message on failure
-      //    - Honeypot field blocks most bots silently
-      // -------------------------------------------------------
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const form = e.target;
-          const btn = document.getElementById("submitBtn");
-          const successMsg = document.getElementById("successMsg");
-          const errorMsg = document.getElementById("errorMsg");
-
-          // Reset previous error state
-          errorMsg.style.display = "none";
-
-          // Disable button and show loading state
-          btn.disabled = true;
-          btn.textContent = "Sending…";
-
-          const data = new FormData(form);
-          const json = Object.fromEntries(data);
-
-          try {
-            const res = await fetch("https://api.web3forms.com/submit", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(json),
-            });
-
-            // Check for HTTP-level errors
-            if (!res.ok) {
-              throw new Error("HTTP error: " + res.status);
-            }
-
-            const result = await res.json();
-
-            if (result.success) {
-              // Hide form, show success
-              form.style.display = "none";
-              successMsg.style.display = "block";
-            } else {
-              // Web3Forms returned success:false
-              throw new Error(result.message || "Submission rejected");
-            }
-          } catch (err) {
-            console.error("Form submission error:", err);
-            // Re-enable button so user can try again
-            btn.disabled = false;
-            btn.textContent = "Send Message →";
-            errorMsg.style.display = "block";
+      document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = new FormData(form);
+        const json = Object.fromEntries(data);
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(json)
+          });
+          const result = await res.json();
+          if (result.success) {
+            form.style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
           }
-        });
+        } catch(err) {
+          console.error(err);
+        }
+      });
     </script>
+
   </body>
 </html>

@@ -1,67 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="css/style.css" />
     <meta charset="UTF-8" />
-    <title>About Me - Smart Grocery Savings</title>
+    <title>About Me - Smart Grocery Intelligence Platform</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Lori — software developer and creator of Smart Grocery Intelligence Platform." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .about-hero {
+        background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%);
+        color: white;
+        padding: 48px 24px;
+        text-align: center;
+      }
+      .about-hero p {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #a5d6a7;
+        margin-bottom: 12px;
+      }
+      .about-hero h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+      .about-hero span {
+        font-size: 1rem;
+        color: #c8e6c9;
+      }
+      .about-body {
+        max-width: 780px;
+        margin: 40px auto;
+        padding: 0 24px 60px;
+      }
+      .about-intro {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 32px;
+        align-items: start;
+        background: white;
+        border-radius: 12px;
+        padding: 32px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        margin-bottom: 36px;
+      }
+      @media (max-width: 600px) {
+        .about-intro { grid-template-columns: 1fr; text-align: center; }
+      }
+      .about-avatar {
+        background: #e8f5e9;
+        border-radius: 12px;
+        width: 100%;
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .about-intro-text h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #1a1a1a;
+      }
+      .about-intro-text .role {
+        color: #2e7d32;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .about-intro-text p {
+        color: #555;
+        font-size: 0.97rem;
+        line-height: 1.75;
+        margin-bottom: 10px;
+      }
+      .about-section {
+        background: white;
+        border-radius: 10px;
+        padding: 28px 32px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        margin-bottom: 24px;
+      }
+      .about-section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.25rem;
+        color: #2e7d32;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e8f5e9;
+      }
+      .about-section p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        margin-bottom: 10px;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .skill-pill {
+        background: #e8f5e9;
+        color: #1b5e20;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-align: center;
+      }
+      .contact-box {
+        background: #1b5e20;
+        color: white;
+        border-radius: 10px;
+        padding: 28px 32px;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+      .contact-box h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #a5d6a7;
+      }
+      .contact-box p { color: #c8e6c9; font-size: 0.95rem; margin-bottom: 16px; }
+      .contact-box a.email-link {
+        display: inline-block;
+        background: white;
+        color: #1b5e20;
+        padding: 10px 24px;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: background 0.2s;
+      }
+      .contact-box a.email-link:hover { background: #e8f5e9; }
+    </style>
   </head>
   <body>
-    <header>
-      <h1>About Me</h1>
-      <nav>
-        <a href="index.html">Home</a> | <a href="about.html">About</a> |
-        <a href="blog.html">Blog</a> |
-        <a href="contact.html">Contact Me</a>
-      </nav>
-    </header>
 
-    <main>
-      <p>
-        Hi, I’m <strong>Lori Yaniro</strong>, a software developer with a
-        passion for building secure and scalable applications.
-      </p>
-      <p>
-        I focus on solving real-world problems through technology, with an
-        interest in cybersecurity, automation, and data-driven systems.
-      </p>
+    <!-- Header injected from header.html -->
+    <div id="header"></div>
+    <script>
+      fetch('header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+    </script>
 
-      <h2>Background</h2>
-      <p>
-        My experience includes full-stack development, secure coding practices,
-        and building applications that prioritize both performance and user
-        trust. I enjoy learning new technologies and applying them to create
-        meaningful solutions.
-      </p>
+    <!-- Page Hero -->
+    <div class="about-hero">
+      <p>About This Site</p>
+      <h2>Meet the Creator</h2>
+      <span>The person behind Smart Grocery Intelligence Platform</span>
+    </div>
 
-      <h2>Skills</h2>
-      <ul>
-        <li>Python, C++, JavaScript, SQL</li>
-        <li>Secure Coding & Application Development</li>
-        <li>REST APIs & Backend Systems</li>
-        <li>CI/CD, Git, and Modern Development Workflows</li>
-      </ul>
+    <div class="about-body">
 
-      <h2>Professional Interests</h2>
-      <p>
-        I’m especially interested in cybersecurity and software systems that
-        protect data and empower users. I also enjoy exploring automation and
-        AI-driven solutions to improve efficiency and decision-making.
-      </p>
+      <!-- Intro -->
+      <div class="about-intro">
+        <div class="about-avatar">👩‍💻</div>
+        <div class="about-intro-text">
+          <h3>Hi, I'm Lori</h3>
+          <span class="role">Software Developer & Grocery Savings Enthusiast</span>
+          <p>
+            I'm a software developer with a passion for building secure, scalable
+            applications — and a deep interest in helping people make smarter
+            financial decisions with technology.
+          </p>
+          <p>
+            I created Smart Grocery Intelligence Platform to combine my love of coding with
+            practical, real-world money-saving advice. Everything on this site is
+            researched and written from genuine experience.
+          </p>
+        </div>
+      </div>
 
-      <h2>Contact Me</h2>
-      <p>smartgrocerysavings@proton.me.</p>
+      <!-- Background -->
+      <div class="about-section">
+        <h2>Background</h2>
+        <p>
+          My experience spans full-stack development, secure coding practices, and
+          building applications that prioritize both performance and user trust. I
+          enjoy learning new technologies and applying them to create meaningful,
+          practical solutions.
+        </p>
+        <p>
+          Smart Grocery Intelligence Platform grew out of my interest in automation and
+          data-driven tools — I wanted to build something that genuinely helps
+          people stretch their budgets without sacrificing quality.
+        </p>
+      </div>
 
-      <p>Thank you for visiting my page!</p>
-    </main>
+      <!-- Skills -->
+      <div class="about-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">C++</div>
+          <div class="skill-pill">JavaScript</div>
+          <div class="skill-pill">SQL</div>
+          <div class="skill-pill">Secure Coding</div>
+          <div class="skill-pill">REST APIs</div>
+          <div class="skill-pill">Git & GitHub</div>
+          <div class="skill-pill">CI/CD</div>
+          <div class="skill-pill">HTML & CSS</div>
+          <div class="skill-pill">Web Deployment</div>
+        </div>
+      </div>
+
+      <!-- Professional Interests -->
+      <div class="about-section">
+        <h2>Professional Interests</h2>
+        <p>
+          I'm especially interested in cybersecurity and software systems that
+          protect data and empower users. I also enjoy exploring automation and
+          AI-driven solutions to improve efficiency and decision-making.
+        </p>
+        <p>
+          Outside of coding, I'm passionate about personal finance, smart
+          shopping strategies, and helping others save money through technology
+          — which is exactly what this site is about.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box">
+        <h2>Get In Touch</h2>
+        <p>Have a question, suggestion, or just want to say hello?</p>
+        <a href="#" class="email-link" id="contactEmailBtn" onclick="revealEmail(event)">
+          Click to reveal email
+        </a>
+        <script>
+          function revealEmail(e) {
+            e.preventDefault();
+            var u = 'smartgrocerysavings';
+            var d = 'proton.me';
+            var email = u + '@' + d;
+            document.getElementById('contactEmailBtn').href = 'mailto:' + email;
+            document.getElementById('contactEmailBtn').textContent = email;
+          }
+        </script>
+      </div>
+
+    </div>
 
     <footer>
       <p>
-        &copy; 2025 Smart Grocery Savings &nbsp;·&nbsp;
+        &copy; 2026 Smart Grocery Intelligence Platform &nbsp;·&nbsp;
         <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="contact.html">Contact</a>
-        <a href="disclosure.html">Affiliate Disclosure</a>
       </p>
     </footer>
+
   </body>
 </html>

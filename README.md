@@ -263,8 +263,8 @@ curl http://localhost:3001/api/items?category=produce
 
 **Website:** [smartgrocerysavings.com](https://www.smartgrocerysavings.com)
 **Price Tool:** [smart-grocery-savings.vercel.app](https://smart-grocery-savings.vercel.app)
-**Email:** smartgrocerysavings2026@gmail.com
+**Contact:** [smartgrocerysavings.com/contact.html](https://www.smartgrocerysavings.com/contact.html)
 
 ---
 
-_Built by Lori Martindale — software developer. Grew from a static HTML/CSS site to a full-stack platform with PostgreSQL, REST API, JWT auth, and a real-time price comparison engine._
+_Built by Lori — software developer. Grew from a static HTML/CSS site to a full-stack platform with PostgreSQL, REST API, JWT auth, and a real-time price comparison engine._
