@@ -84,6 +84,7 @@
         font-size: 0.95rem;
         transition: border-color 0.2s;
         background: #fafaf7;
+        box-sizing: border-box;
       }
       .form-group input:focus,
       .form-group textarea:focus {
@@ -94,6 +95,17 @@
       .form-group textarea {
         min-height: 130px;
         resize: vertical;
+      }
+      /* Honeypot — hide from real users, visible to bots */
+      .bot-field {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        tab-index: -1;
       }
       .submit-btn {
         width: 100%;
@@ -111,9 +123,14 @@
           transform 0.15s;
         margin-top: 8px;
       }
-      .submit-btn:hover {
+      .submit-btn:hover:not(:disabled) {
         background: #1b5e20;
         transform: translateY(-1px);
+      }
+      .submit-btn:disabled {
+        background: #888;
+        cursor: not-allowed;
+        transform: none;
       }
       .form-note {
         font-size: 0.82rem;
@@ -131,6 +148,17 @@
         font-size: 1rem;
         display: none;
       }
+      .error-message {
+        background: #ffebee;
+        color: #c62828;
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.92rem;
+        display: none;
+        margin-top: 14px;
+      }
       .alt-contact-card {
         background: #f5f5f5;
         border-radius: 10px;
@@ -142,6 +170,7 @@
         font-size: 0.92rem;
         margin-bottom: 8px;
       }
+      /* Email link is injected by JS — no plain-text in HTML source */
       .alt-contact-card a {
         color: #2e7d32;
         font-weight: 700;
@@ -185,10 +214,11 @@
         <span class="subtitle">We'll get back to you as soon as possible.</span>
 
         <form id="contactForm">
+          <!-- Web3Forms access key -->
           <input
             type="hidden"
             name="access_key"
-            value="c78d6c6a-9ff5-4180-92e3-6af9b4c45920"
+            value="442357ed-58cd-40a0-89b4-0a33b34ea207"
           />
           <input
             type="hidden"
@@ -201,6 +231,18 @@
             value="Smart Grocery Savings Website"
           />
 
+          <!-- ✅ Honeypot spam field — bots fill this, real users never see it -->
+          <div class="bot-field" aria-hidden="true">
+            <label for="website_url">Leave this blank</label>
+            <input
+              type="text"
+              id="website_url"
+              name="botcheck"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
           <div class="form-group">
             <label for="name">Your Name</label>
             <input
@@ -209,6 +251,7 @@
               name="name"
               placeholder="Jane Smith"
               required
+              autocomplete="name"
             />
           </div>
           <div class="form-group">
@@ -219,6 +262,7 @@
               name="email"
               placeholder="jane@email.com"
               required
+              autocomplete="email"
             />
           </div>
           <div class="form-group">
@@ -231,10 +275,15 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="submit-btn">Send Message →</button>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            Send Message →
+          </button>
           <p class="form-note">
             We value your feedback and questions about grocery savings!
           </p>
+          <div class="error-message" id="errorMsg">
+            ⚠️ Something went wrong. Please try emailing us directly instead.
+          </div>
         </form>
 
         <div class="success-message" id="successMsg">
@@ -244,9 +293,8 @@
 
       <div class="alt-contact-card">
         <p>Prefer to reach out directly?</p>
-        <a href="mailto:smartgrocerysavings@proton.me"
-          >smartgrocerysavings@proton.me</a
-        >
+        <!-- ✅ Email injected by JS — not visible in plain HTML source to scrapers -->
+        <span id="emailLink"></span>
       </div>
     </div>
 
@@ -255,18 +303,54 @@
         &copy; 2025 Smart Grocery Savings &nbsp;·&nbsp;
         <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
         <a href="contact.html">Contact</a>
-        <a href="disclosure.html">Affiliate Disclosure</a>
       </p>
     </footer>
 
     <script>
+      // -------------------------------------------------------
+      // 1. Obfuscated email — assembled at runtime so it never
+      //    appears as plain text in the HTML source code.
+      //    Bots scrape static HTML; they won't run this JS.
+      // -------------------------------------------------------
+      (function () {
+        const u = "smartgrocerysavings";
+        const d = "proton.me";
+        const addr = u + "@" + d;
+        const el = document.getElementById("emailLink");
+        if (el) {
+          const a = document.createElement("a");
+          a.href = "mailto:" + addr;
+          a.textContent = addr;
+          el.appendChild(a);
+        }
+      })();
+
+      // -------------------------------------------------------
+      // 2. Contact form submission via Web3Forms
+      //    - Shows loading state on button
+      //    - Shows friendly error message on failure
+      //    - Honeypot field blocks most bots silently
+      // -------------------------------------------------------
       document
         .getElementById("contactForm")
         .addEventListener("submit", async function (e) {
           e.preventDefault();
+
           const form = e.target;
+          const btn = document.getElementById("submitBtn");
+          const successMsg = document.getElementById("successMsg");
+          const errorMsg = document.getElementById("errorMsg");
+
+          // Reset previous error state
+          errorMsg.style.display = "none";
+
+          // Disable button and show loading state
+          btn.disabled = true;
+          btn.textContent = "Sending…";
+
           const data = new FormData(form);
           const json = Object.fromEntries(data);
+
           try {
             const res = await fetch("https://api.web3forms.com/submit", {
               method: "POST",
@@ -276,13 +360,28 @@
               },
               body: JSON.stringify(json),
             });
+
+            // Check for HTTP-level errors
+            if (!res.ok) {
+              throw new Error("HTTP error: " + res.status);
+            }
+
             const result = await res.json();
+
             if (result.success) {
+              // Hide form, show success
               form.style.display = "none";
-              document.getElementById("successMsg").style.display = "block";
+              successMsg.style.display = "block";
+            } else {
+              // Web3Forms returned success:false
+              throw new Error(result.message || "Submission rejected");
             }
           } catch (err) {
-            console.error(err);
+            console.error("Form submission error:", err);
+            // Re-enable button so user can try again
+            btn.disabled = false;
+            btn.textContent = "Send Message →";
+            errorMsg.style.display = "block";
           }
         });
     </script>
