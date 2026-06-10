@@ -1,362 +1,442 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Affiliate Disclosure | Smart Grocery Savings</title>
-  <meta name="description" content="Learn about our affiliate relationships and how we earn commissions at Smart Grocery Savings." />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Affiliate Disclosure | Smart Grocery Savings</title>
+    <meta
+      name="description"
+      content="Learn about our affiliate relationships and how we earn commissions at Smart Grocery Savings."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --green: #2d6a4f;
-      --green-light: #52b788;
-      --green-pale: #d8f3dc;
-      --cream: #faf8f4;
-      --ink: #1a1a1a;
-      --muted: #6b7280;
-      --border: #e5e0d8;
-    }
+      :root {
+        --green: #2d6a4f;
+        --green-light: #52b788;
+        --green-pale: #d8f3dc;
+        --cream: #faf8f4;
+        --ink: #1a1a1a;
+        --muted: #6b7280;
+        --border: #e5e0d8;
+      }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.7;
-    }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--ink);
+        line-height: 1.7;
+      }
 
-    /* ── NAV ── */
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav .nav-inner {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-    }
-    nav .logo {
-      font-family: 'Lora', serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: var(--green);
-      text-decoration: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    nav ul a {
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-    nav ul a:hover { color: var(--green); }
+      /* ── NAV ── */
+      nav {
+        border-bottom: 1px solid var(--border);
+        padding: 0 2rem;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      nav .nav-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+      nav .logo {
+        font-family: "Lora", serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--green);
+        text-decoration: none;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      nav ul a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      nav ul a:hover {
+        color: var(--green);
+      }
 
-    /* ── HERO BAND ── */
-    .hero-band {
-      background: var(--green);
-      color: #fff;
-      padding: 3.5rem 2rem 3rem;
-      text-align: center;
-    }
-    .hero-band .label {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,0.15);
-      padding: 0.3rem 0.9rem;
-      border-radius: 999px;
-      margin-bottom: 1rem;
-    }
-    .hero-band h1 {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      line-height: 1.25;
-    }
-    .hero-band p {
-      font-size: 1rem;
-      opacity: 0.85;
-      max-width: 480px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
+      /* ── HERO BAND ── */
+      .hero-band {
+        background: var(--green);
+        color: #fff;
+        padding: 3.5rem 2rem 3rem;
+        text-align: center;
+      }
+      .hero-band .label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0.3rem 0.9rem;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+      }
+      .hero-band h1 {
+        font-family: "Lora", serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+      }
+      .hero-band p {
+        font-size: 1rem;
+        opacity: 0.85;
+        max-width: 480px;
+        margin: 0 auto;
+        font-weight: 300;
+      }
 
-    /* ── MAIN CONTENT ── */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 3rem 2rem 5rem;
-    }
+      /* ── MAIN CONTENT ── */
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 3rem 2rem 5rem;
+      }
 
-    .last-updated {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
+      .last-updated {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
 
-    /* summary box */
-    .summary-box {
-      background: var(--green-pale);
-      border-left: 4px solid var(--green-light);
-      border-radius: 0 8px 8px 0;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2.5rem;
-      font-size: 0.95rem;
-    }
-    .summary-box strong { color: var(--green); }
+      /* summary box */
+      .summary-box {
+        background: var(--green-pale);
+        border-left: 4px solid var(--green-light);
+        border-radius: 0 8px 8px 0;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2.5rem;
+        font-size: 0.95rem;
+      }
+      .summary-box strong {
+        color: var(--green);
+      }
 
-    /* sections */
-    section {
-      margin-bottom: 2.75rem;
-    }
-    section h2 {
-      font-family: 'Lora', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--green);
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    section h2 .icon {
-      font-size: 1.1rem;
-    }
-    section p {
-      font-size: 0.97rem;
-      color: #333;
-      margin-bottom: 0.75rem;
-    }
-    section p:last-child { margin-bottom: 0; }
+      /* sections */
+      section {
+        margin-bottom: 2.75rem;
+      }
+      section h2 {
+        font-family: "Lora", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--green);
+        margin-bottom: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      section h2 .icon {
+        font-size: 1.1rem;
+      }
+      section p {
+        font-size: 0.97rem;
+        color: #333;
+        margin-bottom: 0.75rem;
+      }
+      section p:last-child {
+        margin-bottom: 0;
+      }
 
-    /* affiliate list */
-    .affiliate-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.6rem;
-      margin-top: 0.75rem;
-    }
-    .affiliate-list li {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--ink);
-    }
-    .affiliate-list li::before {
-      content: '✓';
-      color: var(--green-light);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
+      /* affiliate list */
+      .affiliate-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.6rem;
+        margin-top: 0.75rem;
+      }
+      .affiliate-list li {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--ink);
+      }
+      .affiliate-list li::before {
+        content: "✓";
+        color: var(--green-light);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
 
-    /* promise cards */
-    .promise-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .promise-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.1rem 1.2rem;
-    }
-    .promise-card .card-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
-    .promise-card h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      color: var(--ink);
-    }
-    .promise-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin: 0;
-    }
+      /* promise cards */
+      .promise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .promise-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.1rem 1.2rem;
+      }
+      .promise-card .card-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0.4rem;
+      }
+      .promise-card h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        color: var(--ink);
+      }
+      .promise-card p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0;
+      }
 
-    /* FTC note */
-    .ftc-note {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
-    .ftc-note a { color: var(--green); }
+      /* FTC note */
+      .ftc-note {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-top: 1rem;
+      }
+      .ftc-note a {
+        color: var(--green);
+      }
 
-    /* divider */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
+      /* divider */
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 2.5rem 0;
+      }
 
-    /* contact CTA */
-    .contact-cta {
-      text-align: center;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-    .contact-cta p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
-    .contact-cta a.btn {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.65rem 1.75rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    .contact-cta a.btn:hover { background: #245a41; }
+      /* contact CTA */
+      .contact-cta {
+        text-align: center;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+      .contact-cta p {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .contact-cta a.btn {
+        display: inline-block;
+        background: var(--green);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.65rem 1.75rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+      .contact-cta a.btn:hover {
+        background: #245a41;
+      }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--muted);
-      background: #fff;
-    }
-    footer a { color: var(--muted); margin: 0 0.5rem; text-decoration: none; }
-    footer a:hover { color: var(--green); }
-  </style>
-</head>
-<body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/index.html" class="logo">🛒 Smart Grocery Savings</a>
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero-band">
-    <span class="label">Transparency</span>
-    <h1>Affiliate Disclosure</h1>
-    <p>We believe you deserve to know exactly how this site works and how we make money.</p>
-  </div>
-
-  <!-- CONTENT -->
-  <main>
-
-    <p class="last-updated">Last updated: April 2025</p>
-
-    <div class="summary-box">
-      <strong>The short version:</strong> Some links on this site are affiliate links. If you click one and make a purchase, we may earn a small commission — at no extra cost to you. We only recommend services and products we've genuinely evaluated. Commissions never influence our rankings or opinions.
-    </div>
-
-    <section>
-      <h2><span class="icon">🔗</span> What Are Affiliate Links?</h2>
-      <p>Affiliate links are special tracking URLs. When you click one and complete a purchase or sign up for a service, the retailer pays us a small referral fee. The price you pay is exactly the same as if you had gone directly to their website.</p>
-      <p>This is a common way for content websites to earn revenue, and it allows us to keep Smart Grocery Savings free for everyone.</p>
-    </section>
-
-    <section>
-      <h2><span class="icon">🤝</span> Our Affiliate Relationships</h2>
-      <p>We may have affiliate relationships with some or all of the following companies. This list may be updated as we add new partners:</p>
-      <ul class="affiliate-list">
-        <li>Walmart+ / Walmart.com</li>
-        <li>Instacart</li>
-        <li>Amazon / Amazon Fresh</li>
-        <li>Thrive Market</li>
-        <li>Ibotta</li>
-        <li>Fetch Rewards</li>
-        <li>Costco</li>
-        <li>Shipt</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2><span class="icon">🧭</span> Our Editorial Promise</h2>
-      <p>Our content is driven by research and honest evaluation — not by which companies pay the highest commissions. Here's what that means in practice:</p>
-      <div class="promise-grid">
-        <div class="promise-card">
-          <div class="card-icon">🔍</div>
-          <h3>Independent Research</h3>
-          <p>We compare prices and features ourselves. No company pays to be featured or ranked higher.</p>
-        </div>
-        <div class="promise-card">
-          <div class="card-icon">📊</div>
-          <h3>Real Data</h3>
-          <p>Our comparisons use actual prices and terms at the time of writing, not marketing materials.</p>
-        </div>
-        <div class="promise-card">
-          <div class="card-icon">🚫</div>
-          <h3>No Paid Reviews</h3>
-          <p>We do not accept payment for positive reviews or sponsored placements disguised as editorial content.</p>
-        </div>
-        <div class="promise-card">
-          <div class="card-icon">🔄</div>
-          <h3>Updated Regularly</h3>
-          <p>We revisit articles when prices, fees, or policies change to keep our recommendations current.</p>
-        </div>
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        font-size: 0.82rem;
+        color: var(--muted);
+        background: #fff;
+      }
+      footer a {
+        color: var(--muted);
+        margin: 0 0.5rem;
+        text-decoration: none;
+      }
+      footer a:hover {
+        color: var(--green);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-inner">
+        <a href="/index.html" class="logo">🛒 Smart Grocery Savings</a>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
       </div>
-    </section>
+    </nav>
 
-    <section>
-      <h2><span class="icon">⚖️</span> FTC Compliance</h2>
-      <p>This disclosure is made in accordance with the U.S. Federal Trade Commission's guidelines on endorsements and testimonials (16 CFR Part 255). We are committed to full transparency about our monetization practices.</p>
-      <div class="ftc-note">
-        You can read more about the FTC's guidelines on affiliate disclosures at <a href="https://www.ftc.gov/tips-advice/business-center/guidance/ftcs-endorsement-guides-what-people-are-asking" target="_blank" rel="noopener">ftc.gov</a>.
-      </div>
-    </section>
-
-    <hr />
-
-    <div class="contact-cta">
-      <p>Have a question about our affiliate relationships or editorial process? We're happy to talk.</p>
-      <a href="/contact.html" class="btn">Get in Touch</a>
+    <!-- HERO -->
+    <div class="hero-band">
+      <span class="label">Transparency</span>
+      <h1>Affiliate Disclosure</h1>
+      <p>
+        We believe you deserve to know exactly how this site works and how we
+        make money.
+      </p>
     </div>
 
-  </main>
+    <!-- CONTENT -->
+    <main>
+      <p class="last-updated">Last updated: April 2025</p>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Smart Grocery Savings &nbsp;·&nbsp;
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <a href="/privacy.html">Privacy Policy</a>
-    <a href="/disclosure.html">Affiliate Disclosure</a>
-  </footer>
+      <div class="summary-box">
+        <strong>The short version:</strong> Some links on this site are
+        affiliate links. If you click one and make a purchase, we may earn a
+        small commission — at no extra cost to you. We only recommend services
+        and products we've genuinely evaluated. Commissions never influence our
+        rankings or opinions.
+      </div>
 
-</body>
+      <section>
+        <h2><span class="icon">🔗</span> What Are Affiliate Links?</h2>
+        <p>
+          Affiliate links are special tracking URLs. When you click one and
+          complete a purchase or sign up for a service, the retailer pays us a
+          small referral fee. The price you pay is exactly the same as if you
+          had gone directly to their website.
+        </p>
+        <p>
+          This is a common way for content websites to earn revenue, and it
+          allows us to keep Smart Grocery Savings free for everyone.
+        </p>
+      </section>
+
+      <section>
+        <h2><span class="icon">🤝</span> Our Affiliate Relationships</h2>
+        <p>
+          We may have affiliate relationships with some or all of the following
+          companies. This list may be updated as we add new partners:
+        </p>
+        <ul class="affiliate-list">
+          <li>Walmart+ / Walmart.com</li>
+          <li>Instacart</li>
+          <li>Amazon / Amazon Fresh</li>
+          <li>Thrive Market</li>
+          <li>Ibotta</li>
+          <li>Fetch Rewards</li>
+          <li>Costco</li>
+          <li>Shipt</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="icon">🧭</span> Our Editorial Promise</h2>
+        <p>
+          Our content is driven by research and honest evaluation — not by which
+          companies pay the highest commissions. Here's what that means in
+          practice:
+        </p>
+        <div class="promise-grid">
+          <div class="promise-card">
+            <div class="card-icon">🔍</div>
+            <h3>Independent Research</h3>
+            <p>
+              We compare prices and features ourselves. No company pays to be
+              featured or ranked higher.
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="card-icon">📊</div>
+            <h3>Real Data</h3>
+            <p>
+              Our comparisons use actual prices and terms at the time of
+              writing, not marketing materials.
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="card-icon">🚫</div>
+            <h3>No Paid Reviews</h3>
+            <p>
+              We do not accept payment for positive reviews or sponsored
+              placements disguised as editorial content.
+            </p>
+          </div>
+          <div class="promise-card">
+            <div class="card-icon">🔄</div>
+            <h3>Updated Regularly</h3>
+            <p>
+              We revisit articles when prices, fees, or policies change to keep
+              our recommendations current.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="icon">⚖️</span> FTC Compliance</h2>
+        <p>
+          This disclosure is made in accordance with the U.S. Federal Trade
+          Commission's guidelines on endorsements and testimonials (16 CFR Part
+          255). We are committed to full transparency about our monetization
+          practices.
+        </p>
+        <div class="ftc-note">
+          You can read more about the FTC's guidelines on affiliate disclosures
+          at
+          <a
+            href="https://www.ftc.gov/tips-advice/business-center/guidance/ftcs-endorsement-guides-what-people-are-asking"
+            target="_blank"
+            rel="noopener"
+            >ftc.gov</a
+          >.
+        </div>
+      </section>
+
+      <hr />
+
+      <div class="contact-cta">
+        <p>
+          Have a question about our affiliate relationships or editorial
+          process? We're happy to talk.
+        </p>
+        <a href="/contact.html" class="btn">Get in Touch</a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2026 Smart Grocery Intelligence Platform &nbsp;·&nbsp;
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/disclosure.html">Affiliate Disclosure</a>
+    </footer>
+  </body>
 </html>
