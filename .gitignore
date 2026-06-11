@@ -12,3 +12,6 @@ frontend/node_modules/
 .env*.local
 .env.local
 COMPANY_DETAILS.md
+
+./.env
+./frontend/.env
