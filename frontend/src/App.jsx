@@ -47,6 +47,12 @@ function App() {
           element={user ? <Navigate to="/dashboard" /> : <Signup />}
         />
         <Route path="/dashboard" element={<Dashboard user={user} />} />
+
+        {/* ADD THIS LINE */}
+        <Route
+          path="/"
+          element={<Navigate to={user ? "/dashboard" : "/login"} replace />}
+        />
       </Routes>
     </BrowserRouter>
   );
