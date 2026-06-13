@@ -24,6 +24,36 @@ Smart Grocery Intelligence Platform helps users **find the cheapest store combin
 
 ---
 
+## 📸 Screenshots
+
+### Static Content Site
+
+![Homepage](screenshots/home_screenshot.png)
+_Magazine-style homepage with featured articles and savings tips_
+
+![Blog](screenshots/blog_screenshot.png)
+_Blog listing page with 12 published posts_
+
+![About](screenshots/about_screenshot.png)
+_About page_
+
+### React Application
+
+![Login](screenshots/login_screenshot.png)
+_User authentication — login page_
+
+![Signup](screenshots/signup_screenshot.png)
+_Account creation — signup page_
+
+![Dashboard](screenshots/dashboard_screenshot.png)
+_User dashboard showing stores and grocery items_
+
+![Price Search](screenshots/price_search_screenshot.png)
+_Real-time price search powered by Kroger API_
+
+![Grocery List](screenshots/grocery_list_screenshot.png)
+_Grocery list builder with progress tracking_
+
 ## 🏗️ Architecture
 
 ```
