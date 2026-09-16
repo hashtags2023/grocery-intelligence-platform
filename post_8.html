@@ -1,13 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Store Brands vs Name Brands: Are They Worth It? - Smart Grocery Intelligence Platform</title>
+    <title>
+      Store Brands vs Name Brands: Are They Worth It? - Smart Grocery
+      Intelligence Platform
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="We tested store brands vs name brands across 15 common grocery categories. Here's where you should always buy store brand — and where name brands are actually worth it." />
+    <meta
+      name="description"
+      content="We tested store brands vs name brands across 15 common grocery categories. Here's where you should always buy store brand — and where name brands are actually worth it."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .comparison-table {
@@ -22,11 +31,25 @@
         padding: 11px 14px;
         text-align: left;
       }
-      .comparison-table td { padding: 10px 14px; border-bottom: 1px solid #eee; }
-      .comparison-table tr:nth-child(even) { background: #f9f9f9; }
-      .buy-store { color: #2e7d32; font-weight: 700; }
-      .buy-name { color: #1565c0; font-weight: 700; }
-      .buy-either { color: #888; font-weight: 600; }
+      .comparison-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #eee;
+      }
+      .comparison-table tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .buy-store {
+        color: #2e7d32;
+        font-weight: 700;
+      }
+      .buy-name {
+        color: #1565c0;
+        font-weight: 700;
+      }
+      .buy-either {
+        color: #888;
+        font-weight: 600;
+      }
       .tip-box {
         background: #fff8e1;
         border-left: 4px solid #f9a825;
@@ -41,21 +64,42 @@
         margin: 28px 0;
         border-radius: 0 8px 8px 0;
       }
-      .verdict-box h3 { color: #2e7d32; margin-bottom: 10px; }
-      .verdict-box p { color: #444; font-size: 0.95rem; line-height: 1.7; margin-bottom: 8px; }
+      .verdict-box h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+      .verdict-box p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
       .category-card {
         background: white;
         border-radius: 10px;
         padding: 20px 24px;
         margin-bottom: 16px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         border-left: 5px solid #2e7d32;
       }
-      .category-card.name-brand { border-left-color: #1565c0; }
-      .category-card h3 { font-size: 1rem; margin-bottom: 6px; }
-      .category-card.store-brand h3 { color: #2e7d32; }
-      .category-card.name-brand h3 { color: #1565c0; }
-      .category-card p { color: #555; font-size: 0.9rem; line-height: 1.65; }
+      .category-card.name-brand {
+        border-left-color: #1565c0;
+      }
+      .category-card h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      .category-card.store-brand h3 {
+        color: #2e7d32;
+      }
+      .category-card.name-brand h3 {
+        color: #1565c0;
+      }
+      .category-card p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
       .savings-banner {
         background: #2e7d32;
         color: white;
@@ -64,23 +108,46 @@
         text-align: center;
         margin: 28px 0;
       }
-      .savings-banner h3 { color: #a5d6a7; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-      .savings-banner .big { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; }
-      .savings-banner p { color: #c8e6c9; font-size: 0.9rem; margin-top: 6px; }
-      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
-      @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
-
-      
+      .savings-banner h3 {
+        color: #a5d6a7;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .savings-banner .big {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 900;
+      }
+      .savings-banner p {
+        color: #c8e6c9;
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      @media (max-width: 600px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* ── HEADER — matches homepage exactly ── */
-      body { font-family: "Source Sans 3", sans-serif; }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+      }
       header {
         background: #1b5e20;
         color: white;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
       .header-inner {
         max-width: 1100px;
@@ -100,7 +167,9 @@
         color: white;
         margin: 0;
       }
-      header h1 span { color: #a5d6a7; }
+      header h1 span {
+        color: #a5d6a7;
+      }
       header nav a {
         color: #c8e6c9;
         text-decoration: none;
@@ -118,38 +187,63 @@
     </style>
   </head>
   <body>
-
     <div id="header"></div>
     <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
     </script>
 
     <main>
-  <!-- FTC Affiliate Disclosure -->
-  <div style="background:#fff8e1;border-left:4px solid #f9a825;padding:12px 18px;margin-bottom:24px;border-radius:0 6px 6px 0;font-size:0.85rem;color:#555;">
-    <strong style="color:#e65100;">📢 Disclosure:</strong> This post contains affiliate links. If you click a link and make a purchase, Smart Grocery Intelligence Platform may earn a small commission at no extra cost to you. We only recommend products and services we genuinely believe provide value. <a href="privacy.html" style="color:#2e7d32;font-weight:600;">Learn more</a>.
-  </div>
+      <!-- FTC Affiliate Disclosure -->
+      <div
+        style="
+          background: #fff8e1;
+          border-left: 4px solid #f9a825;
+          padding: 12px 18px;
+          margin-bottom: 24px;
+          border-radius: 0 6px 6px 0;
+          font-size: 0.85rem;
+          color: #555;
+        "
+      >
+        <strong style="color: #e65100">📢 Disclosure:</strong> This post
+        contains affiliate links. If you click a link and make a purchase, Smart
+        Grocery Intelligence Platform may earn a small commission at no extra
+        cost to you. We only recommend products and services we genuinely
+        believe provide value.
+        <a href="privacy.html" style="color: #2e7d32; font-weight: 600"
+          >Learn more</a
+        >.
+      </div>
       <h2>Store Brands vs Name Brands: Are They Worth It?</h2>
 
       <p>
-        Store brands — also called private label or generic products — are typically
-        20–30% cheaper than their name brand equivalents. On a $400/month grocery budget,
-        switching to store brands where it makes sense could save you $80–120 every month.
-        But not all store brands are created equal. Here's exactly where to buy generic
-        and where the name brand is genuinely worth paying more for.
+        Store brands — also called private label or generic products — are
+        typically 20–30% cheaper than their name brand equivalents. On a
+        $400/month grocery budget, switching to store brands where it makes
+        sense could save you $80–120 every month. But not all store brands are
+        created equal. Here's exactly where to buy generic and where the name
+        brand is genuinely worth paying more for.
       </p>
 
       <div class="tip-box">
-        <strong>💡 The secret most people don't know:</strong> Many store brand products
-        are made in the exact same facilities as name brands — sometimes literally the same
-        product in different packaging. This is especially common for canned goods, dairy,
-        frozen vegetables, and pantry staples.
+        <strong>💡 The secret most people don't know:</strong> Many store brand
+        products are made in the exact same facilities as name brands —
+        sometimes literally the same product in different packaging. This is
+        especially common for canned goods, dairy, frozen vegetables, and pantry
+        staples.
       </div>
 
       <!-- Quick reference table -->
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">Quick Reference Guide</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Quick Reference Guide
+      </h3>
       <table class="comparison-table">
         <thead>
           <tr>
@@ -254,62 +348,135 @@
       </table>
 
       <!-- Always buy store brand -->
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px; color: #2e7d32;">Always Buy Store Brand</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+          color: #2e7d32;
+        "
+      >
+        Always Buy Store Brand
+      </h3>
 
       <div class="two-col">
         <div class="category-card store-brand">
           <h3>🥫 Canned & Pantry Goods</h3>
-          <p>Canned tomatoes, beans, corn, and broth are commodity products. The contents are virtually identical across brands — you're just paying for the label. Store brand saves 25-35% with zero quality sacrifice.</p>
+          <p>
+            Canned tomatoes, beans, corn, and broth are commodity products. The
+            contents are virtually identical across brands — you're just paying
+            for the label. Store brand saves 25-35% with zero quality sacrifice.
+          </p>
         </div>
         <div class="category-card store-brand">
           <h3>🍝 Pasta, Rice & Grains</h3>
-          <p>Pasta is pasta. Once cooked with sauce, no one can tell the difference between Barilla and a store brand. Same goes for rice, oats, and dried beans. Save 25-40% with no taste difference.</p>
+          <p>
+            Pasta is pasta. Once cooked with sauce, no one can tell the
+            difference between Barilla and a store brand. Same goes for rice,
+            oats, and dried beans. Save 25-40% with no taste difference.
+          </p>
         </div>
         <div class="category-card store-brand">
           <h3>🧂 Spices & Baking</h3>
-          <p>This is the biggest hidden savings on any grocery list. Name brand spices are marked up enormously. Store brand flour, sugar, baking powder, and spices are identical in quality and save 40-60%.</p>
+          <p>
+            This is the biggest hidden savings on any grocery list. Name brand
+            spices are marked up enormously. Store brand flour, sugar, baking
+            powder, and spices are identical in quality and save 40-60%.
+          </p>
         </div>
         <div class="category-card store-brand">
           <h3>💊 Over-the-Counter Medicine</h3>
-          <p>By law, generic OTC medications must contain the same active ingredients in the same dosage as name brands. Store brand ibuprofen, antacids, and allergy medicine are medically identical — at 50-70% less.</p>
+          <p>
+            By law, generic OTC medications must contain the same active
+            ingredients in the same dosage as name brands. Store brand
+            ibuprofen, antacids, and allergy medicine are medically identical —
+            at 50-70% less.
+          </p>
         </div>
       </div>
 
       <!-- Worth paying more -->
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px; color: #1565c0;">Where Name Brands Are Worth It</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+          color: #1565c0;
+        "
+      >
+        Where Name Brands Are Worth It
+      </h3>
 
       <div class="two-col">
         <div class="category-card name-brand">
           <h3>☕ Coffee</h3>
-          <p>Coffee quality varies significantly by roasting process, bean quality, and freshness. Most store brand coffees use lower-grade beans and have a noticeably flatter taste. If you drink coffee daily, the name brand is worth the premium.</p>
+          <p>
+            Coffee quality varies significantly by roasting process, bean
+            quality, and freshness. Most store brand coffees use lower-grade
+            beans and have a noticeably flatter taste. If you drink coffee
+            daily, the name brand is worth the premium.
+          </p>
         </div>
         <div class="category-card name-brand">
           <h3>🍅 Ketchup & Key Condiments</h3>
-          <p>Heinz ketchup genuinely tastes different from store brand alternatives — it has a distinct sweetness and consistency that most generic versions don't replicate well. Same with French's mustard. The taste difference is real here.</p>
+          <p>
+            Heinz ketchup genuinely tastes different from store brand
+            alternatives — it has a distinct sweetness and consistency that most
+            generic versions don't replicate well. Same with French's mustard.
+            The taste difference is real here.
+          </p>
         </div>
         <div class="category-card name-brand">
           <h3>🧴 Personal Care Products</h3>
-          <p>Shampoo, skincare, and personal care formulas vary significantly between brands. If you have a product that works for your skin or hair, switching to a generic to save $2 and then dealing with breakouts or damage isn't worth it.</p>
+          <p>
+            Shampoo, skincare, and personal care formulas vary significantly
+            between brands. If you have a product that works for your skin or
+            hair, switching to a generic to save $2 and then dealing with
+            breakouts or damage isn't worth it.
+          </p>
         </div>
         <div class="category-card name-brand">
           <h3>🍪 Snacks You Eat on Their Own</h3>
-          <p>For snacks where the brand experience is the point — Oreos, Doritos, specific crackers — store brand alternatives often taste noticeably different. Reserve name brands for the snacks where it matters to you personally.</p>
+          <p>
+            For snacks where the brand experience is the point — Oreos, Doritos,
+            specific crackers — store brand alternatives often taste noticeably
+            different. Reserve name brands for the snacks where it matters to
+            you personally.
+          </p>
         </div>
       </div>
 
       <div class="savings-banner">
         <h3>Switching to store brands where it makes sense saves</h3>
         <div class="big">$960–1,440/year</div>
-        <p>on a typical $400/month grocery budget — with zero sacrifice in quality on most items</p>
+        <p>
+          on a typical $400/month grocery budget — with zero sacrifice in
+          quality on most items
+        </p>
       </div>
 
       <div class="verdict-box">
         <h3>The Simple Rule</h3>
-        <p><strong>Buy store brand when</strong> the product is an ingredient you're cooking with, a commodity (milk, flour, canned goods), or a regulated product (OTC medicine). The quality difference is minimal to nonexistent.</p>
-        <p><strong>Buy name brand when</strong> you're eating the product on its own and the taste experience matters, or when you've tried the store brand and genuinely prefer the name brand. Your satisfaction is worth something too.</p>
-        <p>A good rule of thumb: start with store brand on everything. If you notice a quality difference that bothers you, switch back. You'll find that on 80% of your grocery list, you won't notice any difference at all.</p>
+        <p>
+          <strong>Buy store brand when</strong> the product is an ingredient
+          you're cooking with, a commodity (milk, flour, canned goods), or a
+          regulated product (OTC medicine). The quality difference is minimal to
+          nonexistent.
+        </p>
+        <p>
+          <strong>Buy name brand when</strong> you're eating the product on its
+          own and the taste experience matters, or when you've tried the store
+          brand and genuinely prefer the name brand. Your satisfaction is worth
+          something too.
+        </p>
+        <p>
+          A good rule of thumb: start with store brand on everything. If you
+          notice a quality difference that bothers you, switch back. You'll find
+          that on 80% of your grocery list, you won't notice any difference at
+          all.
+        </p>
       </div>
 
+      <div id="comments-root" data-post-slug="post_8"></div>
+      <script src="js/comments-widget.js"></script>
       <a href="blog.html" class="button">← Back to Blog</a>
     </main>
 
@@ -320,6 +487,5 @@
         <a href="contact.html">Contact</a>
       </p>
     </footer>
-
   </body>
 </html>

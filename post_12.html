@@ -1,60 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>How to Buy Food with Less Microplastics - Smart Grocery Intelligence Platform</title>
+    <title>
+      How to Buy Food with Less Microplastics - Smart Grocery Intelligence
+      Platform
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A practical guide to reducing microplastics in your food — which foods have the most, which stores and shopping habits help, and simple swaps that make a real difference." />
+    <meta
+      name="description"
+      content="A practical guide to reducing microplastics in your food — which foods have the most, which stores and shopping habits help, and simple swaps that make a real difference."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      .food-table { width:100%; border-collapse:collapse; margin:24px 0; font-size:0.9rem; }
-      .food-table th { background:#2e7d32; color:white; padding:11px 14px; text-align:left; }
-      .food-table td { padding:10px 14px; border-bottom:1px solid #eee; }
-      .food-table tr:nth-child(even) { background:#f9f9f9; }
-      .level-high { color:#c62828; font-weight:700; }
-      .level-med { color:#e65100; font-weight:600; }
-      .level-low { color:#2e7d32; font-weight:700; }
-      .swap-card { background:white; border-radius:10px; padding:20px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.05); display:grid; grid-template-columns:1fr auto 1fr; gap:16px; align-items:center; }
-      .swap-from { background:#fce4ec; border-radius:8px; padding:12px 16px; text-align:center; }
-      .swap-from h4 { color:#c62828; font-size:0.9rem; margin-bottom:4px; }
-      .swap-from p { color:#444; font-size:0.85rem; margin:0; }
-      .swap-arrow { font-size:1.5rem; color:#2e7d32; text-align:center; }
-      .swap-to { background:#e8f5e9; border-radius:8px; padding:12px 16px; text-align:center; }
-      .swap-to h4 { color:#2e7d32; font-size:0.9rem; margin-bottom:4px; }
-      .swap-to p { color:#444; font-size:0.85rem; margin:0; }
-      .store-card { background:white; border-radius:10px; padding:20px 24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
-      .store-card.best { border-left:5px solid #2e7d32; }
-      .store-card.good { border-left:5px solid #f9a825; }
-      .store-card.avoid { border-left:5px solid #c62828; }
-      .store-card h3 { font-size:1rem; margin-bottom:6px; }
-      .store-card.best h3 { color:#2e7d32; }
-      .store-card.good h3 { color:#e65100; }
-      .store-card.avoid h3 { color:#c62828; }
-      .store-card p { color:#555; font-size:0.9rem; line-height:1.65; margin:0; }
-      .tip-box { background:#fff8e1; border-left:4px solid #f9a825; padding:16px 20px; margin:20px 0; border-radius:0 8px 8px 0; }
-      .verdict-box { background:#e8f5e9; border-left:4px solid #2e7d32; padding:20px 24px; margin:28px 0; border-radius:0 8px 8px 0; }
-      .verdict-box h3 { color:#2e7d32; margin-bottom:10px; }
-      .verdict-box p { color:#444; font-size:0.95rem; line-height:1.7; margin-bottom:8px; }
-      .warning-box { background:#fce4ec; border-left:4px solid #c62828; padding:16px 20px; margin:20px 0; border-radius:0 8px 8px 0; }
-      .warning-box strong { color:#c62828; }
-      .warning-box p { color:#444; font-size:0.93rem; margin:6px 0 0; }
-      .section-intro { color:#555; font-size:0.95rem; line-height:1.7; margin-bottom:20px; }
-      @media (max-width:600px) { .swap-card { grid-template-columns:1fr; } .swap-arrow { transform:rotate(90deg); } }
-
-      
+      .food-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: 0.9rem;
+      }
+      .food-table th {
+        background: #2e7d32;
+        color: white;
+        padding: 11px 14px;
+        text-align: left;
+      }
+      .food-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #eee;
+      }
+      .food-table tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .level-high {
+        color: #c62828;
+        font-weight: 700;
+      }
+      .level-med {
+        color: #e65100;
+        font-weight: 600;
+      }
+      .level-low {
+        color: #2e7d32;
+        font-weight: 700;
+      }
+      .swap-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .swap-from {
+        background: #fce4ec;
+        border-radius: 8px;
+        padding: 12px 16px;
+        text-align: center;
+      }
+      .swap-from h4 {
+        color: #c62828;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+      }
+      .swap-from p {
+        color: #444;
+        font-size: 0.85rem;
+        margin: 0;
+      }
+      .swap-arrow {
+        font-size: 1.5rem;
+        color: #2e7d32;
+        text-align: center;
+      }
+      .swap-to {
+        background: #e8f5e9;
+        border-radius: 8px;
+        padding: 12px 16px;
+        text-align: center;
+      }
+      .swap-to h4 {
+        color: #2e7d32;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+      }
+      .swap-to p {
+        color: #444;
+        font-size: 0.85rem;
+        margin: 0;
+      }
+      .store-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px 24px;
+        margin-bottom: 14px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .store-card.best {
+        border-left: 5px solid #2e7d32;
+      }
+      .store-card.good {
+        border-left: 5px solid #f9a825;
+      }
+      .store-card.avoid {
+        border-left: 5px solid #c62828;
+      }
+      .store-card h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      .store-card.best h3 {
+        color: #2e7d32;
+      }
+      .store-card.good h3 {
+        color: #e65100;
+      }
+      .store-card.avoid h3 {
+        color: #c62828;
+      }
+      .store-card p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin: 0;
+      }
+      .tip-box {
+        background: #fff8e1;
+        border-left: 4px solid #f9a825;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .verdict-box {
+        background: #e8f5e9;
+        border-left: 4px solid #2e7d32;
+        padding: 20px 24px;
+        margin: 28px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .verdict-box h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+      .verdict-box p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+      .warning-box {
+        background: #fce4ec;
+        border-left: 4px solid #c62828;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .warning-box strong {
+        color: #c62828;
+      }
+      .warning-box p {
+        color: #444;
+        font-size: 0.93rem;
+        margin: 6px 0 0;
+      }
+      .section-intro {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 600px) {
+        .swap-card {
+          grid-template-columns: 1fr;
+        }
+        .swap-arrow {
+          transform: rotate(90deg);
+        }
+      }
 
       /* ── HEADER — matches homepage exactly ── */
-      body { font-family: "Source Sans 3", sans-serif; }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+      }
       header {
         background: #1b5e20;
         color: white;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
       .header-inner {
         max-width: 1100px;
@@ -74,7 +217,9 @@
         color: white;
         margin: 0;
       }
-      header h1 span { color: #a5d6a7; }
+      header h1 span {
+        color: #a5d6a7;
+      }
       header nav a {
         color: #c8e6c9;
         text-decoration: none;
@@ -92,37 +237,52 @@
     </style>
   </head>
   <body>
-
     <div id="header"></div>
     <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
     </script>
 
     <main>
       <h2>How to Buy Food with Less Microplastics</h2>
 
       <p>
-        Microplastics — tiny plastic particles less than 5mm in size — have been found in
-        drinking water, seafood, salt, honey, beer, and even fresh fruits and vegetables.
-        Scientists are still studying the long-term health effects, but the evidence is mounting
-        that these particles are entering our bodies at significant rates. The good news is that
-        where and how you shop can meaningfully reduce your exposure. Here's what the research
-        says and what you can actually do about it at the grocery store.
+        Microplastics — tiny plastic particles less than 5mm in size — have been
+        found in drinking water, seafood, salt, honey, beer, and even fresh
+        fruits and vegetables. Scientists are still studying the long-term
+        health effects, but the evidence is mounting that these particles are
+        entering our bodies at significant rates. The good news is that where
+        and how you shop can meaningfully reduce your exposure. Here's what the
+        research says and what you can actually do about it at the grocery
+        store.
       </p>
 
       <div class="warning-box">
         <strong>📋 What the science currently says:</strong>
-        <p>The FDA acknowledges microplastics have been found in many foods but states that current evidence does not demonstrate they pose a risk to human health at detected levels. Research is ongoing. This guide is about practical reduction, not elimination — complete avoidance isn't possible, but meaningful reduction is.</p>
+        <p>
+          The FDA acknowledges microplastics have been found in many foods but
+          states that current evidence does not demonstrate they pose a risk to
+          human health at detected levels. Research is ongoing. This guide is
+          about practical reduction, not elimination — complete avoidance isn't
+          possible, but meaningful reduction is.
+        </p>
       </div>
 
       <!-- Foods ranked by microplastic levels -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 12px;">Which Foods Have the Most Microplastics?</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Which Foods Have the Most Microplastics?
+      </h3>
       <p class="section-intro">
-        Research consistently shows that highly processed foods contain more microplastics than
-        minimally processed ones. The more times food is handled, packaged, and processed —
-        the more exposure it has to plastic equipment, conveyor belts, and packaging.
+        Research consistently shows that highly processed foods contain more
+        microplastics than minimally processed ones. The more times food is
+        handled, packaged, and processed — the more exposure it has to plastic
+        equipment, conveyor belts, and packaging.
       </p>
 
       <table class="food-table">
@@ -134,137 +294,336 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Breaded/processed shrimp</td><td class="level-high">Very High</td><td>Plastic packaging, processing equipment</td></tr>
-          <tr><td>Bottled water</td><td class="level-high">Very High</td><td>Plastic bottle degradation (up to 240,000 particles/liter)</td></tr>
-          <tr><td>Fast food</td><td class="level-high">Very High</td><td>Packaging, plastic containers, high fat content</td></tr>
-          <tr><td>Processed/packaged meats</td><td class="level-high">High</td><td>Multiple processing steps, plastic wrapping</td></tr>
-          <tr><td>Plastic-packaged produce</td><td class="level-high">High</td><td>Plastic wrap and bags shedding particles</td></tr>
-          <tr><td>Tea bags (plastic mesh)</td><td class="level-high">High</td><td>Plastic tea bag material breaks down in hot water</td></tr>
-          <tr><td>Sea salt</td><td class="level-med">Medium</td><td>Ocean contamination</td></tr>
-          <tr><td>Beer</td><td class="level-med">Medium</td><td>Water source and processing</td></tr>
-          <tr><td>Honey</td><td class="level-med">Medium</td><td>Environmental contamination, packaging</td></tr>
-          <tr><td>Tap water (filtered)</td><td class="level-med">Medium-Low</td><td>Municipal water systems</td></tr>
-          <tr><td>Fresh whole fruits &amp; vegetables</td><td class="level-low">Low</td><td>Soil and water absorption (minimal)</td></tr>
-          <tr><td>Wild-caught Alaskan seafood</td><td class="level-low">Low</td><td>Least processed, minimal packaging contact</td></tr>
-          <tr><td>Bulk dry goods (glass jar)</td><td class="level-low">Very Low</td><td>Minimal packaging contact</td></tr>
-          <tr><td>Loose leaf tea</td><td class="level-low">Very Low</td><td>No plastic bag involved</td></tr>
+          <tr>
+            <td>Breaded/processed shrimp</td>
+            <td class="level-high">Very High</td>
+            <td>Plastic packaging, processing equipment</td>
+          </tr>
+          <tr>
+            <td>Bottled water</td>
+            <td class="level-high">Very High</td>
+            <td>Plastic bottle degradation (up to 240,000 particles/liter)</td>
+          </tr>
+          <tr>
+            <td>Fast food</td>
+            <td class="level-high">Very High</td>
+            <td>Packaging, plastic containers, high fat content</td>
+          </tr>
+          <tr>
+            <td>Processed/packaged meats</td>
+            <td class="level-high">High</td>
+            <td>Multiple processing steps, plastic wrapping</td>
+          </tr>
+          <tr>
+            <td>Plastic-packaged produce</td>
+            <td class="level-high">High</td>
+            <td>Plastic wrap and bags shedding particles</td>
+          </tr>
+          <tr>
+            <td>Tea bags (plastic mesh)</td>
+            <td class="level-high">High</td>
+            <td>Plastic tea bag material breaks down in hot water</td>
+          </tr>
+          <tr>
+            <td>Sea salt</td>
+            <td class="level-med">Medium</td>
+            <td>Ocean contamination</td>
+          </tr>
+          <tr>
+            <td>Beer</td>
+            <td class="level-med">Medium</td>
+            <td>Water source and processing</td>
+          </tr>
+          <tr>
+            <td>Honey</td>
+            <td class="level-med">Medium</td>
+            <td>Environmental contamination, packaging</td>
+          </tr>
+          <tr>
+            <td>Tap water (filtered)</td>
+            <td class="level-med">Medium-Low</td>
+            <td>Municipal water systems</td>
+          </tr>
+          <tr>
+            <td>Fresh whole fruits &amp; vegetables</td>
+            <td class="level-low">Low</td>
+            <td>Soil and water absorption (minimal)</td>
+          </tr>
+          <tr>
+            <td>Wild-caught Alaskan seafood</td>
+            <td class="level-low">Low</td>
+            <td>Least processed, minimal packaging contact</td>
+          </tr>
+          <tr>
+            <td>Bulk dry goods (glass jar)</td>
+            <td class="level-low">Very Low</td>
+            <td>Minimal packaging contact</td>
+          </tr>
+          <tr>
+            <td>Loose leaf tea</td>
+            <td class="level-low">Very Low</td>
+            <td>No plastic bag involved</td>
+          </tr>
         </tbody>
       </table>
 
       <!-- Where to shop -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 12px;">Where to Shop for Lower Microplastic Exposure</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Where to Shop for Lower Microplastic Exposure
+      </h3>
       <p class="section-intro">
-        No grocery store is completely free of microplastics, but some shopping environments
-        and store types significantly reduce your exposure compared to others.
+        No grocery store is completely free of microplastics, but some shopping
+        environments and store types significantly reduce your exposure compared
+        to others.
       </p>
 
       <div class="store-card best">
         <h3>🏆 Farmers Markets — Best Option</h3>
-        <p>Farmers markets offer the least plastic-packaged food of any shopping environment. Fresh produce sold loose, proteins wrapped in paper, eggs in cardboard cartons. You also know exactly where your food came from and how it was handled. If reducing microplastic exposure is a priority, shopping at a farmers market for your fresh produce and proteins is the single most impactful change you can make.</p>
+        <p>
+          Farmers markets offer the least plastic-packaged food of any shopping
+          environment. Fresh produce sold loose, proteins wrapped in paper, eggs
+          in cardboard cartons. You also know exactly where your food came from
+          and how it was handled. If reducing microplastic exposure is a
+          priority, shopping at a farmers market for your fresh produce and
+          proteins is the single most impactful change you can make.
+        </p>
       </div>
 
       <div class="store-card best">
         <h3>🏆 Co-ops and Bulk Stores — Excellent Choice</h3>
-        <p>Food cooperatives and bulk stores like Whole Foods bulk sections, Natural Grocers, and dedicated bulk stores allow you to bring your own glass containers and fill them with grains, nuts, spices, oils, and dry goods — completely eliminating plastic packaging from those items. This is especially valuable for pantry staples you buy regularly.</p>
+        <p>
+          Food cooperatives and bulk stores like Whole Foods bulk sections,
+          Natural Grocers, and dedicated bulk stores allow you to bring your own
+          glass containers and fill them with grains, nuts, spices, oils, and
+          dry goods — completely eliminating plastic packaging from those items.
+          This is especially valuable for pantry staples you buy regularly.
+        </p>
       </div>
 
       <div class="store-card best">
         <h3>✅ Thrive Market — Great for Pantry Staples</h3>
-        <p>Thrive Market sells many pantry items in glass packaging and offers a curated selection of minimally processed organic foods. Their focus on clean ingredients extends to packaging choices. For shelf-stable items like olive oil, nut butters, and condiments, choosing glass-packaged versions from Thrive is an easy upgrade. They also ship in recyclable cardboard rather than plastic padding.</p>
+        <p>
+          Thrive Market sells many pantry items in glass packaging and offers a
+          curated selection of minimally processed organic foods. Their focus on
+          clean ingredients extends to packaging choices. For shelf-stable items
+          like olive oil, nut butters, and condiments, choosing glass-packaged
+          versions from Thrive is an easy upgrade. They also ship in recyclable
+          cardboard rather than plastic padding.
+        </p>
       </div>
 
       <div class="store-card good">
         <h3>👍 Whole Foods — Good for Packaged Goods</h3>
-        <p>Whole Foods has made more packaging reduction commitments than most mainstream grocers and carries a wider selection of glass-packaged alternatives. Their bulk section is one of the best in mainstream retail. Prices are higher but for targeted items like olive oil, honey, and condiments in glass, it's worth it for reduced plastic exposure.</p>
+        <p>
+          Whole Foods has made more packaging reduction commitments than most
+          mainstream grocers and carries a wider selection of glass-packaged
+          alternatives. Their bulk section is one of the best in mainstream
+          retail. Prices are higher but for targeted items like olive oil,
+          honey, and condiments in glass, it's worth it for reduced plastic
+          exposure.
+        </p>
       </div>
 
       <div class="store-card good">
         <h3>👍 Aldi — Good for Fresh Produce</h3>
-        <p>Aldi uses less packaging than most mainstream grocery stores and has committed to reducing plastic packaging. Their fresh produce section uses minimal wrapping compared to chains like Kroger or Safeway. Buy your loose fruits and vegetables here and you're already reducing exposure significantly compared to buying pre-packaged produce.</p>
+        <p>
+          Aldi uses less packaging than most mainstream grocery stores and has
+          committed to reducing plastic packaging. Their fresh produce section
+          uses minimal wrapping compared to chains like Kroger or Safeway. Buy
+          your loose fruits and vegetables here and you're already reducing
+          exposure significantly compared to buying pre-packaged produce.
+        </p>
       </div>
 
       <div class="store-card avoid">
         <h3>⚠️ Mainstream Supermarkets — Shop Carefully</h3>
-        <p>Stores like Kroger, Safeway, and Publix aren't bad choices overall but tend to have more heavily plastic-packaged produce, more processed foods, and fewer glass alternatives on shelves. You can still shop here with low microplastic exposure — just focus on the swaps below and avoid pre-packaged processed items.</p>
+        <p>
+          Stores like Kroger, Safeway, and Publix aren't bad choices overall but
+          tend to have more heavily plastic-packaged produce, more processed
+          foods, and fewer glass alternatives on shelves. You can still shop
+          here with low microplastic exposure — just focus on the swaps below
+          and avoid pre-packaged processed items.
+        </p>
       </div>
 
       <!-- Practical swaps -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 12px;">Simple Swaps That Make a Real Difference</h3>
-      <p class="section-intro">You don't need to overhaul your entire shopping routine. These targeted swaps address the highest-exposure items first:</p>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Simple Swaps That Make a Real Difference
+      </h3>
+      <p class="section-intro">
+        You don't need to overhaul your entire shopping routine. These targeted
+        swaps address the highest-exposure items first:
+      </p>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Bottled water</h4><p>Up to 240,000 plastic particles per liter</p></div>
+        <div class="swap-from">
+          <h4>❌ Bottled water</h4>
+          <p>Up to 240,000 plastic particles per liter</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Filtered tap water</h4><p>Reverse osmosis filter removes most microplastics</p></div>
+        <div class="swap-to">
+          <h4>✅ Filtered tap water</h4>
+          <p>Reverse osmosis filter removes most microplastics</p>
+        </div>
       </div>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Plastic tea bags</h4><p>Mesh bags shed millions of particles in hot water</p></div>
+        <div class="swap-from">
+          <h4>❌ Plastic tea bags</h4>
+          <p>Mesh bags shed millions of particles in hot water</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Loose leaf tea</h4><p>Use a metal or ceramic strainer — zero plastic contact</p></div>
+        <div class="swap-to">
+          <h4>✅ Loose leaf tea</h4>
+          <p>Use a metal or ceramic strainer — zero plastic contact</p>
+        </div>
       </div>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Plastic-wrapped produce</h4><p>Packaging sheds particles onto food surface</p></div>
+        <div class="swap-from">
+          <h4>❌ Plastic-wrapped produce</h4>
+          <p>Packaging sheds particles onto food surface</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Loose fruits &amp; vegetables</h4><p>Use cloth or mesh reusable bags instead</p></div>
+        <div class="swap-to">
+          <h4>✅ Loose fruits &amp; vegetables</h4>
+          <p>Use cloth or mesh reusable bags instead</p>
+        </div>
       </div>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Condiments in plastic bottles</h4><p>Plastic leaches especially into acidic foods</p></div>
+        <div class="swap-from">
+          <h4>❌ Condiments in plastic bottles</h4>
+          <p>Plastic leaches especially into acidic foods</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Glass-jarred condiments</h4><p>Same product, zero plastic contact with food</p></div>
+        <div class="swap-to">
+          <h4>✅ Glass-jarred condiments</h4>
+          <p>Same product, zero plastic contact with food</p>
+        </div>
       </div>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Heating food in plastic containers</h4><p>Heat dramatically increases plastic leaching</p></div>
+        <div class="swap-from">
+          <h4>❌ Heating food in plastic containers</h4>
+          <p>Heat dramatically increases plastic leaching</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Glass or ceramic containers</h4><p>Transfer food before microwaving — simple habit change</p></div>
+        <div class="swap-to">
+          <h4>✅ Glass or ceramic containers</h4>
+          <p>Transfer food before microwaving — simple habit change</p>
+        </div>
       </div>
 
       <div class="swap-card">
-        <div class="swap-from"><h4>❌ Breaded/processed seafood</h4><p>Highest microplastic levels of any protein tested</p></div>
+        <div class="swap-from">
+          <h4>❌ Breaded/processed seafood</h4>
+          <p>Highest microplastic levels of any protein tested</p>
+        </div>
         <div class="swap-arrow">→</div>
-        <div class="swap-to"><h4>✅ Wild-caught Alaskan seafood</h4><p>Lowest microplastic levels of any seafood tested</p></div>
+        <div class="swap-to">
+          <h4>✅ Wild-caught Alaskan seafood</h4>
+          <p>Lowest microplastic levels of any seafood tested</p>
+        </div>
       </div>
 
       <div class="tip-box">
-        <strong>💡 Biggest impact for least effort:</strong> Switching from bottled water to
-        filtered tap water is the single highest-impact change you can make. Bottled water
-        contains dramatically more microplastics than tap water and costs 1,000x more per
-        gallon. A basic reverse osmosis filter ($150-300) pays for itself within months and
-        removes the vast majority of microplastics from your drinking water.
+        <strong>💡 Biggest impact for least effort:</strong> Switching from
+        bottled water to filtered tap water is the single highest-impact change
+        you can make. Bottled water contains dramatically more microplastics
+        than tap water and costs 1,000x more per gallon. A basic reverse osmosis
+        filter ($150-300) pays for itself within months and removes the vast
+        majority of microplastics from your drinking water.
       </div>
 
       <!-- Kitchen habits -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 12px;">Kitchen Habits That Reduce Exposure</h3>
-      <p class="section-intro">Shopping choices are only part of the picture. What you do at home matters too:</p>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Kitchen Habits That Reduce Exposure
+      </h3>
+      <p class="section-intro">
+        Shopping choices are only part of the picture. What you do at home
+        matters too:
+      </p>
 
-      <div class="store-card best" style="border-left-color:#2e7d32;">
-        <h3 style="color:#1a1a1a;">Never microwave food in plastic containers</h3>
-        <p>Heat dramatically increases plastic leaching — even containers labeled "microwave safe" (which only means they won't melt, not that they're safe). Always transfer food to glass or ceramic before heating.</p>
+      <div class="store-card best" style="border-left-color: #2e7d32">
+        <h3 style="color: #1a1a1a">
+          Never microwave food in plastic containers
+        </h3>
+        <p>
+          Heat dramatically increases plastic leaching — even containers labeled
+          "microwave safe" (which only means they won't melt, not that they're
+          safe). Always transfer food to glass or ceramic before heating.
+        </p>
       </div>
-      <div class="store-card best" style="border-left-color:#2e7d32;">
-        <h3 style="color:#1a1a1a;">Use wooden or glass cutting boards</h3>
-        <p>Cutting on plastic cutting boards causes plastic particles to shed directly into your food. A wooden or bamboo cutting board eliminates this entirely.</p>
+      <div class="store-card best" style="border-left-color: #2e7d32">
+        <h3 style="color: #1a1a1a">Use wooden or glass cutting boards</h3>
+        <p>
+          Cutting on plastic cutting boards causes plastic particles to shed
+          directly into your food. A wooden or bamboo cutting board eliminates
+          this entirely.
+        </p>
       </div>
-      <div class="store-card best" style="border-left-color:#2e7d32;">
-        <h3 style="color:#1a1a1a;">Store food in glass, not plastic</h3>
-        <p>Especially for fatty or acidic foods — fat and acid increase the rate at which plastic leaches into food. Olive oil, tomato sauce, and leftovers should be stored in glass whenever possible.</p>
+      <div class="store-card best" style="border-left-color: #2e7d32">
+        <h3 style="color: #1a1a1a">Store food in glass, not plastic</h3>
+        <p>
+          Especially for fatty or acidic foods — fat and acid increase the rate
+          at which plastic leaches into food. Olive oil, tomato sauce, and
+          leftovers should be stored in glass whenever possible.
+        </p>
       </div>
-      <div class="store-card best" style="border-left-color:#2e7d32;">
-        <h3 style="color:#1a1a1a;">Don't boil rice or pasta in plastic bags</h3>
-        <p>Boil-in-bag rice and similar products expose food to plastic in boiling water — one of the worst combinations for leaching. Use loose rice and a regular pot instead.</p>
+      <div class="store-card best" style="border-left-color: #2e7d32">
+        <h3 style="color: #1a1a1a">Don't boil rice or pasta in plastic bags</h3>
+        <p>
+          Boil-in-bag rice and similar products expose food to plastic in
+          boiling water — one of the worst combinations for leaching. Use loose
+          rice and a regular pot instead.
+        </p>
       </div>
 
       <div class="verdict-box">
         <h3>The Practical Bottom Line</h3>
-        <p>You can't eliminate microplastics from your food entirely — they're too widespread in the environment. But you can meaningfully reduce your exposure with a handful of targeted changes.</p>
-        <p><strong>Start here:</strong> Switch to filtered tap water, buy loose produce instead of plastic-wrapped, and stop microwaving food in plastic. These three changes alone address the highest-exposure situations most people encounter daily.</p>
-        <p><strong>For shopping:</strong> Farmers markets and bulk stores offer the lowest plastic exposure. Thrive Market and Whole Foods are the best mainstream options for glass-packaged alternatives. Any store works if you focus on buying fresh, minimally processed foods and avoiding plastic packaging where possible.</p>
-        <p><strong>Remember:</strong> The goal is meaningful reduction, not perfection. Small consistent changes add up to significantly less plastic in your diet over time.</p>
+        <p>
+          You can't eliminate microplastics from your food entirely — they're
+          too widespread in the environment. But you can meaningfully reduce
+          your exposure with a handful of targeted changes.
+        </p>
+        <p>
+          <strong>Start here:</strong> Switch to filtered tap water, buy loose
+          produce instead of plastic-wrapped, and stop microwaving food in
+          plastic. These three changes alone address the highest-exposure
+          situations most people encounter daily.
+        </p>
+        <p>
+          <strong>For shopping:</strong> Farmers markets and bulk stores offer
+          the lowest plastic exposure. Thrive Market and Whole Foods are the
+          best mainstream options for glass-packaged alternatives. Any store
+          works if you focus on buying fresh, minimally processed foods and
+          avoiding plastic packaging where possible.
+        </p>
+        <p>
+          <strong>Remember:</strong> The goal is meaningful reduction, not
+          perfection. Small consistent changes add up to significantly less
+          plastic in your diet over time.
+        </p>
       </div>
 
+      <div id="comments-root" data-post-slug="post_12"></div>
+      <script src="js/comments-widget.js"></script>
       <a href="blog.html" class="button">← Back to Blog</a>
     </main>
 
@@ -275,6 +634,5 @@
         <a href="contact.html">Contact</a>
       </p>
     </footer>
-
   </body>
 </html>
