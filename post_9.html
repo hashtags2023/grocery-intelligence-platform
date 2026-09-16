@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>How to Save Money at Costco - Smart Grocery Intelligence Platform</title>
+    <title>
+      How to Save Money at Costco - Smart Grocery Intelligence Platform
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Costco can save you thousands per year — or cost you more than a regular grocery store. Here's exactly what to buy, what to skip, and how to make the membership pay for itself." />
+    <meta
+      name="description"
+      content="Costco can save you thousands per year — or cost you more than a regular grocery store. Here's exactly what to buy, what to skip, and how to make the membership pay for itself."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .buy-table {
@@ -16,17 +24,33 @@
         margin: 24px 0;
         font-size: 0.9rem;
       }
-      .buy-table th { background: #2e7d32; color: white; padding: 11px 14px; text-align: left; }
-      .buy-table td { padding: 10px 14px; border-bottom: 1px solid #eee; }
-      .buy-table tr:nth-child(even) { background: #f9f9f9; }
-      .buy-yes { color: #2e7d32; font-weight: 700; }
-      .buy-no { color: #c62828; font-weight: 700; }
+      .buy-table th {
+        background: #2e7d32;
+        color: white;
+        padding: 11px 14px;
+        text-align: left;
+      }
+      .buy-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #eee;
+      }
+      .buy-table tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .buy-yes {
+        color: #2e7d32;
+        font-weight: 700;
+      }
+      .buy-no {
+        color: #c62828;
+        font-weight: 700;
+      }
       .tip-card {
         background: white;
         border-radius: 10px;
         padding: 20px 24px;
         margin-bottom: 16px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         border-left: 5px solid #2e7d32;
         display: flex;
         gap: 16px;
@@ -35,7 +59,7 @@
       .tip-num {
         background: #2e7d32;
         color: white;
-        font-family: 'Playfair Display', serif;
+        font-family: "Playfair Display", serif;
         font-weight: 900;
         font-size: 1.1rem;
         width: 36px;
@@ -46,8 +70,16 @@
         justify-content: center;
         flex-shrink: 0;
       }
-      .tip-card h3 { color: #1a1a1a; font-size: 1rem; margin-bottom: 6px; }
-      .tip-card p { color: #555; font-size: 0.9rem; line-height: 1.65; }
+      .tip-card h3 {
+        color: #1a1a1a;
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      .tip-card p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
       .tip-box {
         background: #fff8e1;
         border-left: 4px solid #f9a825;
@@ -62,8 +94,16 @@
         margin: 28px 0;
         border-radius: 0 8px 8px 0;
       }
-      .verdict-box h3 { color: #2e7d32; margin-bottom: 10px; }
-      .verdict-box p { color: #444; font-size: 0.95rem; line-height: 1.7; margin-bottom: 8px; }
+      .verdict-box h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+      .verdict-box p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
       .membership-box {
         background: #1b5e20;
         color: white;
@@ -74,24 +114,53 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
       }
-      .membership-box h3 { color: #a5d6a7; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; grid-column: 1/-1; }
-      .mem-option { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 16px; }
-      .mem-option h4 { color: white; margin-bottom: 6px; font-size: 1rem; }
-      .mem-option .price { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; color: #a5d6a7; }
-      .mem-option p { color: #c8e6c9; font-size: 0.85rem; margin-top: 6px; line-height: 1.5; }
-      @media (max-width: 600px) { .membership-box { grid-template-columns: 1fr; } }
-
-      
+      .membership-box h3 {
+        color: #a5d6a7;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        grid-column: 1/-1;
+      }
+      .mem-option {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .mem-option h4 {
+        color: white;
+        margin-bottom: 6px;
+        font-size: 1rem;
+      }
+      .mem-option .price {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: #a5d6a7;
+      }
+      .mem-option p {
+        color: #c8e6c9;
+        font-size: 0.85rem;
+        margin-top: 6px;
+        line-height: 1.5;
+      }
+      @media (max-width: 600px) {
+        .membership-box {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* ── HEADER — matches homepage exactly ── */
-      body { font-family: "Source Sans 3", sans-serif; }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+      }
       header {
         background: #1b5e20;
         color: white;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
       .header-inner {
         max-width: 1100px;
@@ -111,7 +180,9 @@
         color: white;
         margin: 0;
       }
-      header h1 span { color: #a5d6a7; }
+      header h1 span {
+        color: #a5d6a7;
+      }
       header nav a {
         color: #c8e6c9;
         text-decoration: none;
@@ -129,27 +200,44 @@
     </style>
   </head>
   <body>
-
     <div id="header"></div>
     <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
     </script>
 
     <main>
-  <!-- FTC Affiliate Disclosure -->
-  <div style="background:#fff8e1;border-left:4px solid #f9a825;padding:12px 18px;margin-bottom:24px;border-radius:0 6px 6px 0;font-size:0.85rem;color:#555;">
-    <strong style="color:#e65100;">📢 Disclosure:</strong> This post contains affiliate links. If you click a link and make a purchase, Smart Grocery Intelligence Platform may earn a small commission at no extra cost to you. We only recommend products and services we genuinely believe provide value. <a href="privacy.html" style="color:#2e7d32;font-weight:600;">Learn more</a>.
-  </div>
+      <!-- FTC Affiliate Disclosure -->
+      <div
+        style="
+          background: #fff8e1;
+          border-left: 4px solid #f9a825;
+          padding: 12px 18px;
+          margin-bottom: 24px;
+          border-radius: 0 6px 6px 0;
+          font-size: 0.85rem;
+          color: #555;
+        "
+      >
+        <strong style="color: #e65100">📢 Disclosure:</strong> This post
+        contains affiliate links. If you click a link and make a purchase, Smart
+        Grocery Intelligence Platform may earn a small commission at no extra
+        cost to you. We only recommend products and services we genuinely
+        believe provide value.
+        <a href="privacy.html" style="color: #2e7d32; font-weight: 600"
+          >Learn more</a
+        >.
+      </div>
       <h2>How to Save Money at Costco in 2025</h2>
 
       <p>
-        Costco is one of the best places in America to save money on groceries — and also
-        one of the easiest places to overspend. The warehouse model means incredible per-unit
-        prices on the right items, but buying 5 pounds of something you won't finish is just
-        waste with extra steps. This guide breaks down exactly what to buy, what to skip, and
-        how to make your $65/year membership pay for itself many times over.
+        Costco is one of the best places in America to save money on groceries —
+        and also one of the easiest places to overspend. The warehouse model
+        means incredible per-unit prices on the right items, but buying 5 pounds
+        of something you won't finish is just waste with extra steps. This guide
+        breaks down exactly what to buy, what to skip, and how to make your
+        $65/year membership pay for itself many times over.
       </p>
 
       <!-- Membership -->
@@ -158,24 +246,37 @@
         <div class="mem-option">
           <h4>Gold Star</h4>
           <div class="price">$65/yr</div>
-          <p>Standard membership. Access to all Costco warehouses and the Costco website. Best for most households.</p>
+          <p>
+            Standard membership. Access to all Costco warehouses and the Costco
+            website. Best for most households.
+          </p>
         </div>
         <div class="mem-option">
           <h4>Executive</h4>
           <div class="price">$130/yr</div>
-          <p>Includes 2% cash back on all purchases (up to $1,000/year). Worth it if you spend $3,000+ at Costco annually.</p>
+          <p>
+            Includes 2% cash back on all purchases (up to $1,000/year). Worth it
+            if you spend $3,000+ at Costco annually.
+          </p>
         </div>
       </div>
 
       <div class="tip-box">
-        <strong>💡 Does the membership pay for itself?</strong> If you buy just 5 items
-        from the "Always Buy at Costco" list below regularly, the $65 membership pays for
-        itself within 2-3 trips. Most regular Costco shoppers save $500-1,500/year above
-        the membership cost.
+        <strong>💡 Does the membership pay for itself?</strong> If you buy just
+        5 items from the "Always Buy at Costco" list below regularly, the $65
+        membership pays for itself within 2-3 trips. Most regular Costco
+        shoppers save $500-1,500/year above the membership cost.
       </div>
 
       <!-- What to buy -->
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">What to Buy vs Skip at Costco</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        What to Buy vs Skip at Costco
+      </h3>
       <table class="buy-table">
         <thead>
           <tr>
@@ -185,32 +286,109 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Kirkland olive oil</td><td class="buy-yes">✅ Always</td><td>Premium quality at half the price of comparable brands</td></tr>
-          <tr><td>Nuts & trail mix</td><td class="buy-yes">✅ Always</td><td>Nuts are 40-60% cheaper per oz vs grocery stores</td></tr>
-          <tr><td>Kirkland coffee</td><td class="buy-yes">✅ Always</td><td>Roasted by Starbucks, sold at a fraction of the price</td></tr>
-          <tr><td>Rotisserie chicken</td><td class="buy-yes">✅ Always</td><td>$4.99 for a full chicken — Costco sells at a loss to drive traffic</td></tr>
-          <tr><td>Paper products</td><td class="buy-yes">✅ Always</td><td>Toilet paper, paper towels 30-40% cheaper per unit</td></tr>
-          <tr><td>Canned goods (bulk)</td><td class="buy-yes">✅ Always</td><td>Great for long shelf-life items you use regularly</td></tr>
-          <tr><td>Kirkland cheese</td><td class="buy-yes">✅ Always</td><td>High quality, significantly cheaper per pound</td></tr>
-          <tr><td>Salmon & seafood</td><td class="buy-yes">✅ Always</td><td>Wild-caught quality at 30-40% below grocery stores</td></tr>
-          <tr><td>Laundry detergent</td><td class="buy-yes">✅ Always</td><td>Cost per load is dramatically lower in bulk</td></tr>
-          <tr><td>Eggs</td><td class="buy-yes">✅ Usually</td><td>Price per egg is lower, but only if you use them quickly</td></tr>
-          <tr><td>Bread</td><td class="buy-no">❌ Skip</td><td>Goes stale/moldy before you finish it unless you freeze half</td></tr>
-          <tr><td>Fresh produce (most)</td><td class="buy-no">❌ Usually skip</td><td>Quantities too large for 1-2 person households</td></tr>
-          <tr><td>Spices</td><td class="buy-no">❌ Skip</td><td>Quantities are far too large — spices lose potency over time</td></tr>
-          <tr><td>Condiments</td><td class="buy-no">❌ Skip</td><td>Gallon of ketchup goes bad before you finish it</td></tr>
-          <tr><td>Fresh herbs</td><td class="buy-no">❌ Skip</td><td>Almost impossible to use before they wilt</td></tr>
+          <tr>
+            <td>Kirkland olive oil</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Premium quality at half the price of comparable brands</td>
+          </tr>
+          <tr>
+            <td>Nuts & trail mix</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Nuts are 40-60% cheaper per oz vs grocery stores</td>
+          </tr>
+          <tr>
+            <td>Kirkland coffee</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Roasted by Starbucks, sold at a fraction of the price</td>
+          </tr>
+          <tr>
+            <td>Rotisserie chicken</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>
+              $4.99 for a full chicken — Costco sells at a loss to drive traffic
+            </td>
+          </tr>
+          <tr>
+            <td>Paper products</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Toilet paper, paper towels 30-40% cheaper per unit</td>
+          </tr>
+          <tr>
+            <td>Canned goods (bulk)</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Great for long shelf-life items you use regularly</td>
+          </tr>
+          <tr>
+            <td>Kirkland cheese</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>High quality, significantly cheaper per pound</td>
+          </tr>
+          <tr>
+            <td>Salmon & seafood</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Wild-caught quality at 30-40% below grocery stores</td>
+          </tr>
+          <tr>
+            <td>Laundry detergent</td>
+            <td class="buy-yes">✅ Always</td>
+            <td>Cost per load is dramatically lower in bulk</td>
+          </tr>
+          <tr>
+            <td>Eggs</td>
+            <td class="buy-yes">✅ Usually</td>
+            <td>Price per egg is lower, but only if you use them quickly</td>
+          </tr>
+          <tr>
+            <td>Bread</td>
+            <td class="buy-no">❌ Skip</td>
+            <td>
+              Goes stale/moldy before you finish it unless you freeze half
+            </td>
+          </tr>
+          <tr>
+            <td>Fresh produce (most)</td>
+            <td class="buy-no">❌ Usually skip</td>
+            <td>Quantities too large for 1-2 person households</td>
+          </tr>
+          <tr>
+            <td>Spices</td>
+            <td class="buy-no">❌ Skip</td>
+            <td>
+              Quantities are far too large — spices lose potency over time
+            </td>
+          </tr>
+          <tr>
+            <td>Condiments</td>
+            <td class="buy-no">❌ Skip</td>
+            <td>Gallon of ketchup goes bad before you finish it</td>
+          </tr>
+          <tr>
+            <td>Fresh herbs</td>
+            <td class="buy-no">❌ Skip</td>
+            <td>Almost impossible to use before they wilt</td>
+          </tr>
         </tbody>
       </table>
 
       <!-- Tips -->
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">8 Tips to Maximize Costco Savings</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        8 Tips to Maximize Costco Savings
+      </h3>
 
       <div class="tip-card">
         <div class="tip-num">1</div>
         <div>
           <h3>Always check the unit price, not the total price</h3>
-          <p>A $15 item at Costco might be cheaper per unit than a $4 item at a regular grocery store. Always compare price per ounce or per unit — the Costco price tag shows this, so use it.</p>
+          <p>
+            A $15 item at Costco might be cheaper per unit than a $4 item at a
+            regular grocery store. Always compare price per ounce or per unit —
+            the Costco price tag shows this, so use it.
+          </p>
         </div>
       </div>
 
@@ -218,7 +396,11 @@
         <div class="tip-num">2</div>
         <div>
           <h3>Use the Costco app before you go</h3>
-          <p>The Costco app shows current deals, Costco Cash offers, and digital coupons. Member-only savings are updated monthly — check before each trip to plan around the best deals.</p>
+          <p>
+            The Costco app shows current deals, Costco Cash offers, and digital
+            coupons. Member-only savings are updated monthly — check before each
+            trip to plan around the best deals.
+          </p>
         </div>
       </div>
 
@@ -226,7 +408,12 @@
         <div class="tip-num">3</div>
         <div>
           <h3>Freeze everything you won't use in 3 days</h3>
-          <p>Bulk buying only saves money if you actually use the product. Portion and freeze meat, bread, and other perishables the same day you buy them. This single habit eliminates food waste from bulk shopping.</p>
+          <p>
+            Bulk buying only saves money if you actually use the product.
+            Portion and freeze meat, bread, and other perishables the same day
+            you buy them. This single habit eliminates food waste from bulk
+            shopping.
+          </p>
         </div>
       </div>
 
@@ -234,7 +421,12 @@
         <div class="tip-num">4</div>
         <div>
           <h3>The rotisserie chicken is a loss leader — use it</h3>
-          <p>Costco sells rotisserie chickens at $4.99 deliberately below cost to drive store traffic. Buy one every trip. Use it for dinner, then use the carcass to make chicken broth. It's one of the best food values in retail.</p>
+          <p>
+            Costco sells rotisserie chickens at $4.99 deliberately below cost to
+            drive store traffic. Buy one every trip. Use it for dinner, then use
+            the carcass to make chicken broth. It's one of the best food values
+            in retail.
+          </p>
         </div>
       </div>
 
@@ -242,7 +434,12 @@
         <div class="tip-num">5</div>
         <div>
           <h3>Split memberships and bulk purchases with a friend</h3>
-          <p>Costco allows two household cards per membership. If you live alone or have a small household, split the membership cost and alternate shopping trips with a friend or neighbor. Split the bulk purchases too.</p>
+          <p>
+            Costco allows two household cards per membership. If you live alone
+            or have a small household, split the membership cost and alternate
+            shopping trips with a friend or neighbor. Split the bulk purchases
+            too.
+          </p>
         </div>
       </div>
 
@@ -250,7 +447,12 @@
         <div class="tip-num">6</div>
         <div>
           <h3>Shop the Kirkland Signature brand first</h3>
-          <p>Kirkland is Costco's private label brand and is consistently high quality — much of it is made by name brand manufacturers under contract. Kirkland olive oil, coffee, nuts, and paper products are among the best values in any store.</p>
+          <p>
+            Kirkland is Costco's private label brand and is consistently high
+            quality — much of it is made by name brand manufacturers under
+            contract. Kirkland olive oil, coffee, nuts, and paper products are
+            among the best values in any store.
+          </p>
         </div>
       </div>
 
@@ -258,7 +460,12 @@
         <div class="tip-num">7</div>
         <div>
           <h3>Don't buy perishables in bulk for small households</h3>
-          <p>If you live alone or with one other person, buying a 5lb bag of spinach or a flat of strawberries is a recipe for waste. Stick to non-perishables, frozen items, and proteins you can freeze for bulk purchases.</p>
+          <p>
+            If you live alone or with one other person, buying a 5lb bag of
+            spinach or a flat of strawberries is a recipe for waste. Stick to
+            non-perishables, frozen items, and proteins you can freeze for bulk
+            purchases.
+          </p>
         </div>
       </div>
 
@@ -266,17 +473,38 @@
         <div class="tip-num">8</div>
         <div>
           <h3>Pay with a Visa card for extra cash back</h3>
-          <p>Costco only accepts Visa credit cards. The Costco Anywhere Visa card gives 4% back on gas, 3% on restaurants, 2% on Costco purchases, and 1% everywhere else. Combined with an Executive membership, regular Costco shoppers can earn $200-400/year in rewards.</p>
+          <p>
+            Costco only accepts Visa credit cards. The Costco Anywhere Visa card
+            gives 4% back on gas, 3% on restaurants, 2% on Costco purchases, and
+            1% everywhere else. Combined with an Executive membership, regular
+            Costco shoppers can earn $200-400/year in rewards.
+          </p>
         </div>
       </div>
 
       <div class="verdict-box">
         <h3>Is Costco Worth It for You?</h3>
-        <p><strong>Yes, if</strong> you have storage space, a household of 2+ people, and you regularly buy the items in the "Always Buy" column above. The membership pays for itself quickly and the savings compound over time.</p>
-        <p><strong>Maybe not, if</strong> you live alone, have limited storage, or mostly buy fresh produce and perishables. In that case the bulk quantities will lead to waste that offsets your savings.</p>
-        <p><strong>The bottom line:</strong> Focus your Costco spending on non-perishables, frozen items, Kirkland brand staples, paper products, and the $4.99 rotisserie chicken. Do that consistently and the $65 membership will return $500+ in savings every year.</p>
+        <p>
+          <strong>Yes, if</strong> you have storage space, a household of 2+
+          people, and you regularly buy the items in the "Always Buy" column
+          above. The membership pays for itself quickly and the savings compound
+          over time.
+        </p>
+        <p>
+          <strong>Maybe not, if</strong> you live alone, have limited storage,
+          or mostly buy fresh produce and perishables. In that case the bulk
+          quantities will lead to waste that offsets your savings.
+        </p>
+        <p>
+          <strong>The bottom line:</strong> Focus your Costco spending on
+          non-perishables, frozen items, Kirkland brand staples, paper products,
+          and the $4.99 rotisserie chicken. Do that consistently and the $65
+          membership will return $500+ in savings every year.
+        </p>
       </div>
 
+      <div id="comments-root" data-post-slug="post_9"></div>
+      <script src="js/comments-widget.js"></script>
       <a href="blog.html" class="button">← Back to Blog</a>
     </main>
 
@@ -287,6 +515,5 @@
         <a href="contact.html">Contact</a>
       </p>
     </footer>
-
   </body>
 </html>

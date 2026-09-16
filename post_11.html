@@ -1,13 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Where to Buy the Cheapest Avocados in 2026 - Smart Grocery Intelligence Platform</title>
+    <title>
+      Where to Buy the Cheapest Avocados in 2026 - Smart Grocery Intelligence
+      Platform
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="We compared avocado prices at Aldi, Costco, Trader Joe's, Walmart, Target, and Whole Foods. Here's exactly where to buy the cheapest avocados in 2026." />
+    <meta
+      name="description"
+      content="We compared avocado prices at Aldi, Costco, Trader Joe's, Walmart, Target, and Whole Foods. Here's exactly where to buy the cheapest avocados in 2026."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .price-table {
@@ -26,43 +35,105 @@
         padding: 11px 16px;
         border-bottom: 1px solid #eee;
       }
-      .price-table tr:nth-child(even) { background: #f9f9f9; }
-      .price-table tr:hover { background: #e8f5e9; }
-      .winner { color: #2e7d32; font-weight: 700; }
-      .loser { color: #c62828; }
-      .mid { color: #e65100; }
-      .best-row { background: #e8f5e9 !important; font-weight: 700; }
+      .price-table tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .price-table tr:hover {
+        background: #e8f5e9;
+      }
+      .winner {
+        color: #2e7d32;
+        font-weight: 700;
+      }
+      .loser {
+        color: #c62828;
+      }
+      .mid {
+        color: #e65100;
+      }
+      .best-row {
+        background: #e8f5e9 !important;
+        font-weight: 700;
+      }
       .store-card {
         background: white;
         border-radius: 10px;
         padding: 20px 24px;
         margin-bottom: 16px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         display: flex;
         gap: 20px;
         align-items: flex-start;
       }
-      .store-card.best { border-left: 5px solid #2e7d32; }
-      .store-card.good { border-left: 5px solid #f9a825; }
-      .store-card.skip { border-left: 5px solid #c62828; }
+      .store-card.best {
+        border-left: 5px solid #2e7d32;
+      }
+      .store-card.good {
+        border-left: 5px solid #f9a825;
+      }
+      .store-card.skip {
+        border-left: 5px solid #c62828;
+      }
       .price-badge {
-        font-family: 'Playfair Display', serif;
+        font-family: "Playfair Display", serif;
         font-size: 1.8rem;
         font-weight: 900;
         line-height: 1;
         min-width: 70px;
         text-align: center;
       }
-      .price-badge.best { color: #2e7d32; }
-      .price-badge.good { color: #e65100; }
-      .price-badge.skip { color: #c62828; }
-      .price-badge .per { font-size: 0.7rem; font-family: 'Source Sans 3', sans-serif; font-weight: 600; color: #888; display: block; margin-top: 2px; }
-      .store-info h3 { font-size: 1rem; color: #1a1a1a; margin-bottom: 4px; }
-      .store-info p { font-size: 0.9rem; color: #555; line-height: 1.65; margin: 0; }
-      .tip-box { background: #fff8e1; border-left: 4px solid #f9a825; padding: 16px 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
-      .verdict-box { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 20px 24px; margin: 28px 0; border-radius: 0 8px 8px 0; }
-      .verdict-box h3 { color: #2e7d32; margin-bottom: 10px; }
-      .verdict-box p { color: #444; font-size: 0.95rem; line-height: 1.7; margin-bottom: 8px; }
+      .price-badge.best {
+        color: #2e7d32;
+      }
+      .price-badge.good {
+        color: #e65100;
+      }
+      .price-badge.skip {
+        color: #c62828;
+      }
+      .price-badge .per {
+        font-size: 0.7rem;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 600;
+        color: #888;
+        display: block;
+        margin-top: 2px;
+      }
+      .store-info h3 {
+        font-size: 1rem;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+      .store-info p {
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.65;
+        margin: 0;
+      }
+      .tip-box {
+        background: #fff8e1;
+        border-left: 4px solid #f9a825;
+        padding: 16px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .verdict-box {
+        background: #e8f5e9;
+        border-left: 4px solid #2e7d32;
+        padding: 20px 24px;
+        margin: 28px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .verdict-box h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+      .verdict-box p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
       .savings-banner {
         background: #1b5e20;
         color: white;
@@ -71,27 +142,73 @@
         text-align: center;
         margin: 28px 0;
       }
-      .savings-banner h3 { color: #a5d6a7; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-      .savings-banner .big { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; }
-      .savings-banner p { color: #c8e6c9; font-size: 0.9rem; margin-top: 6px; }
-      .news-tag { background: #e8f5e9; color: #2e7d32; font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 3px; display: inline-block; margin-bottom: 16px; }
-      .freshness-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
-      .freshness-card { background: white; border-radius: 8px; padding: 16px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-      .freshness-card h4 { color: #2e7d32; font-size: 0.9rem; margin-bottom: 8px; }
-      .freshness-card p { color: #555; font-size: 0.88rem; line-height: 1.65; margin: 0; }
-      @media (max-width: 600px) { .freshness-grid { grid-template-columns: 1fr; } }
-
-      
+      .savings-banner h3 {
+        color: #a5d6a7;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .savings-banner .big {
+        font-family: "Playfair Display", serif;
+        font-size: 2.8rem;
+        font-weight: 900;
+      }
+      .savings-banner p {
+        color: #c8e6c9;
+        font-size: 0.9rem;
+        margin-top: 6px;
+      }
+      .news-tag {
+        background: #e8f5e9;
+        color: #2e7d32;
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+      .freshness-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 20px 0;
+      }
+      .freshness-card {
+        background: white;
+        border-radius: 8px;
+        padding: 16px 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .freshness-card h4 {
+        color: #2e7d32;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+      .freshness-card p {
+        color: #555;
+        font-size: 0.88rem;
+        line-height: 1.65;
+        margin: 0;
+      }
+      @media (max-width: 600px) {
+        .freshness-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* ── HEADER — matches homepage exactly ── */
-      body { font-family: "Source Sans 3", sans-serif; }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+      }
       header {
         background: #1b5e20;
         color: white;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
       .header-inner {
         max-width: 1100px;
@@ -111,7 +228,9 @@
         color: white;
         margin: 0;
       }
-      header h1 span { color: #a5d6a7; }
+      header h1 span {
+        color: #a5d6a7;
+      }
       header nav a {
         color: #c8e6c9;
         text-decoration: none;
@@ -129,12 +248,11 @@
     </style>
   </head>
   <body>
-
     <div id="header"></div>
     <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
     </script>
 
     <main>
@@ -143,22 +261,30 @@
       <span class="news-tag">📊 Updated March 2026</span>
 
       <p>
-        Avocados are one of the most price-volatile items in any grocery store. The same fruit
-        can cost $0.75 at one store and $2.79 at another — literally four times the price for
-        the same avocado. If you eat avocados regularly, knowing where to buy them can save you
-        a surprising amount of money over the course of a year. We compared prices across the
-        major grocery chains so you don't have to guess.
+        Avocados are one of the most price-volatile items in any grocery store.
+        The same fruit can cost $0.75 at one store and $2.79 at another —
+        literally four times the price for the same avocado. If you eat avocados
+        regularly, knowing where to buy them can save you a surprising amount of
+        money over the course of a year. We compared prices across the major
+        grocery chains so you don't have to guess.
       </p>
 
       <div class="tip-box">
-        <strong>💡 Good news for avocado lovers:</strong> Avocado prices dropped more than
-        19% in late 2025 compared to the year before, according to market data. 2026 is
-        shaping up to be one of the more affordable years for avocados in recent memory
-        — making now a great time to stock up.
+        <strong>💡 Good news for avocado lovers:</strong> Avocado prices dropped
+        more than 19% in late 2025 compared to the year before, according to
+        market data. 2026 is shaping up to be one of the more affordable years
+        for avocados in recent memory — making now a great time to stock up.
       </div>
 
       <!-- Price comparison table -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 12px;">Price Comparison — Large Hass Avocado by Store</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        Price Comparison — Large Hass Avocado by Store
+      </h3>
       <table class="price-table">
         <thead>
           <tr>
@@ -221,7 +347,14 @@
       </table>
 
       <!-- Store by store breakdown -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 16px;">Store by Store Breakdown</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 16px;
+        "
+      >
+        Store by Store Breakdown
+      </h3>
 
       <div class="store-card best">
         <div>
@@ -230,11 +363,13 @@
         <div class="store-info">
           <h3>🏆 Aldi — The Clear Winner</h3>
           <p>
-            Aldi sells large Hass avocados for just $0.75 each — the cheapest price of any major
-            grocery chain in the US. If you buy four avocados a week, shopping at Aldi instead of
-            Whole Foods saves you over $100 a year on avocados alone. The quality is consistently
-            good and the size is comparable to what you'd find at more expensive stores. If there's
-            an Aldi near you, this is where you should always buy your avocados.
+            Aldi sells large Hass avocados for just $0.75 each — the cheapest
+            price of any major grocery chain in the US. If you buy four avocados
+            a week, shopping at Aldi instead of Whole Foods saves you over $100
+            a year on avocados alone. The quality is consistently good and the
+            size is comparable to what you'd find at more expensive stores. If
+            there's an Aldi near you, this is where you should always buy your
+            avocados.
           </p>
         </div>
       </div>
@@ -246,11 +381,12 @@
         <div class="store-info">
           <h3>Costco — Best for Bulk Buyers</h3>
           <p>
-            Costco sells avocados in 6-packs for around $5.10, which works out to roughly $0.85
-            per avocado. That's very close to Aldi's price and a great deal — if you go through
-            avocados quickly. The catch is you have to buy six at once, so this only works if you
-            use them fast enough before they over-ripen. Buy them slightly firm and let them ripen
-            at home over 2-3 days.
+            Costco sells avocados in 6-packs for around $5.10, which works out
+            to roughly $0.85 per avocado. That's very close to Aldi's price and
+            a great deal — if you go through avocados quickly. The catch is you
+            have to buy six at once, so this only works if you use them fast
+            enough before they over-ripen. Buy them slightly firm and let them
+            ripen at home over 2-3 days.
           </p>
         </div>
       </div>
@@ -262,10 +398,11 @@
         <div class="store-info">
           <h3>Target — Best Convenience Option</h3>
           <p>
-            At $0.89 each, Target is only 14 cents more than Aldi per avocado. If you're already
-            doing a Target run, it's absolutely worth picking up avocados there rather than making
-            a separate trip to Aldi. The price difference over a year is minimal if you're already
-            at Target anyway.
+            At $0.89 each, Target is only 14 cents more than Aldi per avocado.
+            If you're already doing a Target run, it's absolutely worth picking
+            up avocados there rather than making a separate trip to Aldi. The
+            price difference over a year is minimal if you're already at Target
+            anyway.
           </p>
         </div>
       </div>
@@ -277,10 +414,11 @@
         <div class="store-info">
           <h3>Walmart — Best for Non-Aldi Shoppers</h3>
           <p>
-            Walmart's avocado prices vary between $0.98 and $1.25 depending on size and whether
-            they're sold individually or in bags. Bags of 4-6 avocados are usually the better
-            deal per unit. Not as cheap as Aldi but still reasonable — and you can get them
-            delivered at in-store prices with a Walmart+ membership.
+            Walmart's avocado prices vary between $0.98 and $1.25 depending on
+            size and whether they're sold individually or in bags. Bags of 4-6
+            avocados are usually the better deal per unit. Not as cheap as Aldi
+            but still reasonable — and you can get them delivered at in-store
+            prices with a Walmart+ membership.
           </p>
         </div>
       </div>
@@ -292,10 +430,11 @@
         <div class="store-info">
           <h3>Trader Joe's — Popular but Pricier</h3>
           <p>
-            Trader Joe's charges $1.29 per avocado — more than 70% more expensive than Aldi.
-            The quality is good but there's no compelling reason to buy avocados here when
-            cheaper options are available. Worth it only if Trader Joe's is your primary store
-            and you're already there.
+            Trader Joe's charges $1.29 per avocado — more than 70% more
+            expensive than Aldi. The quality is good but there's no compelling
+            reason to buy avocados here when cheaper options are available.
+            Worth it only if Trader Joe's is your primary store and you're
+            already there.
           </p>
         </div>
       </div>
@@ -307,10 +446,11 @@
         <div class="store-info">
           <h3>Whole Foods — Most Expensive, Skip It</h3>
           <p>
-            Whole Foods charges $2.79 for an organic large Hass avocado — nearly four times
-            what you'd pay at Aldi. Even on sale, you're paying significantly more than you
-            need to. Unless you specifically want certified organic avocados and don't have
-            access to other stores, Whole Foods is not the place to buy avocados.
+            Whole Foods charges $2.79 for an organic large Hass avocado — nearly
+            four times what you'd pay at Aldi. Even on sale, you're paying
+            significantly more than you need to. Unless you specifically want
+            certified organic avocados and don't have access to other stores,
+            Whole Foods is not the place to buy avocados.
           </p>
         </div>
       </div>
@@ -319,50 +459,91 @@
       <div class="savings-banner">
         <h3>If you buy 3 avocados per week</h3>
         <div class="big">$317/year</div>
-        <p>saved by shopping at Aldi ($0.75) vs Whole Foods ($2.79) — same avocado, different store</p>
+        <p>
+          saved by shopping at Aldi ($0.75) vs Whole Foods ($2.79) — same
+          avocado, different store
+        </p>
       </div>
 
       <!-- How to keep them fresh -->
-      <h3 style="font-family:'Playfair Display',serif; margin:28px 0 16px;">How to Keep Avocados Fresh Longer</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 16px;
+        "
+      >
+        How to Keep Avocados Fresh Longer
+      </h3>
       <p>
-        One of the biggest avocado money wasters is buying them and having them go bad before
-        you use them. Here's how to manage ripeness like a pro:
+        One of the biggest avocado money wasters is buying them and having them
+        go bad before you use them. Here's how to manage ripeness like a pro:
       </p>
 
       <div class="freshness-grid">
         <div class="freshness-card">
           <h4>🟢 Buy firm, ripen at home</h4>
-          <p>Buy firm avocados and let them ripen on the counter for 2-4 days. This gives you more control over timing than buying pre-ripened ones.</p>
+          <p>
+            Buy firm avocados and let them ripen on the counter for 2-4 days.
+            This gives you more control over timing than buying pre-ripened
+            ones.
+          </p>
         </div>
         <div class="freshness-card">
           <h4>🧊 Refrigerate to slow ripening</h4>
-          <p>Once an avocado is ripe, put it in the fridge. It will stay good for 2-3 more days — buying you time to use it.</p>
+          <p>
+            Once an avocado is ripe, put it in the fridge. It will stay good for
+            2-3 more days — buying you time to use it.
+          </p>
         </div>
         <div class="freshness-card">
           <h4>🍋 Lemon juice prevents browning</h4>
-          <p>If you only use half, squeeze lemon or lime juice on the cut side and store with the pit in. The acid slows oxidation significantly.</p>
+          <p>
+            If you only use half, squeeze lemon or lime juice on the cut side
+            and store with the pit in. The acid slows oxidation significantly.
+          </p>
         </div>
         <div class="freshness-card">
           <h4>❄️ Freeze for long-term storage</h4>
-          <p>Mash ripe avocados with a little lemon juice and freeze in portions. Perfect for smoothies, guacamole, or avocado toast later.</p>
+          <p>
+            Mash ripe avocados with a little lemon juice and freeze in portions.
+            Perfect for smoothies, guacamole, or avocado toast later.
+          </p>
         </div>
       </div>
 
       <div class="tip-box">
-        <strong>💡 The bulk buying trick:</strong> Buy a 6-pack at Costco when firm. Use 2
-        immediately, leave 2 on the counter to ripen over the next 3 days, and refrigerate
-        the last 2 while still firm. This spreads your avocado supply across nearly a full
-        week from a single purchase.
+        <strong>💡 The bulk buying trick:</strong> Buy a 6-pack at Costco when
+        firm. Use 2 immediately, leave 2 on the counter to ripen over the next 3
+        days, and refrigerate the last 2 while still firm. This spreads your
+        avocado supply across nearly a full week from a single purchase.
       </div>
 
       <div class="verdict-box">
         <h3>The Bottom Line</h3>
-        <p><strong>Aldi wins on price</strong> — at $0.75 per avocado it's the cheapest option by a significant margin. If you have an Aldi nearby, make it your go-to for avocados.</p>
-        <p><strong>Costco and Target</strong> are strong alternatives at $0.85 and $0.89 respectively — worth it for convenience if you're already shopping there.</p>
-        <p><strong>Avoid Whole Foods</strong> for avocados unless you specifically need organic — at $2.79 each you're paying nearly four times the Aldi price for essentially the same fruit.</p>
-        <p>With avocado prices down 19% from last year, 2026 is actually a great time to enjoy them more often — just make sure you're buying from the right store.</p>
+        <p>
+          <strong>Aldi wins on price</strong> — at $0.75 per avocado it's the
+          cheapest option by a significant margin. If you have an Aldi nearby,
+          make it your go-to for avocados.
+        </p>
+        <p>
+          <strong>Costco and Target</strong> are strong alternatives at $0.85
+          and $0.89 respectively — worth it for convenience if you're already
+          shopping there.
+        </p>
+        <p>
+          <strong>Avoid Whole Foods</strong> for avocados unless you
+          specifically need organic — at $2.79 each you're paying nearly four
+          times the Aldi price for essentially the same fruit.
+        </p>
+        <p>
+          With avocado prices down 19% from last year, 2026 is actually a great
+          time to enjoy them more often — just make sure you're buying from the
+          right store.
+        </p>
       </div>
 
+      <div id="comments-root" data-post-slug="post_11"></div>
+      <script src="js/comments-widget.js"></script>
       <a href="blog.html" class="button">← Back to Blog</a>
     </main>
 
@@ -373,6 +554,5 @@
         <a href="contact.html">Contact</a>
       </p>
     </footer>
-
   </body>
 </html>

@@ -1,13 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Does Ibotta Really Save You Money? Honest Review - Smart Grocery Intelligence Platform</title>
+    <title>
+      Does Ibotta Really Save You Money? Honest Review - Smart Grocery
+      Intelligence Platform
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="An honest, no-fluff review of Ibotta — how much you can realistically save, what the catches are, and whether it's worth your time in 2025." />
+    <meta
+      name="description"
+      content="An honest, no-fluff review of Ibotta — how much you can realistically save, what the catches are, and whether it's worth your time in 2025."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <style>
       .review-card {
@@ -15,10 +24,19 @@
         border-radius: 10px;
         padding: 24px 28px;
         margin-bottom: 24px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
       }
-      .review-card h3 { color: #2e7d32; font-size: 1.1rem; margin-bottom: 10px; }
-      .review-card p { color: #444; font-size: 0.95rem; line-height: 1.75; margin-bottom: 10px; }
+      .review-card h3 {
+        color: #2e7d32;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+      }
+      .review-card p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        margin-bottom: 10px;
+      }
       .rating-row {
         display: flex;
         align-items: center;
@@ -26,22 +44,60 @@
         margin-bottom: 10px;
         font-size: 0.9rem;
       }
-      .rating-label { font-weight: 600; color: #333; min-width: 140px; }
-      .rating-bar-wrap { flex: 1; background: #eee; border-radius: 20px; height: 10px; }
-      .rating-bar { height: 10px; border-radius: 20px; background: #2e7d32; }
-      .rating-score { font-weight: 700; color: #2e7d32; min-width: 36px; }
+      .rating-label {
+        font-weight: 600;
+        color: #333;
+        min-width: 140px;
+      }
+      .rating-bar-wrap {
+        flex: 1;
+        background: #eee;
+        border-radius: 20px;
+        height: 10px;
+      }
+      .rating-bar {
+        height: 10px;
+        border-radius: 20px;
+        background: #2e7d32;
+      }
+      .rating-score {
+        font-weight: 700;
+        color: #2e7d32;
+        min-width: 36px;
+      }
       .pros-cons {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 16px;
         margin: 20px 0;
       }
-      .pros, .cons { padding: 16px 20px; border-radius: 8px; font-size: 0.9rem; }
-      .pros { background: #e8f5e9; }
-      .cons { background: #fce4ec; }
-      .pros h4 { color: #2e7d32; margin-bottom: 8px; }
-      .cons h4 { color: #c62828; margin-bottom: 8px; }
-      .pros ul, .cons ul { margin: 0; padding-left: 18px; line-height: 1.8; color: #444; }
+      .pros,
+      .cons {
+        padding: 16px 20px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+      .pros {
+        background: #e8f5e9;
+      }
+      .cons {
+        background: #fce4ec;
+      }
+      .pros h4 {
+        color: #2e7d32;
+        margin-bottom: 8px;
+      }
+      .cons h4 {
+        color: #c62828;
+        margin-bottom: 8px;
+      }
+      .pros ul,
+      .cons ul {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.8;
+        color: #444;
+      }
       .tip-box {
         background: #fff8e1;
         border-left: 4px solid #f9a825;
@@ -56,8 +112,16 @@
         margin: 28px 0;
         border-radius: 0 8px 8px 0;
       }
-      .verdict-box h3 { color: #2e7d32; margin-bottom: 10px; }
-      .verdict-box p { color: #444; font-size: 0.95rem; line-height: 1.7; margin-bottom: 8px; }
+      .verdict-box h3 {
+        color: #2e7d32;
+        margin-bottom: 10px;
+      }
+      .verdict-box p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
       .savings-example {
         background: #1b5e20;
         color: white;
@@ -65,23 +129,47 @@
         padding: 24px 28px;
         margin: 28px 0;
       }
-      .savings-example h3 { color: #a5d6a7; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
-      .savings-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #c8e6c9; }
-      .savings-row:last-child { border-bottom: none; font-weight: 700; color: white; }
-      .savings-row span:last-child { color: #a5d6a7; font-weight: 600; }
-      @media (max-width: 600px) { .pros-cons { grid-template-columns: 1fr; } }
-
-      
+      .savings-example h3 {
+        color: #a5d6a7;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+      }
+      .savings-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        color: #c8e6c9;
+      }
+      .savings-row:last-child {
+        border-bottom: none;
+        font-weight: 700;
+        color: white;
+      }
+      .savings-row span:last-child {
+        color: #a5d6a7;
+        font-weight: 600;
+      }
+      @media (max-width: 600px) {
+        .pros-cons {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* ── HEADER — matches homepage exactly ── */
-      body { font-family: "Source Sans 3", sans-serif; }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+      }
       header {
         background: #1b5e20;
         color: white;
         position: sticky;
         top: 0;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
       .header-inner {
         max-width: 1100px;
@@ -101,7 +189,9 @@
         color: white;
         margin: 0;
       }
-      header h1 span { color: #a5d6a7; }
+      header h1 span {
+        color: #a5d6a7;
+      }
       header nav a {
         color: #c8e6c9;
         text-decoration: none;
@@ -119,27 +209,44 @@
     </style>
   </head>
   <body>
-
     <div id="header"></div>
     <script>
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+      fetch("header.html")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("header").innerHTML = data));
     </script>
 
     <main>
-  <!-- FTC Affiliate Disclosure -->
-  <div style="background:#fff8e1;border-left:4px solid #f9a825;padding:12px 18px;margin-bottom:24px;border-radius:0 6px 6px 0;font-size:0.85rem;color:#555;">
-    <strong style="color:#e65100;">📢 Disclosure:</strong> This post contains affiliate links. If you click a link and make a purchase, Smart Grocery Intelligence Platform may earn a small commission at no extra cost to you. We only recommend products and services we genuinely believe provide value. <a href="privacy.html" style="color:#2e7d32;font-weight:600;">Learn more</a>.
-  </div>
+      <!-- FTC Affiliate Disclosure -->
+      <div
+        style="
+          background: #fff8e1;
+          border-left: 4px solid #f9a825;
+          padding: 12px 18px;
+          margin-bottom: 24px;
+          border-radius: 0 6px 6px 0;
+          font-size: 0.85rem;
+          color: #555;
+        "
+      >
+        <strong style="color: #e65100">📢 Disclosure:</strong> This post
+        contains affiliate links. If you click a link and make a purchase, Smart
+        Grocery Intelligence Platform may earn a small commission at no extra
+        cost to you. We only recommend products and services we genuinely
+        believe provide value.
+        <a href="privacy.html" style="color: #2e7d32; font-weight: 600"
+          >Learn more</a
+        >.
+      </div>
       <h2>Does Ibotta Really Save You Money? Honest Review</h2>
 
       <p>
-        Ibotta is one of the most talked-about grocery savings apps — and one of the most
-        misunderstood. Some people swear by it and claim it saves them hundreds of dollars
-        a year. Others try it, find it confusing, and delete it after a week. So what's
-        the truth? This is an honest, no-fluff review of exactly how Ibotta works, how
-        much you can realistically save, and whether it's worth your time in 2025.
+        Ibotta is one of the most talked-about grocery savings apps — and one of
+        the most misunderstood. Some people swear by it and claim it saves them
+        hundreds of dollars a year. Others try it, find it confusing, and delete
+        it after a week. So what's the truth? This is an honest, no-fluff review
+        of exactly how Ibotta works, how much you can realistically save, and
+        whether it's worth your time in 2025.
       </p>
 
       <!-- Ratings -->
@@ -147,99 +254,148 @@
         <h3>Ibotta at a Glance</h3>
         <div class="rating-row">
           <span class="rating-label">Ease of use</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:80%"></div></div>
+          <div class="rating-bar-wrap">
+            <div class="rating-bar" style="width: 80%"></div>
+          </div>
           <span class="rating-score">8/10</span>
         </div>
         <div class="rating-row">
           <span class="rating-label">Savings potential</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:90%"></div></div>
+          <div class="rating-bar-wrap">
+            <div class="rating-bar" style="width: 90%"></div>
+          </div>
           <span class="rating-score">9/10</span>
         </div>
         <div class="rating-row">
           <span class="rating-label">Store availability</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:95%"></div></div>
+          <div class="rating-bar-wrap">
+            <div class="rating-bar" style="width: 95%"></div>
+          </div>
           <span class="rating-score">9/10</span>
         </div>
         <div class="rating-row">
           <span class="rating-label">Payout speed</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:75%"></div></div>
+          <div class="rating-bar-wrap">
+            <div class="rating-bar" style="width: 75%"></div>
+          </div>
           <span class="rating-score">7/10</span>
         </div>
         <div class="rating-row">
           <span class="rating-label">Overall value</span>
-          <div class="rating-bar-wrap"><div class="rating-bar" style="width:88%"></div></div>
+          <div class="rating-bar-wrap">
+            <div class="rating-bar" style="width: 88%"></div>
+          </div>
           <span class="rating-score">9/10</span>
         </div>
       </div>
 
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">How Ibotta Actually Works</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        How Ibotta Actually Works
+      </h3>
       <p>
-        Ibotta is a cashback app that pays you real money for buying specific products at
-        grocery stores. Here's the basic flow: before you go shopping, you open the app
-        and browse available offers. You add the ones that match items on your list —
-        things like "$0.50 back on any yogurt" or "$1.00 back on Tide detergent." Then
-        you shop as normal, buy those items, and scan your receipt in the app afterward.
-        Within 24 hours the cash back appears in your Ibotta account.
+        Ibotta is a cashback app that pays you real money for buying specific
+        products at grocery stores. Here's the basic flow: before you go
+        shopping, you open the app and browse available offers. You add the ones
+        that match items on your list — things like "$0.50 back on any yogurt"
+        or "$1.00 back on Tide detergent." Then you shop as normal, buy those
+        items, and scan your receipt in the app afterward. Within 24 hours the
+        cash back appears in your Ibotta account.
       </p>
       <p>
-        Once your balance hits $20, you can cash out via PayPal, Venmo, or redeem for
-        gift cards. That's the entire process — no scissors, no printer, no special
-        checkout code needed.
+        Once your balance hits $20, you can cash out via PayPal, Venmo, or
+        redeem for gift cards. That's the entire process — no scissors, no
+        printer, no special checkout code needed.
       </p>
 
       <div class="tip-box">
-        <strong>💡 Key insight:</strong> Ibotta works on top of existing store sales and
-        loyalty discounts. If yogurt is on sale for $1 off AND you have a $0.50 Ibotta
-        offer, you get both discounts. That's why regular Ibotta users save significantly
-        more than the app's offers suggest on the surface.
+        <strong>💡 Key insight:</strong> Ibotta works on top of existing store
+        sales and loyalty discounts. If yogurt is on sale for $1 off AND you
+        have a $0.50 Ibotta offer, you get both discounts. That's why regular
+        Ibotta users save significantly more than the app's offers suggest on
+        the surface.
       </div>
 
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">How Much Can You Realistically Save?</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        How Much Can You Realistically Save?
+      </h3>
       <p>
-        Ibotta reports that active users save an average of $240 per year. Based on real
-        user reports and our own testing, here's a more detailed breakdown by usage level:
+        Ibotta reports that active users save an average of $240 per year. Based
+        on real user reports and our own testing, here's a more detailed
+        breakdown by usage level:
       </p>
 
       <div class="savings-example">
         <h3>Estimated Annual Savings by Usage Level</h3>
-        <div class="savings-row"><span>Casual user (clip 2-3 offers/week)</span><span>$80–120/year</span></div>
-        <div class="savings-row"><span>Regular user (clip 5-8 offers/week)</span><span>$180–240/year</span></div>
-        <div class="savings-row"><span>Power user (clip 10+ offers, stack deals)</span><span>$300–500/year</span></div>
-        <div class="savings-row"><span>Welcome bonus (new users)</span><span>$5–20 free</span></div>
-        <div class="savings-row"><span>Realistic average for most users</span><span>$150–250/year</span></div>
+        <div class="savings-row">
+          <span>Casual user (clip 2-3 offers/week)</span
+          ><span>$80–120/year</span>
+        </div>
+        <div class="savings-row">
+          <span>Regular user (clip 5-8 offers/week)</span
+          ><span>$180–240/year</span>
+        </div>
+        <div class="savings-row">
+          <span>Power user (clip 10+ offers, stack deals)</span
+          ><span>$300–500/year</span>
+        </div>
+        <div class="savings-row">
+          <span>Welcome bonus (new users)</span><span>$5–20 free</span>
+        </div>
+        <div class="savings-row">
+          <span>Realistic average for most users</span
+          ><span>$150–250/year</span>
+        </div>
       </div>
 
-      <h3 style="font-family:'Playfair Display',serif; margin: 28px 0 12px;">What the Catches Are</h3>
+      <h3
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          margin: 28px 0 12px;
+        "
+      >
+        What the Catches Are
+      </h3>
 
       <div class="review-card">
         <h3>Catch #1 — You Must Clip Offers BEFORE Shopping</h3>
         <p>
-          This is where most people go wrong. Ibotta offers don't apply retroactively —
-          you have to add them to your list before you buy the item. If you forget to
-          check the app before your trip, you miss out. The fix is simple: make checking
-          Ibotta part of your pre-shopping routine, right after you write your list.
+          This is where most people go wrong. Ibotta offers don't apply
+          retroactively — you have to add them to your list before you buy the
+          item. If you forget to check the app before your trip, you miss out.
+          The fix is simple: make checking Ibotta part of your pre-shopping
+          routine, right after you write your list.
         </p>
       </div>
 
       <div class="review-card">
         <h3>Catch #2 — Many Offers Are Brand-Specific</h3>
         <p>
-          A lot of Ibotta offers are for specific brands, not generic products. You'll
-          see "$1.00 back on Chobani Greek Yogurt" but not "$1.00 back on any Greek
-          yogurt." This means you sometimes pay more for a name brand than you would
-          for the store brand, even with the cash back. Always do the math — if the
-          store brand is $2.50 and the name brand is $4.00 with $1.00 back, the store
-          brand is still cheaper.
+          A lot of Ibotta offers are for specific brands, not generic products.
+          You'll see "$1.00 back on Chobani Greek Yogurt" but not "$1.00 back on
+          any Greek yogurt." This means you sometimes pay more for a name brand
+          than you would for the store brand, even with the cash back. Always do
+          the math — if the store brand is $2.50 and the name brand is $4.00
+          with $1.00 back, the store brand is still cheaper.
         </p>
       </div>
 
       <div class="review-card">
         <h3>Catch #3 — $20 Minimum to Cash Out</h3>
         <p>
-          You need at least $20 in your account to withdraw. For casual users this might
-          take 2-3 months to reach. It's not a dealbreaker but worth knowing — your
-          money sits in the app until you hit the threshold. Power users hit it monthly
-          with no issue.
+          You need at least $20 in your account to withdraw. For casual users
+          this might take 2-3 months to reach. It's not a dealbreaker but worth
+          knowing — your money sits in the app until you hit the threshold.
+          Power users hit it monthly with no issue.
         </p>
       </div>
 
@@ -269,11 +425,27 @@
 
       <div class="verdict-box">
         <h3>The Verdict — Is Ibotta Worth It?</h3>
-        <p><strong>Yes, unequivocally</strong> — as long as you spend 3-5 minutes clipping offers before each shopping trip. Ibotta is the highest-paying grocery cashback app available and it costs nothing to use.</p>
-        <p>The people who say it doesn't work are usually the ones who forget to clip offers beforehand or who don't shop at stores Ibotta supports. For anyone who grocery shops regularly at mainstream stores, it's one of the easiest $150-250/year you'll ever make.</p>
-        <p><strong>Best strategy:</strong> Check Ibotta right after writing your shopping list. Clip anything that matches. Take 30 seconds to scan your receipt when you get home. That's it.</p>
+        <p>
+          <strong>Yes, unequivocally</strong> — as long as you spend 3-5 minutes
+          clipping offers before each shopping trip. Ibotta is the
+          highest-paying grocery cashback app available and it costs nothing to
+          use.
+        </p>
+        <p>
+          The people who say it doesn't work are usually the ones who forget to
+          clip offers beforehand or who don't shop at stores Ibotta supports.
+          For anyone who grocery shops regularly at mainstream stores, it's one
+          of the easiest $150-250/year you'll ever make.
+        </p>
+        <p>
+          <strong>Best strategy:</strong> Check Ibotta right after writing your
+          shopping list. Clip anything that matches. Take 30 seconds to scan
+          your receipt when you get home. That's it.
+        </p>
       </div>
 
+      <div id="comments-root" data-post-slug="post_7"></div>
+      <script src="js/comments-widget.js"></script>
       <a href="blog.html" class="button">← Back to Blog</a>
     </main>
 
@@ -284,6 +456,5 @@
         <a href="contact.html">Contact</a>
       </p>
     </footer>
-
   </body>
 </html>
