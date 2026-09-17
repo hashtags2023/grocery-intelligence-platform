@@ -2,7 +2,7 @@
  * comments-widget.js
  */
 (function () {
-  const API_BASE = "/api/comments";
+  const API_BASE = "https://smart-grocery-savings.vercel.app/api/comments";
 
   const STYLE = `
     .cw-wrap {

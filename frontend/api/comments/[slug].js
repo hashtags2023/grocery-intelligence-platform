@@ -1,6 +1,6 @@
-// api/comments/[slug].js
-// Public blog comments — same Supabase pattern as api/community-prices.js,
-// but no login required (anon key + RLS "public insert" policy).
+// api/comments/[slug].js — deployed via the frontend Vercel project.
+// Public blog comments, same Supabase pattern as community-prices.js,
+// but uses only the anon key — no login required.
 
 import { createClient } from "@supabase/supabase-js";
 
@@ -14,7 +14,7 @@ const VALID_SLUGS = new Set(
 );
 
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("https://www.smartgrocerysavings.com");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") return res.status(200).end();
@@ -24,7 +24,6 @@ export default async function handler(req, res) {
     return res.status(404).json({ error: "Unknown post" });
   }
 
-  // ── GET: fetch approved comments for this post ──────────────
   if (req.method === "GET") {
     const { data, error } = await supabase
       .from("comments")
@@ -41,18 +40,31 @@ export default async function handler(req, res) {
     return res.status(200).json({ comments: data, count: data.length });
   }
 
-  // ── POST: submit a new comment ───────────────────────────────
   if (req.method === "POST") {
     const { author_name, body, website } = req.body || {};
 
-    // Honeypot — bots fill this in, real users never see it
     if (website) return res.status(201).json({ ok: true });
 
     if (!author_name || !author_name.trim() || author_name.length > 80) {
       return res.status(400).json({ error: "Name must be 1-80 characters" });
     }
     if (!body || !body.trim() || body.length > 2000) {
-      return res.status(400).json({ error: "Comment must be 1-2000 characters" });
+      return res
+        .status(400)
+        .json({ error: "Comment must be 1-2000 characters" });
+    }
+
+    const today = new Date().toISOString().slice(0, 10);
+    const { count } = await supabase
+      .from("comments")
+      .select("id", { count: "exact", head: true })
+      .eq("post_slug", slug)
+      .gte("created_at", `${today}T00:00:00Z`);
+
+    if (count >= 30) {
+      return res.status(429).json({
+        error: "Too many comments on this post today. Try again tomorrow.",
+      });
     }
 
     const { data, error } = await supabase

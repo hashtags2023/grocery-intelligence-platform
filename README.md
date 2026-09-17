@@ -2,10 +2,9 @@
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-smartgrocerysavings.com-2e7d32?style=for-the-badge)](https://www.smartgrocerysavings.com)
 [![Price Tool](https://img.shields.io/badge/Price%20Tool-Vercel-black?style=for-the-badge&logo=vercel)](https://smart-grocery-savings.vercel.app)
-[![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions)](https://github.com/hashtags2023/smart-grocery-savings/actions)
 [![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)]()
 
-> A full-stack grocery cost optimization platform — built from a static content site into a real application with a PostgreSQL database, REST API, user authentication, and a real-time price comparison engine.
+> A full-stack grocery cost optimization platform — built from a static content site into a real application with a PostgreSQL database, a serverless API, Supabase authentication, and a real-time price comparison engine.
 
 ---
 
@@ -17,9 +16,9 @@ Smart Grocery Intelligence Platform helps users **find the cheapest store combin
 
 - 🔍 Real-time grocery price comparison across 8 stores
 - 📋 Grocery list builder with cost optimization
-- 👤 User accounts with personalized preferences
-- 📉 Price history tracking and drop alerts
-- 💸 Spending tracker with store-by-store breakdown
+- 🙋 Crowdsourced pricing for stores without an official API (Safeway, Trader Joe's, Costco, etc.)
+- 💬 Comments on all 12 blog posts, backed by Supabase
+- 👤 User accounts via Supabase Auth
 - 📰 12 published SEO-optimized editorial posts driving organic traffic
 
 ---
@@ -54,30 +53,29 @@ _Real-time price search powered by Kroger API_
 ![Grocery List](screenshots/grocery_list_screenshot.png)
 _Grocery list builder with progress tracking_
 
+---
+
 ## 🏗️ Architecture
 
-```
 ┌─────────────────────────────────────────────────────────┐
-│                     Frontend                            │
-│          Static HTML/CSS/JS → React (in progress)       │
-│          Hosted on Vercel + custom domain (Namecheap)   │
+│ Static Blog (GitHub Pages) │
+│ smartgrocerysavings.com — 12 posts + comments │
 └────────────────────────┬────────────────────────────────┘
-                         │ REST API calls
+│ fetch() to Vercel functions
 ┌────────────────────────▼────────────────────────────────┐
-│                   Backend API                           │
-│              Node.js + Express                          │
-│              Vercel Serverless Functions                │
-│                                                         │
-│  /api/auth    /api/items    /api/stores    /api/lists   │
+│ React App + Serverless API (Vercel) │
+│ frontend/ — Vite + React │
+│ │
+│ frontend/api/kroger-search.js frontend/api/kroger-token.js │
+│ frontend/api/kroger-locations.js frontend/api/walmart-search.js│
+│ frontend/api/community-prices.js frontend/api/comments/[slug].js│
 └────────────────────────┬────────────────────────────────┘
-                         │ PostgreSQL
+│ @supabase/supabase-js
 ┌────────────────────────▼────────────────────────────────┐
-│                    Database                             │
-│              Supabase (PostgreSQL)                      │
-│   users · items · prices · price_history · lists        │
-│   preferences · alerts · spending_history               │
+│ Supabase (PostgreSQL + Auth) │
+│ stores · items · prices · grocery_lists · list_items │
+│ community_prices · comments · auth.users │
 └─────────────────────────────────────────────────────────┘
-```
 
 ---
 
@@ -95,131 +93,108 @@ _Grocery list builder with progress tracking_
 
 ### Backend
 
-| Technology         | Purpose                  |
-| ------------------ | ------------------------ |
-| Node.js + Express  | REST API server          |
-| JWT (jsonwebtoken) | Stateless authentication |
-| bcryptjs           | Password hashing         |
-| express-validator  | Input validation         |
-| Helmet             | HTTP security headers    |
+| Technology                  | Purpose                                           |
+| --------------------------- | ------------------------------------------------- |
+| Vercel Serverless Functions | API endpoints (`frontend/api/*.js`)               |
+| @supabase/supabase-js       | Database queries + auth from serverless functions |
+| Supabase Auth               | User accounts, session handling (no custom JWT)   |
+| Row Level Security (RLS)    | Per-table access control, enforced in Postgres    |
 
 ### Infrastructure
 
-| Technology            | Purpose                                       |
-| --------------------- | --------------------------------------------- |
-| Vercel                | Hosting + serverless functions + CI/CD        |
-| Supabase (PostgreSQL) | Database + auth + row-level security          |
-| GitHub Actions        | Automated build and deployment pipeline       |
-| Namecheap             | Custom domain + DNS configuration             |
-| Web3Forms             | Contact form + newsletter (no backend needed) |
-| Resend _(planned)_    | Transactional email for price alerts          |
-| Mixpanel _(planned)_  | User behavior analytics                       |
+| Technology            | Purpose                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| GitHub Pages          | Hosts the static blog/marketing site (`smartgrocerysavings.com`) |
+| Vercel                | Hosts the `frontend/` React app + its serverless API functions   |
+| Supabase (PostgreSQL) | Database + auth + row-level security, shared by both projects    |
+| Namecheap             | Custom domain + DNS configuration                                |
 
 ---
 
 ## 📁 Project Structure
 
-```
 grocery-intelligence-platform/
 │
 ├── 📄 Static Site (live at smartgrocerysavings.com)
-│   ├── index.html              # Magazine-style homepage
-│   ├── blog.html               # Blog listing (12 posts)
-│   ├── about.html / contact.html / privacy.html
-│   ├── header.html             # Shared component (JS fetch include)
-│   ├── post_1.html → post_12.html
-│   ├── robots.txt + sitemap.xml
-│   └── css/ + images/
+│ ├── index.html # Magazine-style homepage
+│ ├── blog.html # Blog listing (12 posts)
+│ ├── about.html / contact.html / privacy.html
+│ ├── header.html # Shared component (JS fetch include)
+│ ├── post_1.html → post_12.html
+│ ├── robots.txt + sitemap.xml
+│ └── css/ + images/
 │
-└── 🔧 Backend API (Node.js + Express)
-    ├── server.js               # Express app entry point
-    ├── .env.example            # Environment variable template
-    ├── db/
-    │   ├── index.js            # PostgreSQL connection pool
-    │   └── schema.sql          # Full DB schema + seed data
-    ├── middleware/
-    │   └── auth.js             # JWT verification middleware
-    └── routes/
-        ├── auth.js             # POST /signup, POST /login, GET /me
-        ├── items.js            # GET /items, GET /items/:id, price queries
-        ├── stores.js           # GET /stores, POST /stores/compare
-        ├── lists.js            # CRUD + optimization engine (in progress)
-        ├── alerts.js           # Price drop alerts (in progress)
-        └── spending.js         # Spending tracker (in progress)
-```
+└── ⚙️ frontend/ (React + Vite, separate Vercel project)
+├── src/ # React app source
+├── api/ # Vercel serverless functions
+│ ├── kroger-search.js
+│ ├── kroger-token.js
+│ ├── kroger-locations.js
+│ ├── walmart-search.js
+│ ├── community-prices.js # Crowdsourced price submissions
+│ └── comments/
+│ └── [slug].js # Blog comment API (GET/POST)
+└── vite.config.js
 
 ---
 
 ## 🗄️ Database Schema
 
-10 tables covering the full data model:
+7 tables, plus Supabase's built-in `auth.users` for authentication:
 
 ```sql
-users              -- accounts, auth, profile
-stores             -- 8 grocery chains with location data
-categories         -- 10 product categories
-items              -- grocery items with UPC + unit
-prices             -- current price per item per store (UNIQUE constraint)
-price_history      -- time-series price tracking
-grocery_lists      -- user-owned lists with estimated totals
-grocery_list_items -- items in each list with quantity + checked state
-user_preferences   -- preferred stores, dietary flags, weekly budget
-price_alerts       -- target price triggers per item per user
-spending_history   -- logged shopping trips with totals
+stores             -- grocery chains with location data
+items              -- grocery items with category + unit
+prices             -- current price per item per store
+grocery_lists      -- user-owned lists (references auth.users)
+list_items         -- items in each list, with quantity + checked state
+community_prices   -- crowdsourced prices for stores with no official API
+                   -- (Safeway, Trader Joe's, Costco, Sprouts, etc.)
+comments           -- blog post comments (post_slug, author_name, body, status)
 ```
+
+All tables use Row Level Security. Most allow public read; writes generally
+require an authenticated Supabase session, except `comments`, which allows
+public inserts since blog comments don't require an account.
 
 ---
 
 ## 🔌 API Endpoints
 
-### Authentication
+All endpoints are Vercel serverless functions in `frontend/api/`.
 
-```
-POST   /api/auth/signup     Create account, return JWT
-POST   /api/auth/login      Verify credentials, return JWT
-GET    /api/auth/me         Get current user profile (protected)
-```
+### Pricing
 
-### Items
+GET /api/kroger-search Search live Kroger prices
+GET /api/kroger-locations Find nearby Kroger store locations
+POST /api/kroger-token Refresh Kroger API OAuth token
+GET /api/walmart-search Search live Walmart prices
 
-```
-GET    /api/items           All items with cheapest price per store
-                            Supports: ?category=produce&search=apple&limit=50
-GET    /api/items/:id       Single item with all store prices + 30-day history
-GET    /api/items/categories/all  All categories with item counts
-```
+### Community Prices
 
-### Stores
+GET /api/community-prices?item=apples&store=safeway&zip=95814
+Returns recent crowdsourced prices for stores with no official API
 
-```
-GET    /api/stores          All stores with price counts
-GET    /api/stores/:id/prices     All prices at a specific store
-POST   /api/stores/compare  KEY ENDPOINT: Send item_ids[], get back
-                            each store's total sorted cheapest-first
-                            + cheapest store per individual item
-```
+POST /api/community-prices
+body: { item_name, store_name, price, unit, zip_code, user_id? }
+Submits a new price (requires an authenticated Supabase session)
 
-### Lists _(in progress)_
+### Blog Comments
 
-```
-GET    /api/lists            User's grocery lists
-POST   /api/lists            Create list
-GET    /api/lists/:id        List with items + live prices
-POST   /api/lists/:id/items  Add item to list
-PUT    /api/lists/:id/items/:itemId  Update quantity/checked state
-GET    /api/lists/:id/optimize  CORE FEATURE: cheapest store combo
-```
+GET /api/comments/:slug Approved comments for a post (post_1 – post_12)
+POST /api/comments/:slug Submit a new comment — no login required
+body: { author_name, body }
 
 ---
 
 ## ✨ Engineering Highlights
 
-- **Price comparison engine** — `POST /api/stores/compare` aggregates prices across 8 stores, calculates per-store totals, identifies cheapest store per item, and returns sorted recommendations in a single query
-- **JWT authentication** — stateless auth with bcrypt password hashing, 7-day token expiry, protected route middleware
+- **Community pricing** — `community_prices` lets users submit prices for stores with no official API, with per-day submission limits and Row Level Security scoping writes to authenticated users
+- **Blog comments** — a dependency-free, self-contained widget (`js/comments-widget.js`) posts to a Vercel serverless function on a separate project (since the blog itself runs on GitHub Pages, which can't run server code), secured with CORS + a public-insert RLS policy
+- **Supabase Auth + RLS** — session-based authentication with per-table Row Level Security policies instead of a custom JWT layer
 - **Shared header component** — single `header.html` file loaded via `fetch()` across all pages — update once, reflects everywhere
-- **CI/CD pipeline** — auto-deploys to Vercel on every push to `main` via GitHub Actions
+- **CI/CD pipeline** — GitHub Pages auto-deploys the static blog on every push to `main`; Vercel auto-deploys `frontend/` independently — no custom GitHub Actions workflow needed for either
 - **SEO architecture** — `robots.txt`, `sitemap.xml` with all 12 posts, meta descriptions, structured content
-- **Security** — Content Security Policy headers, X-XSS-Protection, X-Content-Type-Options, HTTPS enforced, secrets in environment variables only
 - **FTC compliant** — affiliate disclosure on all monetized content per FTC guidelines
 
 ---
@@ -228,24 +203,22 @@ GET    /api/lists/:id/optimize  CORE FEATURE: cheapest store combo
 
 ```bash
 # Clone
-git clone https://github.com/hashtags2023/smart-grocery-savings.git
-cd smart-grocery-savings
+git clone https://github.com/hashtags2023/grocery-intelligence-platform.git
+cd grocery-intelligence-platform
 
-# Backend setup
-cd backend
-cp .env.example .env
-# Fill in DATABASE_URL, JWT_SECRET, SUPABASE keys
+# Static blog — just open the HTML files directly, or serve locally:
+npx serve .
 
+# React app + serverless API
+cd frontend
 npm install
-npm run dev        # API runs at http://localhost:3001
+# Add VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY, KROGER_CLIENT_ID,
+# KROGER_CLIENT_SECRET, VITE_MIXPANEL_TOKEN to a local .env
 
-# Run schema in Supabase SQL Editor
-# Paste contents of backend/db/schema.sql
+vercel dev          # runs the React app + api/ functions together
 
-# Test
-curl http://localhost:3001/health
-curl http://localhost:3001/api/stores
-curl http://localhost:3001/api/items?category=produce
+# Test an endpoint
+curl http://localhost:3000/api/comments/post_1
 ```
 
 ---
@@ -282,10 +255,9 @@ curl http://localhost:3001/api/items?category=produce
 
 - HTTPS enforced (GitHub Pages + Vercel SSL)
 - Content Security Policy meta tags
-- JWT with bcrypt — no plaintext passwords stored
 - Environment variables for all secrets — never committed to repo
-- Input validation on all API endpoints via express-validator
-- Helmet.js HTTP security headers on API
+- Manual input validation in each serverless function (type checks, length limits, format checks)
+- Row Level Security enforced in Postgres on every table
 
 ---
 
@@ -297,4 +269,4 @@ curl http://localhost:3001/api/items?category=produce
 
 ---
 
-_Built by Lori — software developer. Grew from a static HTML/CSS site to a full-stack platform with PostgreSQL, REST API, JWT auth, and a real-time price comparison engine._
+_Built by Lori — software developer. Grew from a static HTML/CSS site to a full-stack platform with PostgreSQL, Supabase Auth, and a real-time price comparison engine._
