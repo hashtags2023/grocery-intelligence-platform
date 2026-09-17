@@ -7,6 +7,7 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## April 17, 2026 — Project Kickoff & Static Site Setup
 
 **What I did:**
+
 - Set up GitHub repo: `hashtags2023/smart-grocery-savings`
 - Built static HTML/CSS/JS site with 12 blog posts
 - Configured custom domain `smartgrocerysavings.com` via Namecheap
@@ -16,11 +17,13 @@ A running record of engineering decisions, challenges, and lessons learned build
 - Configured `robots.txt` and `sitemap.xml` for SEO
 
 **Decisions made:**
+
 - Chose static HTML over WordPress for simplicity, speed, and zero hosting cost
 - Used Web3Forms for contact/newsletter to avoid managing a backend
 - Added FTC-compliant affiliate disclosure on all monetized content
 
 **Monetization set up:**
+
 - Amazon Associates approved (Store ID: smartgrocerys-20)
 - Applied to Google AdSense, Thrive Market, Instacart, Walmart, HelloFresh affiliates
 
@@ -29,6 +32,7 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## April 27, 2026 — Sprint 1: Full-Stack Foundation
 
 **What I did:**
+
 - Created React frontend with Vite inside `/frontend` folder
 - Set up Supabase project for PostgreSQL database + auth
 - Connected React app to Supabase using `@supabase/supabase-js`
@@ -38,12 +42,14 @@ A running record of engineering decisions, challenges, and lessons learned build
 - Built first working page — fetching and displaying items from database
 
 **Technical decisions:**
+
 - Chose Supabase over building custom auth — saves weeks of work, built-in JWT handling
 - Chose Vite over Create React App — faster builds, better developer experience
 - Used Vercel serverless functions instead of separate Express server — simpler architecture, same JS ecosystem
 - Kept static HTML site at root alongside React app in `/frontend` (monorepo approach)
 
 **Challenges:**
+
 - `npm warn EBADENGINE` warnings on install — resolved by confirming they were harmless ESLint version mismatches, not blocking errors
 - Dashboard.jsx parse error on first deploy — caused by smart quotes being substituted during copy/paste; fixed by rewriting the file
 
@@ -52,6 +58,7 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## April 27, 2026 — Sprint 2: User Authentication
 
 **What I did:**
+
 - Built Login, Signup, and Dashboard pages in React
 - Implemented Supabase Auth (email/password)
 - Added protected routes — unauthenticated users redirected to login
@@ -60,11 +67,13 @@ A running record of engineering decisions, challenges, and lessons learned build
 - Installed and configured `react-router-dom`
 
 **Technical decisions:**
+
 - Used Supabase Auth instead of custom JWT — eliminates password hashing, token management, and security risks
 - Disabled email confirmation during development for faster testing iteration
 - Used `onAuthStateChange` listener to keep auth state in sync across the app
 
 **Challenges:**
+
 - Duplicate "My Lists" link appeared in navbar — caused by adding the link twice during iterative edits; fixed by auditing Navbar.jsx with grep
 - Pages folder not created by earlier touch command — recreated manually with mkdir -p
 
@@ -73,6 +82,7 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## May 2026 — Sprint 3: Kroger API Integration & Price Search
 
 **What I did:**
+
 - Registered for Kroger Developer API (certification environment)
 - Built 3 Vercel serverless functions:
   - `api/kroger-token.js` — OAuth2 client credentials flow
@@ -84,16 +94,19 @@ A running record of engineering decisions, challenges, and lessons learned build
 - Added Vite proxy config so local dev routes `/api` calls to `vercel dev`
 
 **Technical decisions:**
+
 - Used Vercel serverless functions as API proxy — keeps Kroger credentials server-side, never exposed to browser
 - Used certification environment (`api-ce.kroger.com`) for development — avoids hitting production rate limits
 - Filtered search results to only show products with prices — Kroger API returns products without prices when no location is specified
 
 **Challenges:**
+
 - Search returned "Unexpected token '<'" error in production — caused by Vite serving HTML 404 page instead of routing to API; fixed by adding proxy config to `vite.config.js`
 - `kroger-locations.js` didn't get created by touch command — file was missing silently; caught by running `ls api/`
 - Kroger API returns no prices without a `locationId` — had to implement location lookup first before prices would appear
 
 **Lesson learned:**
+
 - Always verify files were actually created after touch commands — the shell doesn't error if touch succeeds on a file that already exists or fails silently
 
 ---
@@ -101,6 +114,7 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## May 2026 — Security Hardening
 
 **What I did:**
+
 - Ran vulnerability scan on `smartgrocerysavings.com` using WebSecMonitor
 - Found 2 HIGH, 3 MEDIUM, 6 INFO severity issues
 - Added security headers to `vercel.json`:
@@ -115,11 +129,13 @@ A running record of engineering decisions, challenges, and lessons learned build
   - Final fix: `ALTER FUNCTION public.rls_auto_enable() SECURITY INVOKER` — cleaner solution
 
 **What I ignored (intentionally):**
+
 - `sitemap.xml` and `robots.txt` flagged as "exposed" — these are intentionally public for SEO
 - `X-XSS-Protection` header — deprecated, modern browsers ignore it
 - `Server: GitHub.com` header — can't control GitHub Pages headers; will resolve after Vercel migration
 
 **Lesson learned:**
+
 - Security scanners flag everything including intentional configurations — always evaluate findings in context rather than blindly fixing all of them
 
 ---
@@ -127,10 +143,12 @@ A running record of engineering decisions, challenges, and lessons learned build
 ## May 2026 — Credential Security Incident & Recovery
 
 **What happened:**
+
 - Accidentally shared Supabase anon key and Kroger client secret in chat during debugging
 - Immediately rotated all exposed credentials
 
 **Response steps taken:**
+
 1. Generated new Kroger client secret via developer.kroger.com
 2. Created new Supabase publishable API key
 3. Attempted to rotate Supabase legacy anon key (JWT) — discovered no direct rotation option in new Supabase UI
@@ -140,8 +158,9 @@ A running record of engineering decisions, challenges, and lessons learned build
 7. Added `.env.local` to `.gitignore`
 
 **Lesson learned:**
+
 - Never paste API keys or secrets into any chat interface, even for debugging
-- Use `cat .env` output only to verify key *names* are present, never paste the values
+- Use `cat .env` output only to verify key _names_ are present, never paste the values
 - Sensitive Vercel environment variables can't be pulled to local `.env` via `vercel env pull` — must be added to `.env.local` manually
 - Always rotate credentials immediately when exposed — don't wait
 
@@ -153,18 +172,21 @@ A running record of engineering decisions, challenges, and lessons learned build
 Deploying the React app to Vercel was more complex than expected due to the monorepo structure (static HTML site at root + React app in `/frontend`).
 
 **Problems encountered:**
+
 1. Vercel kept serving root `index.html` (static site) instead of React app
 2. Build was completing in 3-4 seconds — too fast, not actually running Vite
 3. `vercel.json` in root wasn't being picked up when Root Directory was set to `frontend`
 4. API functions in `/api` weren't accessible after setting root to `frontend`
 
 **Solutions tried:**
+
 - Setting Root Directory to `frontend` in Vercel dashboard ✅
 - Adding `buildCommand` and `outputDirectory` to `vercel.json` ✅
 - Moving `vercel.json` into `frontend/` folder (required when Root Directory is set) ✅
 - Moving `api/` folder into `frontend/api/` so serverless functions are inside root directory ✅
 
 **Final working structure:**
+
 ```
 smart-grocery-savings/
 ├── index.html              ← static site (root)
@@ -183,6 +205,7 @@ When using a subdirectory as Vercel's Root Directory, `vercel.json` and all serv
 ## May 2026 — Database RLS & Permissions Fixes
 
 **Issues encountered after deployment:**
+
 - "permission denied for table items" when adding items from price search
 - "new row violates row-level security policy" on insert
 
@@ -190,6 +213,7 @@ When using a subdirectory as Vercel's Root Directory, `vercel.json` and all serv
 RLS policies were created but GRANT statements were missing — PostgreSQL requires both RLS policies AND explicit GRANT permissions.
 
 **Fix applied:**
+
 ```sql
 GRANT SELECT, INSERT, UPDATE ON public.items TO authenticated;
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.list_items TO authenticated;
@@ -200,15 +224,17 @@ GRANT SELECT ON public.prices TO authenticated;
 
 **Lesson learned:**
 In PostgreSQL with RLS enabled, you need two layers of access control:
+
 1. RLS policies — define row-level rules (which rows a user can see/edit)
 2. GRANT statements — define table-level permissions (which operations are allowed at all)
-Both are required. RLS policies alone are not enough.
+   Both are required. RLS policies alone are not enough.
 
 ---
 
 ## May 2026 — Homepage Updates & App Integration
 
 **What I did:**
+
 - Added "🛒 Price Tool" link to static site navbar pointing to Vercel app
 - Added "Compare Prices Free" CTA button to hero section
 - Added app banner below hero highlighting the new price comparison tool
@@ -226,6 +252,7 @@ Bridge the gap between the static content site and the React app so visitors can
 ## September 9, 2026 — Site Audit & Cleanup
 
 **What I did:**
+
 - Removed 8 dead affiliate CTA buttons pointing to unfilled `YOUR_..._AFFILIATE_LINK` placeholders (Instacart, Walmart+, HelloFresh, Thrive Market) across `post_1.html`, `post_2.html`, `post_3.html`, `post_10.html` — those programs are still pending/in review, so the buttons were removed rather than left broken or faked
 - Standardized branding to "Smart Grocery Intelligence Platform" across `index.html`, `blog.html`, `disclosure.html`, `css/style.css`, and the React `Navbar.jsx` — previously the homepage/blog said "Smart Grocery Savings" while other pages said "Smart Grocery Intelligence Platform"
 - Fixed `header.html` (the shared header component fetched via JS into `about.html`, `contact.html`, and `post_1.html`/`post_4.html`–`post_12.html`) — it was missing the logo and 🛒 Price Tool link that the homepage header has, even though the per-page CSS comment said it should "match the homepage exactly"
@@ -233,10 +260,12 @@ Bridge the gap between the static content site and the React app so visitors can
 - Replaced the non-functional blog category filter links (`href="#"`, no filtering logic behind them) with plain non-clickable labels so they don't look like broken links
 
 **Decisions made:**
+
 - Chose to remove pending affiliate CTAs entirely rather than link to non-affiliate URLs, since the monetization tracker showed Instacart/Walmart/HelloFresh/Thrive Market are still pending or have open issues — link back in once each program is approved
 - Left `post_2.html`'s "2025" title as-is — verified it correctly reflects the post's actual publish date (Dec 2025), not a bug
 
 **Still open:**
+
 - Re-add affiliate CTA buttons once Instacart, Walmart, HelloFresh, and Thrive Market are approved
 - Wire up Ibotta (active affiliate program, currently unused anywhere on the site)
 - Decide whether to build real category filtering on the blog or leave labels static
@@ -246,6 +275,7 @@ Bridge the gap between the static content site and the React app so visitors can
 ## Roadmap — What's Next
 
 ### Phase 4 — Store Expansion & Intelligence
+
 - [ ] Walmart Open API integration for expanded store coverage
 - [ ] Zip code based store search (user enters their zip, finds nearby stores)
 - [ ] Store price comparison page (side-by-side price breakdown)
@@ -253,6 +283,7 @@ Bridge the gap between the static content site and the React app so visitors can
 - [ ] Price history tracking in database
 
 ### Phase 5 — User Engagement
+
 - [ ] Price drop email alerts via Resend API
 - [ ] Spending tracker (log shopping trips, track budget over time)
 - [ ] User preferences (preferred stores, dietary restrictions, weekly budget)
@@ -260,6 +291,7 @@ Bridge the gap between the static content site and the React app so visitors can
 - [ ] Improved Dashboard with real stats and recent activity
 
 ### Phase 6 — Growth & Monetization
+
 - [ ] Crowdsourced price submissions for stores without APIs (Safeway, Raley's, Nugget)
 - [ ] Affiliate deep links in price search results
 - [ ] SEO optimization for React app pages
@@ -270,4 +302,30 @@ Bridge the gap between the static content site and the React app so visitors can
 
 ---
 
-*This log is maintained by Lori — documenting the journey of turning a static blog into a real product.*
+_This log is maintained by Lori — documenting the journey of turning a static blog into a real product._
+
+## September 16, 2026 — Blog Comments Feature
+
+**What I did:**
+
+- Added a `comments` table in Supabase (post_slug, author_name, body, status, created_at) with Row Level Security: public read for approved comments, public insert for new ones
+- Built `/api/comments/[slug]` as a Vercel serverless function inside `frontend/api/` — GET to fetch a post's comments, POST to submit a new one
+- Built a self-contained `js/comments-widget.js` — vanilla JS, no build step, styled to match the site's green/Playfair Display look, with a live comment count, character limit, and honeypot spam field
+- Wired the widget into all 12 post pages (`post_1.html`–`post_12.html`) via a `data-post-slug` attribute so each post has its own comment thread
+
+**Bug found & fixed:**
+
+- Initially placed the comments API at the repo root (`api/comments/[slug].js`), assuming the static site was Vercel-hosted per the README's Infrastructure table. It 404'd in production — GitHub Pages (the site's actual host, confirmed in the April 17 entry above) only serves static files and can't run serverless functions.
+- Moved the function into `frontend/api/`, the project that's actually deployed to Vercel, and pointed the widget at that project's domain with CORS restricted to `smartgrocerysavings.com`.
+
+**Decisions made:**
+
+- Used the Supabase anon key (not the service role key) since comments don't require login — same tradeoff as `community-prices.js`, but without the `auth.role() = 'authenticated'` insert check
+- Comments default to `status = 'approved'` so they appear immediately; moderation can be added later by defaulting new rows to `'pending'` instead
+- Basic spam protection only for now (honeypot field + a per-post daily cap): revisit with Cloudflare Turnstile or similar if spam becomes a real problem
+
+**Lesson learned:**
+
+- The README's Infrastructure section said the frontend was "hosted on Vercel," which is only true for `frontend/` — the root static site is GitHub Pages. Updated the README to make this explicit so it doesn't cause confusion again.
+
+---
