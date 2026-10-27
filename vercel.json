@@ -1,4 +1,9 @@
    {
      "cleanUrls": true,
-     "trailingSlash": false
+     "trailingSlash": false,
+     "redirects": [
+       { "source": "/schema.sql", "destination": "/", "permanent": false },
+       { "source": "/data.sql", "destination": "/", "permanent": false },
+       { "source": "/DEVLOG.md", "destination": "/", "permanent": false }
+     ]
    }
